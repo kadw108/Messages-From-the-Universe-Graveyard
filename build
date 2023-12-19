@@ -1,0 +1,10 @@
+rm -f ../export/index.html
+cd script_files
+npx esbuild index.js --bundle --minify --outfile=../src/meta/crumblingcastle.js --global-name=crumblingcastle
+
+# make crumblingcastle globally accessible
+# from https://stackoverflow.com/questions/64806255/how-to-expose-a-class-to-the-global-scope-with-esbuild
+echo "window.crumblingcastle = crumblingcastle;" >> ../src/meta/crumblingcastle.js
+
+cd ../src
+npx ifc -o ../export/index.html

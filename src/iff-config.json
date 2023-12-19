@@ -1,0 +1,19 @@
+{
+    "story": {
+        "title": "Crumbling Castle",
+        "author": {
+            "name": "KADW"
+        },
+        "version": "1.0.0"
+    },
+    "scripts": {
+        "story": "meta/crumblingcastle.js"
+    },
+    "styles": {
+        "story": [
+            "meta/styles/reset.css",
+            "meta/styles/stylesheet.css",
+            "meta/styles/fonts.css"
+        ]
+    }
+}

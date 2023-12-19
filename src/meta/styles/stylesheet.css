@@ -1,0 +1,273 @@
+/*
+GENERAL STYLE
+*/
+
+/* Can define CSS variables here */
+:root {
+    --color1: #fabb33;
+    --colorb: #fcdd55;
+    --color2: #fff;
+    --shadow: #ddd;
+
+  	--screenheight: 675px;
+  	--screenwidth: 765px;
+  	--screenheightbig: 700px;
+  	--screenwidthbig: 800px;
+}
+
+/* Background */
+#bg {
+  height: 100%;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+  
+  background-image: url("assets/background.png");
+  background-color: #000000;
+}
+
+/* Passage container */
+#passages {
+  margin: 10px auto auto auto;
+  padding: 15px;
+
+  width: 600px;
+  height: 800px;
+  
+  /* Prevent images from extending past div bounds
+  object-fit: cover;
+  overflow: hidden;
+  */
+
+  background-color: rgba(0, 0, 0, 0.92);
+  box-shadow: 0px 0px 5px 5px rgb(0, 0, 5);
+  
+  font-size: 100%;
+  font-family: "Go Mono", monospace;
+
+  position: relative;
+}
+
+/* For passages themselves */
+.passage {
+  /* overflow: auto; */
+  height: 100%;
+  width: 100%;
+  position: relative; /* See https://stackoverflow.com/a/46318225
+  - this sets .passage div as reference point for children position: absolute divs*/
+}
+
+#screenBg {
+  width: 100%;
+  height: 100%;
+
+  background-color: #004;
+  background-size: cover;
+  
+  border: 3px solid white;
+  border-image: url(assets/white3.gif);
+  border-image-slice: 4;
+
+  position: relative;
+  z-index: 0;
+}
+
+#screenContents {
+  width: 97%;
+  height: 98%;
+  margin: auto;
+}
+#topHalf {
+  width: 100%;
+  height: 50%;
+  bottom: 50%;
+  margin: auto;
+}
+#bottomhalf {
+  width: 100%;
+  height: 50%;
+  top: 50%;
+  margin: auto;
+
+  padding: 10px;
+}
+
+#menuButtons {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 85%;
+
+    display: flex;
+    gap: 10px;
+}
+
+/*
+CUSTOM STYLES
+*/
+
+.menuPanel {
+  overflow: scroll;
+  padding: 3px 7px 3px 7px;
+  margin: 5px;
+
+  background-color: #001020;
+  border: 1px dotted #ccc;
+  border-radius: 10px;
+}
+
+.menuButton {
+  z-index: 2;
+}
+
+.hoverDiv {
+  position: absolute;
+  z-index: 3;
+  line-height: 100%;
+  padding: 4px;
+
+  display: none;
+}
+
+.outlineDiv {
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255,255,255,.4);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2),inset 0 -1px 2px #fff;
+
+  color: #fff;
+  border: solid 1px #aaa;
+  background: #000;
+}
+
+.blackBg {
+  color: white;
+  background-color: black;
+  border: 2px dotted white;
+}
+
+.absoluteAlign {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.grey {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.grey:hover {
+  color: #aaaaaa;
+}
+
+.red-text {
+  color: #ff0000;
+  text-decoration: underline;
+}
+.green-text {
+  color: #00ff00;
+  text-decoration: underline;
+}
+
+.smalltext {
+  color: #777777;
+  font-size: 0.8em;
+}
+
+.noClick{
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/*
+OVERRIDING DEFAULT CSS STYLES
+*/
+
+body {
+  color: #ffffff;
+}
+
+small {
+  font-size: 70%;
+}
+
+/* For replacelink */
+.initial {
+  color: #eeeeee;
+}
+.initial:hover {
+  color: #666666;
+}
+
+a {
+  color: #aaddaa;
+  text-decoration: inherit;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: inherit;
+  color: #339988;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+hr {
+  height: 0px;
+  margin: 3px 0;
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #444;
+}
+
+/* CUSTOM STYLINGS (because reset.css) */
+
+h1 {
+  font-size: 200%;
+}
+h2 {
+  font-size: 150%;
+}
+h3 {
+  font-size: 125%;
+}
+h4 {
+  font-size: 115%;
+}
+h5 {
+  font-size: 110%;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+  margin: 15px 0 15px 0;
+}
+h4, h5 {
+  margin: 9px 0 9px 0;
+}
+
+body > div, span {
+  margin: 3px 0 3px 0;
+}
+
+p {
+  margin: 12px 0 12px 0;
+}
