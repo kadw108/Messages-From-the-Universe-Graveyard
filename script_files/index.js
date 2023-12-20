@@ -1,5 +1,5 @@
-import {main} from "./test";
+import {getBoard} from "./readBoard";
 
 export {
-  main
+  getBoard
 }
