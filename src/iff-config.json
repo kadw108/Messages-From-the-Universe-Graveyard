@@ -13,7 +13,8 @@
         "story": [
             "meta/styles/reset.css",
             "meta/styles/stylesheet.css",
-            "meta/styles/fonts.css"
+            "meta/styles/fonts.css",
+            "meta/styles/marker.css"
         ]
     }
 }

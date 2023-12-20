@@ -256,12 +256,15 @@ h4 {
 h5 {
   font-size: 110%;
 }
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   margin: 15px 0 15px 0;
 }
 h4, h5 {
   margin: 9px 0 9px 0;
+}
+h6 {
+  margin: 3px 0 3px 0;
 }
 
 body > div, span {

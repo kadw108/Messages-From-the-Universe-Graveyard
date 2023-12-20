@@ -1,0 +1,56 @@
+#markerDiv {
+  z-index: 20;
+  margin: 20px;
+  background-color: #000;
+  border: 3px double #fff;
+  border-radius: 5px;
+
+  font-size: 90%;
+
+  overflow: scroll;
+}
+
+#closeMarkerDiv {
+  position: absolute;
+  right: 8px;
+  top: 5px;
+}
+
+.markerMessage {
+  margin: 5px;
+  padding: 5px 7px 0 7px;
+  border: 1px solid #555;
+  border-radius: 20px;
+}
+
+.pageLinkContainer {
+    margin: 5px;
+}
+.pageLinkContainer * {
+    display: inline-block;
+}
+.pageLink {
+    border: 1px solid white;
+    padding: 4px;
+}
+
+.sendBox {
+    margin: 10px;
+    border: 1px solid white;
+    padding: 10px;
+}
+.sendBox > div {
+    margin: 10px 0 10px 0;
+}
+.sendBox label {
+    text-align: right;
+    width: 15%;
+    margin-right: 5px;
+}
+.sendBox label, button {
+    display: inline-block;
+}
+#messageInput {
+    width: 80%;
+    vertical-align: top;
+}
