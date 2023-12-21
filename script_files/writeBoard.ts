@@ -17,8 +17,6 @@ const client = new DynamoDBClient({
   })
 });
 
-/* --- */
-
 const docClient = DynamoDBDocumentClient.from(client);
 
 const sendPutRequest = async(boardNumber: number, inputName: string, inputMessage: string) => {

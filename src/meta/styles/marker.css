@@ -1,6 +1,7 @@
 #markerDiv {
   z-index: 20;
   margin: 20px;
+  padding-bottom: 15px;
   background-color: #000;
   border: 3px double #fff;
   border-radius: 5px;

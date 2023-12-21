@@ -3,6 +3,11 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { fromCognitoIdentityPool} from "@aws-sdk/credential-providers";
 import { QueryCommand, DynamoDBDocumentClient, QueryCommandOutput } from "@aws-sdk/lib-dynamodb";
 
+import Filter from "bad-words";
+const filter = new Filter();
+// @ts-ignore
+// const filter = new Filter({ replaceRegex: /(?<!^)(.*)(?!$)/g }); 
+
 const REGION = "us-east-2";
 
 const client = new DynamoDBClient({
@@ -15,8 +20,6 @@ const client = new DynamoDBClient({
         },
   })
 });
-
-/* --- */
 
 const docClient = DynamoDBDocumentClient.from(client);
 
@@ -66,10 +69,10 @@ const renderMessage = (messageData) => {
 
   const senderName = document.createElement("h6");
   senderName.classList.add("senderName");
-  senderName.innerText = "from: " + messageData.name;
+  senderName.innerText = "from: " + filter.clean(messageData.name);
 
   const message = document.createElement("p");
-  message.innerText = messageData.message;
+  message.innerText = filter.clean(messageData.message);
 
   div.append(senderName, message);
   return div;
