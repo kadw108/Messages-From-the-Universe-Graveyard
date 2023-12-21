@@ -18,16 +18,20 @@ function closeMarker() {
     document.getElementById("markerDiv").classList.add("hidden");
 }
 
-async function refresh(event) {
-    event.target.innerHTML = "<img src='assets/loading.gif' style='width: 18px;'/>";
-    event.target.disabled = true;
+async function refresh(refreshButton) {
+    refreshButton.innerHTML = "<img src='assets/loading.gif' style='width: 18px;'/>";
+    refreshButton.disabled = true;
 
     const ref = window.crumblingcastle;
-    const refreshNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
-    await ref.getBoard(refreshNumber);
+    const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
+    await ref.getBoard(boardNumber);
 
-    event.target.innerHTML = "Refresh";
-    event.target.disabled = false;
+    refreshButton.innerHTML = "Refresh";
+    refreshButton.disabled = false;
+}
+
+async function refreshClickHandler(event) {
+    refresh(event.target);
 }
 
 function showHideSendBox(event) {
@@ -41,6 +45,26 @@ function showHideSendBox(event) {
         event.target.style.borderBottom = "none";
         document.getElementById("sendBox").classList.remove("hidden");
     }
+}
+
+async function submitMessageForm(event) {
+  event.preventDefault();
+
+  let nameInput = document.getElementById("nameInput");
+  let messageInput = document.getElementById("messageInput");
+
+  const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
+  const name = nameInput.value;
+  const message = messageInput.value;
+
+  const ref = window.crumblingcastle;
+  await ref.addMessage(boardNumber, name, message);
+  await refresh(document.getElementById("refreshButton"));
+
+  nameInput.value = "";
+  messageInput.value = "";
+
+  return false;
 }
 
 function createMarkerDiv() {
@@ -74,7 +98,7 @@ function createFetchedInfoDiv() {
     const refreshButton = document.createElement("button");
     refreshButton.id = "refreshButton";
     refreshButton.innerText = "Refresh";
-    refreshButton.addEventListener("click", refresh);
+    refreshButton.addEventListener("click", refreshClickHandler);
 
     const messageContainer = document.createElement("div");
     messageContainer.id = "messageContainer";
@@ -87,7 +111,12 @@ function createFetchedInfoDiv() {
     const sendBox = document.createElement("form");
     sendBox.id = "sendBox";
     sendBox.classList.add("hidden");
-    sendBox.innerHTML = '<h6>Leave a Message?</h6><div><label for="nameInput">Name<small>  [3-32 characters, alphanumeric only]</small></label><input type="text" maxlength=32 minlength=3 pattern="[a-zA-Z0-9]+" id="nameInput" "Alphanumeric name from 3 to 32 characters."></div><div><label for="messageInput">Message</label><textarea id="messageInput" rows="10"></textarea></div><button type="submit">Send</button>';
+    sendBox.innerHTML = '<h6>Leave a Message?</h6><div><label for="nameInput">Name <small>[3-32 characters, letters and numbers only]</small></label><input type="text" maxlength="32" minlength="3" pattern="[a-zA-Z0-9]+" id="nameInput" "Alphanumeric name from 3 to 32 characters."></div><div><label for="messageInput">Message <small>[50-1000 characters]</small></label><textarea id="messageInput" rows="10" maxlength="1000" minlength="50" title="Message from 50 to 1000 characters."></textarea></div>';
+    const submitButton = document.createElement("button");
+    submitButton.type = "submit";
+    submitButton.innerText = "Send";
+    sendBox.appendChild(submitButton);
+    sendBox.addEventListener("submit", submitMessageForm);
 
     fetchedInfoDiv.append(pageLinkContainer, refreshButton, messageContainer, sendBoxButton, sendBox);
     return fetchedInfoDiv;

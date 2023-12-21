@@ -22,8 +22,8 @@ const docClient = DynamoDBDocumentClient.from(client);
 
 const queryBoard = async (boardNumber: number) => {
   const command = new QueryCommand({
-    TableName: "board",
-    IndexName: "board-index",
+    TableName: "boardTable",
+    IndexName: "board-time-index",
     KeyConditionExpression:
       "board = :boardNum",
     ExpressionAttributeValues: {
@@ -49,10 +49,15 @@ const renderBoard = (response: QueryCommandOutput) => {
   }
   messageContainer.innerHTML = "";
 
-  items.forEach((messageData) => {
-    const div = renderMessage(messageData);
-    messageContainer.append(div);
-  })
+  if (items.length === 0) {
+    messageContainer.innerHTML = "<p style='margin: 15px;'>Nothing here.</p>";
+  }
+  else {
+    items.forEach((messageData) => {
+      const div = renderMessage(messageData);
+      messageContainer.append(div);
+    })
+  }
 }
 
 const renderMessage = (messageData) => {

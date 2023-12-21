@@ -82,7 +82,7 @@
     padding: 3px 6px 3px 6px;
     border: 1px solid white;
 }
-#messageInput, #nameInput {
+#nameInput, #messageInput {
     width: 95%;
     vertical-align: top;
     background-color: #111;
@@ -92,6 +92,6 @@
     margin: 5px 0 5px 0;
     border-radius: 5px;
 }
-#nameInput:invalid {
-    color: red;
+#nameInput:invalid, #messageInput:invalid {
+    border: 1px groove red;
 }
