@@ -16,56 +16,82 @@
   top: 5px;
 }
 
-#messageContainer {
-  margin: 0 5px 0 5px;
-}
-#messageContainer > img { /* loading icon */
-  height: 30px;
-  width: 30px;
+#loadingDiv > img { /* loading icon */
+  height: 50px;
+  width: 50px;
 
   position: relative;
   left: 50%;
-  margin-left: -15px; /* half of width */
+  margin-left: -25px; /* half of width */
+  margin-top: 50px;
 }
 
-.markerMessage {
-  margin: 5px 0 5px 0;
-  padding: 5px 7px 0 7px;
-  border: 1px solid #555;
-  border-radius: 20px;
+/* --- */
+
+#refreshButton {
+  float: right;
+  margin-right: 40px;
+  margin-top: 5px;
+  border-radius: 7px;
 }
 
 .pageLinkContainer {
     margin: 5px;
 }
-.pageLinkContainer * {
+.pageLinkContainer, .pageLinkContainer * {
     display: inline-block;
 }
 .pageLinkContainer > ul {
     margin-right: 10px;
 }
-.pageLink {
+.pageLinkContainer li {
     border: 1px solid white;
     padding: 4px;
 }
 
-.sendBox {
+.markerMessage {
+  margin: 7px;
+  padding: 5px 7px 0 7px;
+  border: 1px solid #555;
+  border-radius: 20px;
+}
+
+#sendBoxButton {
+  margin: 15px;
+  margin-bottom: -3px;
+
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 4px 10px 4px 10px;
+}
+
+#sendBox {
     margin: 10px;
+    margin-top: 0;
     border: 1px solid white;
     padding: 10px;
 }
-.sendBox > div {
+#sendBox > div {
     margin: 10px 0 10px 0;
 }
-.sendBox label {
-    text-align: right;
-    width: 15%;
-    margin-right: 5px;
+#sendBox label {
+    display: block;
 }
-.sendBox label, button {
-    display: inline-block;
+#sendBox > button {
+    border-radius: 14px;
+    padding: 3px 6px 3px 6px;
+    border: 1px solid white;
 }
-#messageInput {
-    width: 80%;
+#messageInput, #nameInput {
+    width: 95%;
     vertical-align: top;
+    background-color: #111;
+    color: white;
+    border: 1px groove #aaa;
+    padding: 4px;
+    margin: 5px 0 5px 0;
+    border-radius: 5px;
+}
+#nameInput:invalid {
+    color: red;
 }

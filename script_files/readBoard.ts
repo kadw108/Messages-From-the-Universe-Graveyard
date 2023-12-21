@@ -77,7 +77,7 @@ const getBoard = async (boardNumber: number) => {
   }
 
   const result = await queryBoard(boardNumber);
-  return renderBoard(result);
+  renderBoard(result);
 }
 
 /*
