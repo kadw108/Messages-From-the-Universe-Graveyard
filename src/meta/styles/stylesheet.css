@@ -97,13 +97,13 @@ GENERAL STYLE
 }
 
 #menuButtons {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    font-size: 85%;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 85%;
 
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 /*
@@ -212,13 +212,16 @@ small {
 }
 
 a {
-  color: #aaddaa;
+  color: #aaaadd;
   text-decoration: inherit;
   cursor: pointer;
 }
+.hiddenLink a {
+  color: inherit;
+}
 a:hover {
   text-decoration: inherit;
-  color: #339988;
+  color: #446699;
 }
 
 div {
