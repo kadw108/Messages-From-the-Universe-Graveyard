@@ -70,12 +70,13 @@ async function submitMessageForm(event) {
 function createMarkerDiv() {
     const markerDiv = document.createElement("div");
     markerDiv.id = "markerDiv";
-    markerDiv.classList.add("absoluteAlign", "hidden");
+    markerDiv.classList.add("absoluteAlign", "hidden", "popupMenu");
 
     const closeButton = document.createElement("button");
     closeButton.innerText = "X";
     closeButton.type = "button";
     closeButton.id = "closeMarkerDiv";
+    closeButton.classList.add("closeButton");
     closeButton.addEventListener("click", closeMarker);
 
     const loadingDiv = document.createElement("div");

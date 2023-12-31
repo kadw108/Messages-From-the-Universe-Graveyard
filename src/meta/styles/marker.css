@@ -7,25 +7,6 @@
   text-decoration: underline;
 }
 
-#markerDiv {
-  z-index: 20;
-  margin: 20px;
-  padding-bottom: 15px;
-  background-color: #000;
-  border: 3px double #fff;
-  border-radius: 5px;
-
-  font-size: 90%;
-
-  overflow: scroll;
-}
-
-#closeMarkerDiv {
-  position: absolute;
-  right: 8px;
-  top: 5px;
-}
-
 #loadingDiv > img { /* loading icon */
   height: 50px;
   width: 50px;

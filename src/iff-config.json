@@ -14,7 +14,9 @@
             "meta/styles/reset.css",
             "meta/styles/stylesheet.css",
             "meta/styles/fonts.css",
-            "meta/styles/marker.css"
+            "meta/styles/menu.css",
+            "meta/styles/marker.css",
+            "meta/styles/machine.css"
         ]
     }
 }
