@@ -4,6 +4,7 @@ const dormMusic: Array<Howl> = [
     new Howl({
         src: ["assets/music/Serat - Flow Sessions - 16 Out of Bounds.mp3"],
         loop: true,
+        rate: 0.5,
 
         autoplay: true,
         volume: 0

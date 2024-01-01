@@ -99,12 +99,24 @@ window.crumblingcastle.musicManager.playSoundtrack(1);
 <div class="absoluteAlign bottomHalf blackBg">
     <h3 class="roomName">Greenhouse - North</h3>
 
-    <p>Wind whistles through holes in the waterlogged ceiling. White flowers carpet the floor, curling their vines towards you. Their texture is the same as the other flowers - strangely soft, as if made of mist. You wave you hand through them and they disperse, then reform. You cannot take them.</p>
+    <p>Wind whistles through holes in the waterlogged ceiling. White flowers carpet the floor, curling their vines towards you. Their texture is the same as the other flowers - strangely soft, as if made of mist. You wave your hand through them and they disperse, then reform. You cannot take them.</p>
 
-    <p>The path is too choked by vines here for you to continue. There is no way to go but back [[south|greenhouseEntrance]].</p>
+    <p>The path runs [[north|greenhousePond]] and [[south|greenhouseEntrance]].</p>
 </div>
 </snippet>
 
+<snippet name="greenhousePond" scripts="meta/addWrapperHtml.js; meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Greenhouse - Pond</h3>
+
+    <p>A small blue pond sits amidst the foliage, rippling gently. Beams of sunlight shine from holes in the ceiling and glitter on the water. Tiny lilypads float on the pond's surface, boasting small white lillies.</p>
+
+    <p>The path is too choked by vines here for you to continue. There is no way to go but back [[south|greenhouseNorth]].</p>
+</div>
+</snippet>
 
 <snippet name="hallOfStatues" scripts="meta/addWrapperHtml.js; meta/markerDivScript.js">
 
@@ -202,6 +214,8 @@ window.crumblingcastle.musicManager.playSoundtrack(1);
     <h3 class="roomName">Pit</h3>
 
     <p>An enormous pit carves this hallway in half. Water rushes into it, cascading into darkness, producing a cacophonous roar. Crossing is impossible. You cannot see the bottom.</p>
+
+    <p>[[Jump?|sunkenHallTransition]]</p>
 
     <p>The hall continues to the [[south|collapsedHall]].</p>
 </div>
