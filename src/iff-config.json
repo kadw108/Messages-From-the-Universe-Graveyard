@@ -19,7 +19,7 @@
             "meta/styles/reset.css",
             "meta/styles/stylesheet.css",
             "meta/styles/fonts.css",
-            "meta/styles/menu.css",
+            "meta/styles/panel.css",
             "meta/styles/marker.css",
             "meta/styles/machine.css"
         ]

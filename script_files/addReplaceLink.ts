@@ -1,14 +1,14 @@
 /*
 Syntax:
 
-<a class="replaceLink" replace="replaced" identifier="test" >How awful.</a>
-<span class="replaceLink hidden" replace="replacer" identifier="test">How wonderful.</span>
+<a class="linkReplaced" identifier="test" >How awful.</a>
+<span class="linkReplacer hidden" identifier="test">How wonderful.</span>
 
 */
 
 function clickReplaceLink(event) {
     const identifier = event.target.getAttribute("identifier");
-    const replacers = document.querySelectorAll("[identifier='" + identifier + "'][replace='replacer']");
+    const replacers = document.querySelectorAll(".linkReplacer[identifier='" + identifier + "']");
 
     if (replacers.length === 0) {
         console.error("Replacelink without replacer!");
@@ -23,7 +23,7 @@ function clickReplaceLink(event) {
 }
 
 export function addReplaceLink() {
-    Array.from(document.querySelectorAll(".replaceLink[replace='replaced']")).forEach(e => {
+    Array.from(document.getElementsByClassName("linkReplaced")).forEach(e => {
         e.addEventListener("click", clickReplaceLink);
     });
 }
