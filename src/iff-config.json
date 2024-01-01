@@ -9,6 +9,9 @@
     "scripts": {
         "story": [
             "meta/crumblingcastle.js"
+        ],
+        "global": [
+            "meta/addWrapperHtml.js"
         ]
     },
     "styles": {
