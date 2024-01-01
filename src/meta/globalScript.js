@@ -1,4 +1,4 @@
 $(function () {
-    console.log(window.crumblingcastle);
     window.crumblingcastle.addWrapperHtml();
+    window.crumblingcastle.addReplaceLink();
 });
