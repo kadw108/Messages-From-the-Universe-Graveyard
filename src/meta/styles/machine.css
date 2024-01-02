@@ -1,3 +1,25 @@
 .panelFull[identifier='machine'] {
     padding: 15px;
 }
+
+.machineScreen {
+  background-color: #000;
+  border: 1px solid white;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 10px;
+  margin: 10px;
+  display: inline-block;
+}
+
+.machineScreen label {
+    display: block;
+}
+
+.machineScreen input {
+  background-color: #000;
+  border: 1px solid #ccc;
+  margin: 5px;
+  color: #fff;
+  padding: 5px;
+}

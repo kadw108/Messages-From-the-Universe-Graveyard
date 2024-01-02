@@ -143,14 +143,22 @@ window.crumblingcastle.musicManager.playSoundtrack(0);
 <snippet name="maintenanceTunnelXEnd" scripts="meta/markerDivScript.js; meta/machineScript.js">
 
 <div class="panelFull absoluteAlign hidden" identifier="machine">
-    <p>A prominent switch is located on the side of the apparatus.</p>
+    <p>A metallic switch gleams prominently beneath a black screen.</p>
+
+    <div class="machineScreen">
+        <label for="coordinates">COORDINATES</label>
+        <input name="coordinates" type="number" step="1"/>
+    </div>
 
     <p><a class="activateLink">Pull switch.</a></p>
 
     <div class="successfulActivation hidden">
-        <p>A blinding flash of light. A coruscating rip in the fabric of spacetime opens within the cage. The metallic arms shiver and withdraw, leaving the rip shimmering before you. </p>
+        <p>Light flashes. A coruscating rip in the fabric of spacetime opens before you.</p>
 
-        <p>[[Enter.|nexusDome]]</p>
+        <p><a class="successfulActivationLink">Enter.</a></p>
+    </div>
+    <div class="unsuccessfulActivation hidden">
+        <p>Click. Nothing happens.</p>
     </div>
 </div>
 
@@ -159,9 +167,9 @@ window.crumblingcastle.musicManager.playSoundtrack(0);
 <div class="absoluteAlign bottomHalf blackBg">
     <h3 class="roomName">Maintenance Tunnel X - End</h3>
 
-    <p>At the end of the tunnel, a cage-like <a class="panelOpener" identifier="machine">apparatus</a> made of interlocking metallic arms is set into the wall. Somewhere, water drips. The air is filled with the ambient hum-buzz of machinery.</p>
+    <p>At the end of this tunnel, a cage-like <a class="panelOpener" identifier="machine">apparatus</a> made of interlocking metallic arms is set into the wall. Somewhere, water drips. The air is filled with the ambient hum-buzz of machinery.</p>
 
-    <p>On the side of the apparatus is a <a class="whiteMarker" board="11">white panel</a>.</p>
+    <p>By the side of the apparatus is a <a class="whiteMarker" board="11">white panel</a>.</p>
 
     <p>The tunnel continues [[north|maintenanceTunnelX]].</p>
 </div>
