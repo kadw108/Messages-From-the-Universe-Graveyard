@@ -1,3 +1,146 @@
+<snippet name="dormW4" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dorm W-4</h3>
+
+    <p>The pit is jagged, its sides an accumulation of broken machinery and rubble. At the bottom, a small circle of debris has been cleared away. A <a class="whiteMarker" board="4">glowing panel</a> flickers in the middle.</p>
+
+    <p>A faint circle of light overhead is the only sign that there is a world [[above|dormR13]].</p>
+</div>
+</snippet>
+
+
+<snippet name="dormR8" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="keypad">
+    <!-- https://code-boxx.com/pure-javascript-numeric-keypad/ -->
+
+    <div class="machineScreen">
+        <input name="keycode" type="number" step="1"/>
+    </div>
+
+    <p><a class="activateLink">Enter code.</a></p>
+
+    <div class="successfulActivation hidden">
+        <p>The keypad turns green.</p>
+
+        <p><a class="successfulActivationLink">Enter.</a></p>
+    </div>
+    <div class="unsuccessfulActivation hidden">
+        <p>A harsh buzz, and the screen clears.</p>
+    </div>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dorm R-8</h3>
+
+    <p>At the end of the room, a rusty door leads south. A metal plaque on the door, hanging by one screw, reads: "AUT-O I__D P RSO۩N__ ON_Y". The door is locked with a <a class="panelOpener" identifier="keypad">keypad</a>.</p>
+
+    <p>The door is flanked by two panels. Only the <a class="whiteMarker" board="9">glowing panel</a> to the right is lit, the left cracked into three parts.</p>
+
+    <p>Rows of metal pods glitter in the shadows, continuing to the [[west|dormR9]].</p>
+</div>
+
+<%
+function activateKeypad(event) {
+    const codeInput = document.querySelector(".machineScreen input");
+    const inputString = codeInput.value;
+    if (inputString === "9272") {
+        window.crumblingcastle.machine.success(codeInput, "maintenanceTunnelX");
+        codeInput.style.borderColor = "green";
+    }
+    else {
+        window.crumblingcastle.machine.failure(codeInput);
+    }
+}
+
+$(function () {
+    Array.from(document.getElementsByClassName("activateLink")).forEach(e => {
+        e.addEventListener("click", activateKeypad);
+    });
+});
+%>
+
+</snippet>
+
+<snippet name="dormR9" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dorm R-9</h3>
+
+    <p>Above looms a crooked canopy of leaden pipes. Buzzing green lights give off an ectoplasmic glow. Metal pods glitter, chained together by black wires. One pod stands open.</p>
+
+    <p>A <a class="whiteMarker" board="3">glowing panel</a> is set into the wall. Its light washes over you.</p>
+
+    <p>The room runs to the [[east|dormR8]] and [[west|dormR10]].</p>
+</div>
+
+<% 
+window.crumblingcastle.musicManager.playSoundtrack(0);
+%>
+</snippet>
+
+
+<snippet name="dormR10" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dorm R-10</h3>
+
+    <p>Metal pods stretch into the distance. Machinery hums, resonant. Amidst the dark snarl of pipes and wires, a <a class="whiteMarker" board="5">glowing panel</a> hovers.</p>
+
+    <p>The room runs to the [[east|dormR9]] and [[west|dormR11]].</p>
+</div>
+</snippet>
+
+
+<snippet name="dormR11" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dorm R-11</h3>
+
+    <p>Several pods here have been smashed to pieces by enormous chunks of debris. Wreckage and broken pipes lie scattered across the floor. A <a class="whiteMarker" board="6">glowing panel</a> hovers over the crushed remnants of a pod.</p>
+
+    <p>The room runs to the [[east|dormR10]] and [[west|dormR12]].</p>
+</div>
+</snippet>
+
+
+<snippet name="dormR12" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dorm R-12</h3>
+
+    <p>The lights flicker here. Pods lie in various states of upheavel, some shattered or blasted with bulletholes. Torn wires send the occasional flurry of green sparks into the air. A <a class="whiteMarker" board="7">glowing panel</a> is set into the side of a cracked metal pod.</p>
+
+    <p>The room runs to the [[east|dormR11]] and [[west|dormR13]], where the lights dim.</p>
+</div>
+</snippet>
+
+<snippet name="dormR13" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dorm R-13</h3>
+
+    <p>The lights here are largely broken. The few that retain power flicker erratically, illuminating destruction: a sagging ceiling, a floor littered with metal scrap, a <span class="hiddenLink">[[pit|dormW4]]</span> that yawns under a tangle of black wires. Dark silhouettes surround you. Brief flashes of light reveal them to be destroyed pods, wires trailing from their shattered walls. A <a class="whiteMarker" board="8">glowing panel</a> shines over a heap of rubble.</p>
+
+    <p>The room runs to the [[east|dormR12]] and [[west|podTower]].</p>
+</div>
+</snippet>
+
 <snippet name="podTower" scripts="meta/markerDivScript.js">
 
 <div class="absoluteAlign topHalf">
@@ -5,122 +148,10 @@
 <div class="absoluteAlign bottomHalf blackBg">
     <h3 class="roomName">Pod Tower</h3>
 
-    <p>A spire of steel. Walls of gleaming silver and chrome stretch upwards to vertiginous heights, lined with rows upon rows of metal pods. There are no stairs or elevators visible; no way up.</p>
+    <p>In the darkness, walls pitted with rust stretch upwards to vertiginous heights, lined with rows upon rows of metal pods. There are no stairs or elevators visible; no way up.</p>
 
-    <p>You can only go back [[west|dormX8]].</p>
+    <p>You can only go back [[east|dormR13]].</p>
 </div>
-
-</snippet>
-
-
-<snippet name="dormX4" scripts="meta/markerDivScript.js">
-
-<div class="absoluteAlign topHalf">
-</div>
-<div class="absoluteAlign bottomHalf blackBg">
-    <h3 class="roomName">Dorm X4</h3>
-
-    <p>The pit is jagged, its sides an accumulation of broken machinery and rubble. At the bottom, a small circle of debris has been cleared away. A <a class="whiteMarker" board="4">white panel</a> flickers in the middle.</p>
-
-    <p>A faint circle of light overhead is the only sign that there is a world [[above|dormX12]].</p>
-</div>
-
-</snippet>
-
-
-<snippet name="dormX8" scripts="meta/markerDivScript.js">
-
-<div class="absoluteAlign topHalf">
-</div>
-<div class="absoluteAlign bottomHalf blackBg">
-    <h3 class="roomName">Dorm X8</h3>
-
-    <p>Above looms a crooked canopy of leaden pipes. Buzzing green lights give off an ectoplasmic glow. Metal pods glitter, chained together by black wires. One pod stands open.</p>
-
-    <p>A glowing <a class="whiteMarker" board="3">white panel</a> is set into the wall. Its light washes over you.</p>
-
-    <p>The room runs to the [[east|podTower]] and [[west|dormX9]].</p>
-</div>
-
-<% 
-window.crumblingcastle.musicManager.playSoundtrack(0);
-%>
-
-</snippet>
-
-
-<snippet name="dormX9" scripts="meta/markerDivScript.js">
-
-<div class="absoluteAlign topHalf">
-</div>
-<div class="absoluteAlign bottomHalf blackBg">
-    <h3 class="roomName">Dorm X9</h3>
-
-    <p>Metal pods stretch into the distance. Machinery hums, resonant. Amidst the dark snarl of pipes and wires, a <a class="whiteMarker" board="5">white panel</a> hovers.</p>
-
-    <p>The room runs to the [[east|dormX8]] and [[west|dormX10]].</p>
-</div>
-
-</snippet>
-
-
-<snippet name="dormX10" scripts="meta/markerDivScript.js">
-
-<div class="absoluteAlign topHalf">
-</div>
-<div class="absoluteAlign bottomHalf blackBg">
-    <h3 class="roomName">Dorm X10</h3>
-
-    <p>Several pods here have been smashed to pieces by enormous chunks of debris. Wreckage and broken pipes lie scattered across the floor. A <a class="whiteMarker" board="6">white panel</a> hovers over the crushed remnants of a pod.</p>
-
-    <p>The room runs to the [[east|dormX9]] and [[west|dormX11]].</p>
-</div>
-
-</snippet>
-
-
-<snippet name="dormX11" scripts="meta/markerDivScript.js">
-
-<div class="absoluteAlign topHalf">
-</div>
-<div class="absoluteAlign bottomHalf blackBg">
-    <h3 class="roomName">Dorm X11</h3>
-
-    <p>The lights flicker here. Pods lie in various states of upheavel, some shattered or blasted with bulletholes. Torn wires send the occasional flurry of green sparks into the air. A <a class="whiteMarker" board="7">white panel</a> is set into the side of a cracked metal pod.</p>
-
-    <p>The room runs to the [[east|dormX10]] and [[west|dormX12]], where the lights dim.</p>
-</div>
-
-</snippet>
-
-
-<snippet name="dormX12" scripts="meta/markerDivScript.js">
-
-<div class="absoluteAlign topHalf">
-</div>
-<div class="absoluteAlign bottomHalf blackBg">
-    <h3 class="roomName">Dorm X12</h3>
-
-    <p>The lights here are largely broken. The few that retain power flicker erratically, illuminating destruction: a sagging ceiling, a floor littered with metal scrap, a <span class="hiddenLink">[[pit|dormX4]]</span> that yawns under a tangle of black wires. Dark silhouettes surround you. Brief flashes of light reveal them to be destroyed pods, wires trailing from their shattered walls. A <a class="whiteMarker" board="8">white panel</a> shines over a heap of rubble.</p>
-
-    <p>To the [[east|dormX11]], the darkness lessens. To the [[west|dormX13]], a red light shines.</p>
-</div>
-
-</snippet>
-
-
-<snippet name="dormX13" scripts="meta/markerDivScript.js">
-
-<div class="absoluteAlign topHalf">
-</div>
-<div class="absoluteAlign bottomHalf blackBg">
-    <h3 class="roomName">Dorm X13</h3>
-
-    <p>The rows of broken pods terminate abruptly. At the end of the room, a rusty door leads [[south|maintenanceTunnelX]], into a tunnel lined by red lights. A metal plaque on the door, attached by a single screw, reads: AUTHORIZED PERSONNEL ONLY.</p>
-
-    <p>The door is flanked by two panels. Only the <a class="whiteMarker" board="9">white panel</a> to the right is lit, the left cracked into three parts.</p>
-</div>
-
 </snippet>
 
 <snippet name="maintenanceTunnelX" scripts="meta/markerDivScript.js">
@@ -132,11 +163,10 @@ window.crumblingcastle.musicManager.playSoundtrack(0);
 
     <p>Detritus crunches beneath you as you make your way through the tunnel. The concrete floor is carpeted with rubble. Doors are set into the walls at regular intervals, but all are rusted shut.</p>
 
-    <p>At the tunnel's halfway point, a <a class="whiteMarker" board="10">white panel</a> floats in the air.</p>
+    <p>At the tunnel's halfway point, a <a class="whiteMarker" board="10">glowing panel</a> floats in the air.</p>
 
-    <p>The tunnel runs [[north|dormX12]] and [[south|maintenanceTunnelXEnd]].</p>
+    <p>The tunnel runs [[north|dormR8]] and [[south|maintenanceTunnelXEnd]].</p>
 </div>
-
 </snippet>
 
 
@@ -169,9 +199,8 @@ window.crumblingcastle.musicManager.playSoundtrack(0);
 
     <p>At the end of this tunnel, a cage-like <a class="panelOpener" identifier="machine">apparatus</a> made of interlocking metallic arms is set into the wall. Somewhere, water drips. The air is filled with the ambient hum-buzz of machinery.</p>
 
-    <p>By the side of the apparatus is a <a class="whiteMarker" board="11">white panel</a>.</p>
+    <p>By the side of the apparatus is a <a class="whiteMarker" board="11">glowing panel</a>.</p>
 
     <p>The tunnel continues [[north|maintenanceTunnelX]].</p>
 </div>
-
 </snippet>

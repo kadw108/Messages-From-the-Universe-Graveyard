@@ -7,6 +7,10 @@
   text-decoration: underline;
 }
 
+#markerDiv {
+  padding: 0 0 15px 0;
+}
+
 #loadingDiv > img { /* loading icon */
   height: 50px;
   width: 50px;

@@ -23,7 +23,6 @@ function editMenuPanel(menuPanel) {
     const closeButton = document.createElement("button");
     closeButton.innerText = "X";
     closeButton.type = "button";
-    closeButton.id = "closeMachineDiv";
     closeButton.classList.add("closeButton");
     closeButton.addEventListener("click", () => {
         menuPanel.classList.add("hidden");
