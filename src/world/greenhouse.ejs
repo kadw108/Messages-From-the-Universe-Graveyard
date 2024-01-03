@@ -28,7 +28,7 @@ window.crumblingcastle.musicManager.playSoundtrack(1);
 
     <p>Water pours through holes in the ceiling, dripping down white flowers and white vines, pattering onto stone, flowing through long-worn crevices, before falling away through small cracks and holes threading through the floor. A <a class="whiteMarker marblePlaque" board="1">white plaque</a> sits half-covered in vines.</p>
 
-    <p>The hall runs [[north|floodedHallNorth]] and [[south|floodedHallSouth]]. To the [[northeast|hallOfStatues]], steps ascend to a corridor that looks to be in slightly better shape. A misty hallway intersects with this one to the [[west|overgrownHallEast]].</p>
+    <p>The hall runs [[north|floodedHallNorth]] and [[south|floodedHallSouth]]. To the [[northeast|hallOfStatues]], steps ascend to a corridor that looks to be in slightly better shape. An overgrown hallway intersects with this one to the [[west|overgrownHallEast]].</p>
 </div>
 
 </snippet>
@@ -57,7 +57,7 @@ window.crumblingcastle.musicManager.playSoundtrack(1);
 
     <p>The water falls with more ferocity, here. A miniature rainstorm contained in this one room. At the end of the hall is a sheer curtain of water, a waterfall crashing down with a deafening roar. The <a class="whiteMarker marblePlaque" board="12">plaque</a> is concealed behind the waterfall.</p>
 
-    <p>The hall continues to the [[north|floodedHallIntersection]].</p>
+    <p>The hall ends here. You can only go back [[north|floodedHallIntersection]].</p>
 </div>
 </snippet>
 
@@ -73,7 +73,7 @@ window.crumblingcastle.musicManager.playSoundtrack(1);
 
     <p>A <a class="whiteMarker marblePlaque" board="19">white plaque</a> is nestled in the center of one flower, now overgrown with fuzz. The light here is a soft blue. From somewhere plays the distant trickle of water.</p>
 
-    <p>A stone archway to the [[northeast|overgrownHallGraveyard]] leads to an overgrown hall. A path runs [[north|greenhouseNorth]] and [[south|greenhouseFountain]].</p>
+    <p>A stone archway to the [[northeast|overgrownHallGraveyard]] leads to an overgrown hall. A path runs [[north|greenhouseNorth]] and [[south|greenhouseFlower]].</p>
 </div>
 </snippet>
 
@@ -87,7 +87,7 @@ window.crumblingcastle.musicManager.playSoundtrack(1);
 
     <p>A stone fountain, covered in white flowers, plays merrily in the center of this little plaza. Five benches surround it. On one sits a gleaming <a class="whiteMarker marblePlaque" board="20">white plaque</a>. Crumpled robots lie in the white foliage, obscured mostly by white leaves.</p>
 
-    <p>The path is too choked by vines here for you to continue. There is no way to go but back [[north|greenhouseEntrance]].</p>
+    <p>The path is too choked by vines here for you to continue. There is no way to go but back [[east|greenhouseNorth]].</p>
 </div>
 </snippet>
 
@@ -101,7 +101,7 @@ window.crumblingcastle.musicManager.playSoundtrack(1);
 
     <p>Wind whistles through holes in the waterlogged ceiling. White flowers carpet the floor, curling their vines towards you. Their texture is the same as the other flowers - strangely soft, as if made of mist. You wave your hand through them and they disperse, then reform. You cannot take them.</p>
 
-    <p>The path runs [[north|greenhousePond]] and [[south|greenhouseEntrance]].</p>
+    <p>The path runs [[north|greenhousePond]], [[south|greenhouseEntrance]], and [[west|greenhouseFountain]].</p>
 </div>
 </snippet>
 
@@ -115,6 +115,52 @@ window.crumblingcastle.musicManager.playSoundtrack(1);
     <p>A small blue pond sits amidst the foliage, rippling gently. Beams of sunlight shine from holes in the ceiling and glitter on the water. Tiny lilypads float on the pond's surface, boasting small white lillies.</p>
 
     <p>The path is too choked by vines here for you to continue. There is no way to go but back [[south|greenhouseNorth]].</p>
+</div>
+</snippet>
+
+<snippet name="greenhouseFlower" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Greenhouse - Flower</h3>
+
+    <p>The bud of an enormous white flower, at least ten meters in height, rises from a circle of stone. A small opening between the petals is just large enough to allow entrance.</p>
+
+    <p>You can step [[inside|greenhouseWithinFlower]], or return [[north|greenhouseEntrance]].</p>
+</div>
+</snippet>
+
+<snippet name="greenhouseWithinFlower" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="machine">
+    <p>A metallic switch gleams prominently beneath a black screen.</p>
+
+    <div class="machineScreen">
+        <label for="coordinates">NODE ID</label>
+        <input name="coordinates" type="number" step="1"/>
+    </div>
+
+    <p><a class="activateLink" location="greenhouseWithinFlower">Pull switch.</a></p>
+
+    <div class="successfulActivation hidden">
+        <p>Light flashes. A coruscating rip in the fabric of spacetime opens before you.</p>
+
+        <p><a class="successfulActivationLink">Enter.</a></p>
+    </div>
+    <div class="unsuccessfulActivation hidden">
+        <p>Click. Nothing happens.</p>
+    </div>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Greenhouse - Within Flower</h3>
+
+    <p>You stand inside a giant flowerbud. Soft white petals curve upwards: delicate things, silken to the touch. Planted in the center is another cage-like <a class="panelOpener" identifier="machine">apparatus</a>, comprised of metal rods intertwined with white vines and wires.</p>
+
+    <p>Light filters through a small opening between the petals, leading [[outside|greenhouseFlower]].</p>
 </div>
 </snippet>
 
@@ -187,7 +233,7 @@ window.crumblingcastle.musicManager.playSoundtrack(1);
 
     <p>A <a class="whiteMarker marblePlaque" board="16">white plaque</a> is set into a wall.</p>
 
-    <p>The hall runs to the [[east|overgrownHallEast]] and [[west|overgrownHallGraveyard]]. A rusty door swings to the [[north|overgrownCrates]].</p>
+    <p>A rusty door swings to the [[north|overgrownCrates]]. The hall runs to the [[east|overgrownHallEast]] and [[west|overgrownHallGraveyard]].</p>
 </div>
 </snippet>
 

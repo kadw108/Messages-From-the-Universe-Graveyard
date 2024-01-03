@@ -94,6 +94,7 @@ div .bottomHalf {
   margin: auto;
 
   padding: 10px;
+  overflow: scroll;
 }
 
 #menuButtons {
@@ -189,6 +190,11 @@ CUSTOM STYLES
 
 .hidden {
   display: none;
+}
+
+.transitionMessage {
+  font-style: italic;
+  font-size: 80%;
 }
 
 /*

@@ -9,7 +9,8 @@
     "scripts": {
         "story": [
             "meta/crumblingcastle.js",
-            "meta/storyScript.js"
+            "meta/storyScript/initializeState.js",
+            "meta/storyScript/addSunkenHallNav.js"
         ],
         "global": [
             "meta/globalScript.js"

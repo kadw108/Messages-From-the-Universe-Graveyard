@@ -1,7 +1,7 @@
 export const coordinateMap = {
-    666: "test",
     108: "skyGrove",
-    9272: "collapsedHall",
-    7288: "nexusDome",
+    9272: "greenhouseWithinFlower",
+    71928: "drownedApparatus",
+    3859: "nexusDome",
     20103: "maintenanceTunnelXEnd"
 };

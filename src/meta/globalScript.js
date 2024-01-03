@@ -2,14 +2,14 @@ $(function () {
     window.crumblingcastle.addWrapperHtml();
     window.crumblingcastle.addReplaceLink();
     window.crumblingcastle.addMenuPanels();
-    window.crumblingcastle.addSunkenHallNav();
+    f.addSunkenHallNav();
 
     const bottomHalf = document.querySelector("div.absoluteAlign.bottomHalf");
-    if (story.transitionMessage !== null) {
+    if (s.transitionMessage !== null) {
         const message = document.createElement("p");
         message.classList.add("transitionMessage");
-        message.innerText = story.transitionMessage;
+        message.innerText = s.transitionMessage;
         bottomHalf.prepend(message);
-        story.transitionMessage = null;
+        s.transitionMessage = null;
     }
 });

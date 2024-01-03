@@ -1,4 +1,4 @@
-import {coordinateMap} from "./coordinateMap";
+import { coordinateMap } from "./coordinateMap";
 
 export const machine = {
     success: function(coordinateInput, destination) {
@@ -41,9 +41,9 @@ export const machine = {
     use: function(event) {
         const coordinateInput = document.querySelector(".machineScreen input");
         const destination = coordinateMap[(coordinateInput as HTMLInputElement).value];
+        const location = event.target.getAttribute("location");
 
-        // @ts-expect-error
-        if (destination !== undefined && destination !== snippet.name) {
+        if (destination !== undefined && destination !== location) {
             machine.success(coordinateInput, destination);
         }
         else {
