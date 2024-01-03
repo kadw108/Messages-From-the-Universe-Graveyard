@@ -1,10 +1,15 @@
-<snippet name="sunkenHallTransition" scripts="meta/markerDivScript.js">
+<snippet name="sunkenHallTransition" tags="transition">
 
-    <p>You plunge into inky darkness.</p>
+<p class="removedOnClick" identifier="plunge">You plunge into <a class="linkReplaced" identifier="plunge">darkness</a>.</p>
 
-    <p>As your eyes adjust, you begin to make out new shapes...</p>
+<div class="linkReplacer hidden" identifier="plunge"><p>As your eyes adjust, you begin to make out new shapes...</p>
 
-    <p>[[---|sunkenHall]]</p>
+<p>[[---|sunkenHall]]</p></div>
+
+<% 
+window.crumblingcastle.musicManager.playSoundtrack(2);
+%>
+
 </snippet>
 
 <snippet name="sunkenHall" scripts="meta/markerDivScript.js">
@@ -15,11 +20,11 @@
     <h3 class="roomName">Sunken Hall</h3>
 
     <p>This hall is entirely flooded. Shoals of curious fish flicker through the water, glowing with blue stripes. Pale coral and fronds of sea grass sway gently.</p>
-</div>
 
-<% 
-window.crumblingcastle.musicManager.playSoundtrack(2);
-%>
+    <p class="swimUp"><a>Swim up.</a></p>
+
+    <p class="drift"><a>Drift with the current.</a></p>
+</div>
 
 </snippet>
 
@@ -30,7 +35,11 @@ window.crumblingcastle.musicManager.playSoundtrack(2);
 <div class="absoluteAlign bottomHalf blackBg">
     <h3 class="roomName">Black Wormbed</h3>
 
-    <p>Black sea worms undulate through the length of this ruined hall. Dark tubes about half a meter in diameter, each as long as the hall itself, swaying gently. They are smooth and soft to the touch.</p>
+    <p>Black sea worms undulate through the length of this drowned hall. Dark tubes about half a meter in diameter, each as long as the hall itself, swaying gently. They are smooth and soft to the touch.</p>
+
+    <p class="swimUp"><a>Swim up.</a></p>
+
+    <p class="drift"><a>Drift with the current.</a></p>
 </div>
 </snippet>
 
@@ -42,6 +51,10 @@ window.crumblingcastle.musicManager.playSoundtrack(2);
     <h3 class="roomName">Jellyfish</h3>
 
     <p>An enormous jellyfish hums in the center of this drowned chamber. Its bell pulses in and out, rings of concretic light spreading from its top. Its tentacles wave at you.</p>
+
+    <p class="swimUp"><a>Swim up.</a></p>
+
+    <p class="drift"><a>Drift with the current.</a></p>
 </div>
 </snippet>
 
@@ -53,6 +66,10 @@ window.crumblingcastle.musicManager.playSoundtrack(2);
     <h3 class="roomName">Kelp Forest</h3>
 
     <p>A shimmering undersea forest in shades of cyan, cerulean, prussian blue. Fish dart in and out between waving fronds, and jellyfish float lazily around.</p>
+
+    <p class="swimUp"><a>Swim up.</a></p>
+
+    <p class="drift"><a>Drift with the current.</a></p>
 </div>
 </snippet>
 
@@ -64,6 +81,10 @@ window.crumblingcastle.musicManager.playSoundtrack(2);
     <h3 class="roomName">Kelp Graveyard</h3>
 
     <p>Skeletons lie between kelp fronds, some with fronds sprouting from their eyesockets or ribcages. You cannot tell what might have killed them. Perhaps they are only decoration.</p>
+
+    <p class="swimUp"><a>Swim up.</a></p>
+
+    <p class="drift"><a>Drift with the current.</a></p>
 </div>
 </snippet>
 
@@ -75,6 +96,10 @@ window.crumblingcastle.musicManager.playSoundtrack(2);
     <h3 class="roomName">Sunken Statue</h3>
 
     <p>The top half of a colossal marble statue gleams, half-buried in rubble. Around it, fronds of luminescent seagrass grows from the cracked cobblestones. Bubbles swirl.</p>
+
+    <p class="swimUp"><a>Swim up.</a></p>
+
+    <p class="drift"><a>Drift with the current.</a></p>
 </div>
 </snippet>
 
@@ -86,6 +111,10 @@ window.crumblingcastle.musicManager.playSoundtrack(2);
     <h3 class="roomName">Treasure Pile</h3>
 
     <p>Shining amidst the silt is an enormous pile of treasure. Gold atop gems atop silver chalices atop jeweled swords and shields. Coins spill from sunken chests. A <a class="whiteMarker stoneStele" board="21">stone stele</a> lies half-covered by a rusty shield. Unfortunately, none of it can be taken.</p>
+
+    <p class="swimUp"><a>Swim up.</a></p>
+
+    <p class="drift"><a>Drift with the current.</a></p>
 </div>
 </snippet>
 
@@ -97,6 +126,10 @@ window.crumblingcastle.musicManager.playSoundtrack(2);
     <h3 class="roomName">White Wormbed</h3>
 
     <p>White worms squirm through the water here, each a finger's length, silvery. Little moonbeams caught in the water. Shimmering.</p>
+
+    <p class="swimUp"><a>Swim up.</a></p>
+
+    <p class="drift"><a>Drift with the current.</a></p>
 </div>
 </snippet>
 
@@ -108,6 +141,10 @@ window.crumblingcastle.musicManager.playSoundtrack(2);
     <h3 class="roomName">Underwater Machines</h3>
 
     <p>Underwater machines hum and clatter. Currents churn from still-spinning motors, tugging you this way and that. Kelp fronds waver in the tide.</p>
+
+    <p class="swimUp"><a>Swim up.</a></p>
+
+    <p class="drift"><a>Drift with the current.</a></p>
 </div>
 </snippet>
 
@@ -118,18 +155,20 @@ window.crumblingcastle.musicManager.playSoundtrack(2);
 <div class="absoluteAlign bottomHalf blackBg">
     <h3 class="roomName">Current</h3>
 
-    <p>You glimpse light above. As you approach, you feel a current rippling up from the depths, threatening to drag you all the way to the surface.</p>
+    <p>You glimpse light above. As you approach, you feel a strong current rippling up from the depths, threatening to drag you irreversibly to the surface.</p>
+
+    <p>[[Let the current take you.|shoreTransition]]</p>
+
+    <p class="drift">[[Swim against the current, returning down.]]</p>
 </div>
 </snippet>
 
-<snippet name="shoreTransition" scripts="meta/markerDivScript.js">
-<div class="absoluteAlign topHalf">
-</div>
-<div class="absoluteAlign bottomHalf blackBg">
-    <p class="removedOnClick linkReplaced" identifier="current"><a>The current intensifies. You shoot through the water...</a></p>
-        
-    <div class="linkReplacer hidden" identifier="current"><p>You break the surface with a splash. Dark droplets scatter around you.</p>
+<snippet name="shoreTransition" tags="transition">
 
-    <p>[[---|bathhouseDeepWater]]</p></div>
-</div>
+<p><a class="removedOnClick linkReplaced" identifier="current">You shoot through the water... </a></p>
+
+<div class="linkReplacer hidden" identifier="current"><p>You break the surface with a splash. Dark droplets scatter around you.</p>
+
+<p>[[---|bathhouseDeepWater]]</p></div>
+
 </snippet>

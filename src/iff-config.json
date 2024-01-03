@@ -8,7 +8,8 @@
     },
     "scripts": {
         "story": [
-            "meta/crumblingcastle.js"
+            "meta/crumblingcastle.js",
+            "meta/storyScript.js"
         ],
         "global": [
             "meta/globalScript.js"
@@ -22,6 +23,12 @@
             "meta/styles/panel.css",
             "meta/styles/marker.css",
             "meta/styles/machine.css"
+        ],
+        "tags": [
+            {
+                "rule": "transition",
+                "files": "meta/styles/specific/transition.css"
+            }
         ]
     }
 }

@@ -197,6 +197,7 @@ OVERRIDING DEFAULT CSS STYLES
 
 body {
   color: #ffffff;
+  word-wrap: break-word;
 }
 
 small {

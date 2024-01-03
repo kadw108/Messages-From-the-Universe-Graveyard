@@ -2,7 +2,7 @@
 Syntax:
 
 <a class="panelOpener" identifier="test" >Click to make it show up!</a>
-<div class="panelFull hidden" identifier="test">How wonderful. I love my life.</div>
+<div class="panelFull absoluteAlign hidden" identifier="test">How wonderful. I love my life.</div>
 
 */
 
