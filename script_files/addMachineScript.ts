@@ -40,7 +40,8 @@ export const machine = {
 
     use: function(event) {
         const coordinateInput = document.querySelector(".machineScreen input");
-        const destination = coordinateMap[(coordinateInput as HTMLInputElement).value];
+        const coordinateValue = parseInt((coordinateInput as HTMLInputElement).value);
+        const destination = coordinateMap[coordinateValue];
         const location = event.target.getAttribute("location");
 
         if (destination !== undefined && destination !== location) {
