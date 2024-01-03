@@ -99,3 +99,37 @@ window.crumblingcastle.musicManager.playSoundtrack(2);
     <p>White worms squirm through the water here, each a finger's length, silvery. Little moonbeams caught in the water. Shimmering.</p>
 </div>
 </snippet>
+
+<snippet name="underwaterMachines" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Underwater Machines</h3>
+
+    <p>Underwater machines hum and clatter. Currents churn from still-spinning motors, tugging you this way and that. Kelp fronds waver in the tide.</p>
+</div>
+</snippet>
+
+<snippet name="current" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Current</h3>
+
+    <p>You glimpse light above. As you approach, you feel a current rippling up from the depths, threatening to drag you all the way to the surface.</p>
+</div>
+</snippet>
+
+<snippet name="shoreTransition" scripts="meta/markerDivScript.js">
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <p class="removedOnClick linkReplaced" identifier="current"><a>The current intensifies. You shoot through the water...</a></p>
+        
+    <div class="linkReplacer hidden" identifier="current"><p>You break the surface with a splash. Dark droplets scatter around you.</p>
+
+    <p>[[---|bathhouseDeepWater]]</p></div>
+</div>
+</snippet>
