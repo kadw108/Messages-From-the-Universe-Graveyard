@@ -9,11 +9,16 @@
     "scripts": {
         "story": [
             "meta/crumblingcastle.js",
-            "meta/storyScript/initializeState.js",
-            "meta/storyScript/addSunkenHallNav.js"
+            "meta/storyScript/initializeState.js"
         ],
         "global": [
             "meta/globalScript.js"
+        ],
+        "tags": [
+            {
+                "rule": "sunken",
+                "files": "meta/addSunkenHallNav.js"
+            }
         ]
     },
     "styles": {

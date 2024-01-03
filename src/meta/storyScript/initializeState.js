@@ -1,1 +1,1 @@
-s.transitionMessage = null;
+story.transitionMessage = null;
