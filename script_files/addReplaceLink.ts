@@ -2,6 +2,7 @@
 Syntax:
 
 <a class="linkReplaced" identifier="test" >How awful.</a>
+<p class="removedOnClick" identifier="test" >It sucks.</p>
 <span class="linkReplacer hidden" identifier="test">How wonderful.</span>
 
 */
@@ -16,7 +17,11 @@ function clickReplaceLink(event) {
         return;
     }
 
-    event.target.classList.add("hidden");
+    const removed = document.querySelectorAll(".removedOnClick[identifier='" + identifier + "']");
+    removed.forEach(r => {
+        r.classList.remove("hidden");
+    })
+
     replacers.forEach(r => {
         r.classList.remove("hidden");
     })
