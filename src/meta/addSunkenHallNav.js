@@ -13,7 +13,7 @@ $(function () {
             newSnippet = window.crumblingcastle.randItem(sunkenHallSnippets);
         }
 
-        story.transitionMessage = "You are taken somewhere else...";
+        story.transitionMessage = "You are taken somewhere new...";
         story.showSnippet(newSnippet);
     });
 });

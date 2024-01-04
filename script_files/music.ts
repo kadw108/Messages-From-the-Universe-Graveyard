@@ -17,89 +17,105 @@ const introMusic: Array<Howl> = [
 ];
 
 const dormMusic: Array<Howl> = [
-    new Howl({
+    addMaxVolume(new Howl({
         src: ["assets/music_real/out_of_bounds.mp3"],
         loop: true,
 
         autoplay: true,
         volume: 0
-    }),
+    }), 0.9),
     addMaxVolume(new Howl({
         src: ["assets/music_real/room_tone.mp3"],
         loop: true,
 
         autoplay: true,
         volume: 0
-    }), 0.7)
+    }), 0.2),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/buzzing_light.ogg"],
+        loop: true,
+
+        autoplay: true,
+        volume: 0
+    }), 0.1)
 ];
 
 const greenhouseMusic: Array<Howl> = [
-    new Howl({
-        src: ["assets/music/Blear Moon - Sauvignon Valley - 01 Come Fly With Me.mp3"],
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/bubble_skrotraff.ogg"],
         loop: true,
 
         autoplay: true,
         volume: 0
-    }),
-    new Howl({
-        src: ["assets/music_real/forest_day_wind_roadhumm.mp3"],
+    }), 0.8),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/forest_day_wind_roadhumm2.ogg"],
         loop: true,
 
         autoplay: true,
         volume: 0
-    }),
+    }), 0.3),
 ];
 
 const sunkenMusic: Array<Howl> = [
     new Howl({
-        src: ["assets/music_real/river2.mp3"],
+        src: ["assets/music_real/river2.ogg"],
         loop: true,
 
         autoplay: true,
         volume: 0
     }),
-    new Howl({
-        src: ["assets/music_real/sheen_shine_2.mp3"],
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/symphony_of_stones_v3.ogg"],
         loop: true,
 
         autoplay: true,
         volume: 0
-    }),
+    }), 0.7),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/bubbling.ogg"],
+        loop: true,
+
+        autoplay: true,
+        volume: 0
+    }), 0.4),
 ];
 
 const amberMusic: Array<Howl> = [
-    new Howl({
-        src: ["assets/music_real/river2.mp3"],
-        loop: true,
-
-        autoplay: true,
-        volume: 0
-    }),
-    new Howl({
-        src: ["assets/music_real/sheen_shine_2.mp3"],
-        loop: true,
-
-        autoplay: true,
-        volume: 0
-    }),
-];
-
-const depthsMusic: Array<Howl> = [
     addMaxVolume(new Howl({
-        src: ["assets/music_real/outdoor_nighttime_ambience.ogg"],
+        src: ["assets/music_real/blessed_are_the_hearts_that_can_bend.ogg"],
         loop: true,
 
         autoplay: true,
         volume: 0
-    }), 1.9),
+    }), 1.7),
     addMaxVolume(new Howl({
-        src: ["assets/music_real/piano.mp3"],
+        src: ["assets/music_real/running_ship_steam_engine.ogg"],
         loop: true,
         rate: 0.8,
 
         autoplay: true,
         volume: 0
-    }), 1.6)
+    }), 0.3),
+];
+
+const depthsMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/outdoor_nighttime_ambience2.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 0.7),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/piano.ogg"],
+        loop: true,
+        rate: 0.9,
+
+        autoplay: true,
+        volume: 0
+    }), 0.35),
 ];
 
 type MusicManager = {
@@ -125,13 +141,12 @@ const musicManager: MusicManager = {
 
         setTimeout(() => {
             this.soundtracks[whichSoundtrack].forEach(howl => {
-                if (howl["maxVolume"] !== undefined) {
-                    console.log(howl["maxVolume"]);
-                    howl.fade(0, howl["maxVolume"], 9000);
+                let maxVolume = howl["maxVolume"];
+                if (maxVolume === undefined) {
+                    maxVolume = 1.0;
                 }
-                else {
-                    howl.fade(0, 1.0, 9000);
-                }
+
+                howl.fade(0, maxVolume, 9000);
             })
         }, 1000);
 
