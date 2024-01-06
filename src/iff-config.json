@@ -12,7 +12,8 @@
             "meta/storyScript/initializeState.js"
         ],
         "global": [
-            "meta/globalScript.js"
+            "meta/globalScript.js",
+            "meta/markerDivScript.js"
         ],
         "tags": [
             {

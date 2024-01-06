@@ -124,10 +124,14 @@ function createFetchedInfoDiv() {
 }
 
 $(function () {
-    Array.from(document.getElementsByClassName("whiteMarker")).forEach(e => {
-        e.addEventListener("click", openMarker);
-    });
+    const whiteMarkerList = Array.from(document.getElementsByClassName("whiteMarker"));
 
-    const markerDiv = createMarkerDiv();
-    document.getElementById("iff-snippet").prepend(markerDiv);
+    if (whiteMarkerList.length > 0) {
+        whiteMarkerList.forEach(e => {
+            e.addEventListener("click", openMarker);
+        });
+
+        const markerDiv = createMarkerDiv();
+        document.getElementById("iff-snippet").prepend(markerDiv);
+    }
 });
