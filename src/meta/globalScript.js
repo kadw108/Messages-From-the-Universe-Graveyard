@@ -2,6 +2,7 @@ $(function () {
     window.crumblingcastle.addWrapperHtml();
     window.crumblingcastle.addReplaceLink();
     window.crumblingcastle.addMenuPanels();
+    window.crumblingcastle.machine.editMachineDiv();
 
     const bottomHalf = document.querySelector("div.absoluteAlign.bottomHalf");
     if (story.transitionMessage !== null) {

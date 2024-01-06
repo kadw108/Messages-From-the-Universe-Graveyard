@@ -1,0 +1,96 @@
+<snippet name="hiddenGrove" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="machine">
+    <p>A metallic switch gleams prominently beneath a black screen.</p>
+
+    <div class="machineScreen">
+        <label for="coordinates">NODE ID</label>
+        <input name="coordinates" type="number" step="1"/>
+    </div>
+
+    <p><a class="activateLink" location="hiddenGrove">Pull switch.</a></p>
+
+    <div class="successfulActivation hidden">
+        <p>Light flashes. A coruscating rip in the fabric of spacetime opens before you.</p>
+
+        <p><a class="successfulActivationLink">Enter.</a></p>
+    </div>
+    <div class="unsuccessfulActivation hidden">
+        <p>Click. Nothing happens.</p>
+    </div>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Hidden Grove</h3>
+
+    <p>The <a class="panelOpener" identifier="machine">apparatus</a> rests in the center of a small pine grove. Above, a full moon hangs in a starry sky. A summer breeze blows. The wind carries the scent of pine needles and wildflowers.</p>
+
+    <p>A gap through the pines leads [[northwest|hiddenWell]].</p>
+</div>
+</snippet>
+
+<snippet name="hiddenWell" scripts="meta/markerDivScript.js">
+
+<% 
+$(function () {
+   document.getElementById("downLadderText").addEventListener("click", () => {
+        story.transitionMessage = "The well shaft gradually expands as you descend. Further down, it enters an immense cavern, an underground hollow you are entering rung by rung.";
+   });
+});
+%>
+
+<div class="panelFull absoluteAlign hidden" identifier="well">
+    <p>You look into the well. Where you expect darkness, perhaps the shimmer of moonlight reflecting on water, you instead see a rusty ladder leading far <span id="downLadderText">[[down|onTheLadder]]</span>, towards a faint red light at the bottom.</p>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Hidden Well</h3>
+
+    An old stone <span class="hiddenLink"><a class="panelOpener" identifier="well">well</a></span>, half-covered with vines, rests in the center of another pine grove. It has clearly seen better days.
+
+    <p>A gap through the pines leads [[southeast|hiddenGrove]].</p>
+</div>
+</snippet>
+
+<snippet name="onTheLadder" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">On the Ladder</h3>
+
+    <p>The rungs rattle, cold beneath your grip. Wind whistles through the caverns in an eerie duotone.</p>
+
+    <p>You can climb [[up|hiddenWell]] or [[down|whiteCavern]].</p>
+</div>
+</snippet>
+
+<snippet name="whiteCavern" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">White Cavern</h3>
+
+    <p>A hollow carved into the earth by hands long gone. White stone surrounds you. Stairs are cut into the ground, and a red carpet has been draped over them to soften your footfalls. Iron railings are built into the sides.</p>
+
+    <p>A rusty ladder at the top of the stairs leads [[up|onTheLadder]]. At the bottom of the stairs, all the way [[down|isolationChamber]], shines a red door shines engraved with the symbol of a white eye.</p>
+</div>
+</snippet>
+
+<snippet name="isolationChamber" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Isolation Chamber</h3>
+
+    <p>A small room with a chair fixed to the floor, facing a darkened screen. Manacles have been grafted onto the chair's arms and legs. The light in the room, originating from no apparent source, pulses a soft red.</p>
+
+    <p>A red door, engraved with a symbol of a white eye, leads [[out|whiteCavern]] of the room.</p>
+</div>
+</snippet>

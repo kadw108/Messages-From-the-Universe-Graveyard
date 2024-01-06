@@ -12,6 +12,8 @@ with open(output_path, 'w') as outfile:
     for fname in filenames:
         with open(fname) as infile:
 
+            outfile.write("<h1>##" + fname[len(input_path)+1:] + "</h1>")
+
             current_snippet = []
             snippet_name = ""
             board_num = "NA"

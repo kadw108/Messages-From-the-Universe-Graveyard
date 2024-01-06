@@ -1,0 +1,85 @@
+<snippet name="bridgeSkyIsland" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="machine">
+    <p>A marble switch gleams prominently beneath a black screen.</p>
+
+    <div class="machineScreen">
+        <label for="coordinates">NODE ID</label>
+        <input name="coordinates" type="number" step="1"/>
+    </div>
+
+    <p><a class="activateLink" location="bridgeSkyIsland">Pull switch.</a></p>
+
+    <div class="successfulActivation hidden">
+        <p>Light flashes. A coruscating rip in the fabric of spacetime opens before you.</p>
+
+        <p><a class="successfulActivationLink">Enter.</a></p>
+    </div>
+    <div class="unsuccessfulActivation hidden">
+        <p>Click. Nothing happens.</p>
+    </div>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Bridge - Sky Island</h3>
+
+    <p>The <a class="panelOpener" identifier="machine">apparatus</a> is screwed into a floating chunk of stone, cracked and covered in moss. To the [[northwest|bridgeFloweringIsland]], a rickety wooden bridge extends from the chunk of stone onto the mist, slats rattling in the wind. To the [[east|bridgeEastCliff]], a similar bridge extends along the south face of a sheer cliffside.</p>
+</div>
+</snippet>
+
+<snippet name="bridgeEastCliff" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Bridge - East Cliff</h3>
+
+    <p>The cliff rises from the mist and ascends back into the mist - you can see neither top nor bottom. Within various clefts in the rock face, you see sprigs of plants with odd blue and yellow stems, and flowers that resemble more polygons than any flowers you know.</p>
+
+    <p>The bridge goes [[east|bridgeEastLanding]] and [[west|bridgeSkyIsland]].</p>
+</div>
+</snippet>
+
+
+<snippet name="bridgeEastLanding" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Bridge - East Landing</h3>
+
+    <p>Another floating chunk of stone much like the one you landed on. There is another bridge continuing to the [[east|bridgeEastPath]], made of elegant wrought iron. Iron bars and iron struts form guardrails. To the [[west|bridgeEastCliff]], the rickety wooden bridge leads back.</p>
+</div>
+</snippet>
+
+
+<snippet name="bridgeEastPath" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Bridge - East Path</h3>
+
+    <p>The iron bridge has collapsed. There is nothing beyond. You can see broken support pillars continuing for a few more feet in the mist, but after that there is no way forward.</p>
+
+    <p>You can only go back [[west|bridgeEastLanding]].</p>
+</div>
+</snippet>
+
+
+<snippet name="bridgeFloweringIsland" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Bridge - Flowering Island</h3>
+
+    <p>The wooden bridge ends in a floating island with an enormous flowering tree, sporting white and pink flowers on every branch. It smells sweet, floral. Petals swirl in the wind and vanish off the side of the island, into the mist. The grass is soft and dewy.</p>
+
+    <p>A white stele stands beneath the tree.</p>
+
+    <p>The bridge leads back [[southeast|bridgeSkyIsland]].</p>
+</div>
+</snippet>

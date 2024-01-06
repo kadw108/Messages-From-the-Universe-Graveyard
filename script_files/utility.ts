@@ -23,7 +23,7 @@ export function capitalizeAllWords(string: string): string {
 
 export function randomInterval(length: number): Array<number> {
     const start = Math.floor(Math.random() * length);
-    const array = [];
+    const array: Array<number> = [];
 
     let i = start;
     for (let j = 0; j < length; j++) {

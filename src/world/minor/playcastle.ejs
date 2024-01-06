@@ -1,0 +1,338 @@
+<snippet name="playdeck" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Playdeck</h3>
+
+    <p>A plastic deck of the kind found in playgrounds, surrounded by plastic walls. The south wall is covered by an arrangement of spinning blocks, the face of each block engraved with colorful shapes. On the opposite wall, a circular window curves outward. Through it you see an expanse of darkness studded by stars. There is no sign of any other structure, man-made or otherwise, and no ground visible.</p>
+
+    <p>To the [[west|caterpillarsStomach]] is the grinning face of an enormous caterpillar, its mouth opening into a narrow tunnel barely large enough to crawl through. To the [[south|downwardSpiral]], a purple slide curves down into darkness.</p>
+</div>
+</snippet>
+
+<snippet name="caterpillarsStomach" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="machine">
+    <p>A plastic switch gleams prominently beneath a black screen.</p>
+
+    <div class="machineScreen">
+        <label for="coordinates">NODE ID</label>
+        <input name="coordinates" type="number" step="1"/>
+    </div>
+
+    <p><a class="activateLink" location="caterpillarsStomach">Pull switch.</a></p>
+
+    <div class="successfulActivation hidden">
+        <p>Light flashes. A coruscating rip in the fabric of spacetime opens before you.</p>
+
+        <p><a class="successfulActivationLink">Enter.</a></p>
+    </div>
+    <div class="unsuccessfulActivation hidden">
+        <p>Click. Nothing happens.</p>
+    </div>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Caterpillar's Stomach</h3>
+
+    <p>An enormous chamber bulges out within a narrow tunnel of green plastic. Green string lights dangling from the ceiling brush the top of a cage-like <a class="panelOpener" identifier="machine">apparatus</a> made of metal casings and plastic bits.</p>
+
+    <p>You can crawl [[east|playdeck]] or [[west|ropescapeCenter]] through the tunnel.</p>
+</div>
+</snippet>
+
+
+<snippet name="ropescapeCenter" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Ropescape - Center</h3>
+
+    <p>You emerge in the middle of a giant climbing net webbed with nylon rope. All around are structures of varicolored plastic floating in a dark void.</p>
+
+    <p>[[North|tubeLabyrinth]] is a plastic tube leading into a labyrinth of other plastic tubes, some dotted with windows where you can see grimy faces peeking out. To the [[east|caterpillarsStomach]], a cartoon caterpillar opens its gaping mouth to reveal a tunnel you can crawl through. To the [[south|monkeyBridge]], a series of monkey bars crosses the abyss. You can also climb [[up|ropescapeSummit]] for a better view.</p>
+</div>
+</snippet>
+
+
+<snippet name="ropescapeSummit" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Ropescape - Summit</h3>
+
+    <p>The nylon rope is densely placed, providing no shortage of handholds for your climb. Plastic platforms provide frequent rest stops.</p>
+
+    <p>At the highest point of the climbing net is a plastic hammock, where you can sit and gaze upon the world. It is a citadel built from plastic, a playground the likes of which you have never seen: enormous, utterly dwarfing you in scope, and completely empty besides yourself. No children or other lifeforms of any kind.</p>
+
+    <p>You can only climb [[down|ropescapeCenter]] from here.</p>
+</div>
+</snippet>
+
+
+<snippet name="monkeyBridge" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Monkey Bridge</h3>
+
+    <p>A long bridge of monkey bars, with nothing above and below them but total darkness. The light that makes them gleam bright red comes from no apparent source.</p>
+
+    <p>The bridge leads [[north|ropescapeCenter]] to an enormous climbing net, and [[south|merryGoRound]], where you can glimpse something colorful at the end of the bars.</p>
+</div>
+</snippet>
+
+<snippet name="merryGoRound" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Merry-Go-Round</h3>
+
+    <p>A colored roundabout spins slowly in the abyss, despite the lack of any outside force to keep it moving. It is divided into sections of bright green, white, orange, blue, and yellow.</p>
+
+    <p>To the [[north|monkeyBridge]], a bridge of monkey bars leads to other sections of the playcastle.</p>
+</div>
+</snippet>
+
+
+<snippet name="downwardSpiral" tags="transition">
+<h3 class="roomName">Downward Spiral</h3>
+
+<p>The slide is a tight spiral. The lights grow dimmer and dimmer as you slide, plastic squeaking beneath you, circling [[down|slideTransition]].</p>
+</snippet>
+
+<snippet name="slideTransition" tags="transition">
+<p>Eventually all the light from above disappears, and you are left in total darkness.</p>
+
+<p>You are still moving [[down|ballPitTransition]].</p>
+</snippet>
+
+<snippet name="ballPitTransition" tags="transition">
+<p>You sink into a sea of colored plastic balls.</p>
+
+<p>[[You are submerged in plastic.|ballPitTransition2]]</p>
+</snippet>
+
+<snippet name="ballPitTransition2" tags="transition">
+<p>[[Struggle towards the surface.|ballPitReal]]</p>
+
+<% 
+story.transitionMessage = "With effort, you work your way up through the ball pit, emerging onto a solid concerete surface...";
+%>
+
+</snippet>
+
+<snippet name="ballPitReal" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="ballPit">
+    <p>It smells like urine and desperation. It is barely a few balls deep.</p>
+
+    <p>Standing in it produces no effect.</p>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Ball Pit</h3>
+
+    <p>An enormous room with concrete walls, floor, and ceiling. A minuscule <a class="panelOpener" identifier="ballPit">ball pit</a>, half-filled, rests in the very center of the room.</p>
+
+    <p>The only exit is a tiny door to the [[north|northCloset]].</p>
+</div>
+</snippet>
+
+<snippet name="northCloset" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="machine">
+    <p>A plastic switch gleams prominently beneath a black screen.</p>
+
+    <div class="machineScreen">
+        <label for="coordinates">NODE ID</label>
+        <input name="coordinates" type="number" step="1"/>
+    </div>
+
+    <p><a class="activateLink" location="northCloset">Pull switch.</a></p>
+
+    <div class="successfulActivation hidden">
+        <p>Light flashes. A coruscating rip in the fabric of spacetime opens before you.</p>
+
+        <p><a class="successfulActivationLink">Enter.</a></p>
+    </div>
+    <div class="unsuccessfulActivation hidden">
+        <p>Click. Nothing happens.</p>
+    </div>
+</div>
+
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">North Closet</h3>
+
+    <p>A tiny closet. A single paltry lightbulb hangs from the ceiling. The <a class="panelOpener" identifier="machine">apparatus</a> beneath casts dark shadows, moving across the walls as the bulb swings back and forth.</p>
+
+    <p>A tiny door leads [[south|ballPitReal]].</p>
+</div>
+</snippet>
+
+
+<snippet name="tubeLabyrinth0" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>The tube is dim. Just enough light filters through the plastic for you to tell how close the walls are. Cramped enough you can't even turn your head to look behind you. If you must reverse direction, you will have to do it crawling backward.</p>
+
+    <p>Eventually you come across a intersection where the tube splits into three paths: [[left|tubeLabyrinth1]], [[center|tubeLabyrinth2]], and [[right|tubeLabyrinth6]].</p>
+</div>
+</snippet>
+
+<snippet name="tubeLabyrinth6" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>This tube is blocked off by a solid wall of yellow plastic. You have no choice but to crawl [[backwards|tubeLabyrinth0]] to the intersection from which you came.</p>
+</div>
+</snippet>
+
+<snippet name="tubeLabyrinth1" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>You crawl through sections of tube segmented off by color: green, white, orange, blue, yellow. Occasionally you come across patterns scrawled or scratched into these tubular sections: simple shapes, stars and triangles, assortments of strange lines that may mean nothing.</p>
+
+    <p>Eventually you come across a intersection where the tube splits into two paths: [[left|tubeLabyrinth3]] and [[right|tubeLabyrinth4]].</p>
+</div>
+</snippet>
+
+<snippet name="tubeLabyrinth2" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>The sides of this tube are covered in tally marks. You count more than four hundred before you lose track of the number.</p>
+
+    <p>Eventually you come across a intersection where the tube splits into two paths: [[left|tubeLabyrinth5]] and [[right|tubeLabyrinth4]].</p>
+</div>
+</snippet>
+
+
+<snippet name="tubeLabyrinth3" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>In the middle of this tube is a dusty plastic porthole, a window through which you can see the climbing net you came from, suspended above the abyss. Someone has drawn a smiling face in the dust, with misshapen Xs for eyes.</p>
+
+    <p>Eventually you come across a intersection where the tube splits into three paths: [[left|tubeLabyrinth7]], [[center|tubeLabyrinth4]], and [[right|tubeLabyrinth8]].</p>
+</div>
+</snippet>
+
+
+<snippet name="tubeLabyrinth8" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>Rounding a bend in the tube, you realize the path is blocked off by a solid mass of pulsating red flesh, beating arrhythmically. You have no choice but to crawl [[backwards|tubeLabyrinth3]] to the intersection from which you came.</p>
+</div>
+</snippet>
+
+<snippet name="tubeLabyrinth7" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>Partway through, this tube abruptly slopes up at an angle so steep you cannot crawl through. You have no choice but to crawl [[backwards|tubeLabyrinth3]] to the intersection from which you came.</p>
+</div>
+</snippet>
+
+<snippet name="tubeLabyrinth4" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>Halfway through this tube, you begin to hear muffled breathing and the sound of shuffling behind you. When you reach the intersection, the sound fades.</p>
+
+    <p>At the intersection, the tube splits into two paths: [[left|tubeLabyrinth1]] and [[right|]].</p>
+</div>
+</snippet>
+
+<snippet name="tubeLabyrinth5" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>The lights flicker as you crawl and then go out, immersing you in total darkness. You are forced to progress by touch alone, feeling your way blindly through the tunnel. Once you sense the slight breeze of an intersection opening up before you, the lights flicker back on.</p>
+
+    <p>At the intersection, the tube splits into two paths: [[left|tubeLabyrinth9]] and [[right|tubeLabyrinth3]].</p>
+</div>
+</snippet>
+
+<snippet name="tubeLabyrinth9" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>This tube narrows as you crawl through it, until it becomes so tight you can no longer continue to squeeze your way through. You have no choice but to crawl [[backwards|tubeLabyrinth5]] to the intersection from which you came.</p>
+</div>
+</snippet>
+
+<snippet name="tubeLabyrinth10">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Tube Labyrinth</h3>
+
+    <p>The tube slopes down as you crawl, becoming steeper and steeper. The walls become thinner, letting in more light from outside, where it glimmers on the plastic floor of the tunnel. Eventually you start sliding down, unable to resist the force of gravity.</p>
+
+    <p>You plunge, face-first...</p>
+</div>
+
+<% 
+story.transitionMessage = "...landing on a cushioning layer of plastic.";
+%>
+</snippet>
+
+<snippet name="ballPitReal2">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Ball Pit</h3>
+
+    <p>An enormous ball pit under a plastic dome covered in blue-and-orange polka dots. Colored light filters through colored plastic, glimmering on the surface of the shiny ballpit sea. Towards the middle of the ball pit, a glittering plastic sphere hovers.</p>
+
+    <p>The tube you fell from is set high above the ball pit. You cannot return. The only way out is [[down|ballPitTransition]].</p>
+</div>
+</snippet>

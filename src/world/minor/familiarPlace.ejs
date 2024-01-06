@@ -1,0 +1,71 @@
+<snippet name="familiarPlaceApparatus" tags="familiar" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="machine">
+    <p>A metallic switch gleams prominently beneath a black screen.</p>
+
+    <div class="machineScreen">
+        <label for="coordinates">NODE ID</label>
+        <input name="coordinates" type="number" step="1"/>
+    </div>
+
+    <p><a class="activateLink" location="familiarPlaceApparatus">Pull switch.</a></p>
+
+    <div class="successfulActivation hidden">
+        <p>Light flashes. A coruscating rip in the fabric of spacetime opens before you.</p>
+
+        <p><a class="successfulActivationLink">Enter.</a></p>
+    </div>
+    <div class="unsuccessfulActivation hidden">
+        <p>Click. Nothing happens.</p>
+    </div>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Familiar Place</h3>
+
+    <p>An expanse of yellow carpet and off-white walls. Florescent lights buzz. Square support columns extend down from the ceiling. The landscape looks identical in all directions, with no landmarks that you can see.</p>
+
+    <p>The <a class="panelOpener" identifier="machine">apparatus</a> stands before you, humming quietly.</p>
+
+    <p>You can <a class="familiarPlaceNav">wander</a> in any direction, though you suspect the one you choose will not make a difference.</p>
+</div>
+</snippet>
+
+<snippet name="familiarPlacePanel" tags="familiar" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Familiar Place</h3>
+
+    <p>An expanse of yellow carpet and off-white walls. Florescent lights buzz. Square support columns extend down from the ceiling. The landscape looks identical in all directions, with no landmarks that you can see.</p>
+
+    <p>You notice an off-white panel camouflaged among the off-white walls, easily missable. Have you overlooked it before?</p>
+
+    <p>You can <a class="familiarPlaceNav">wander</a> in any direction, though you suspect the one you choose will not make a difference.</p>
+</div>
+</snippet>
+
+<snippet name="familiarPlaceDefault" tags="familiar" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Familiar Place</h3>
+
+    <p>An expanse of yellow carpet and off-white walls. Florescent lights buzz. Square support columns extend down from the ceiling. The landscape looks identical in all directions, with no landmarks that you can see.</p>
+
+    <span id="familiarFlavorText"></span>
+
+    <p>You can <a class="familiarPlaceNav">wander</a> in any direction, though you suspect the one you choose will not make a difference.</p>
+</div>
+
+<% 
+genFamiliarFlavorText();
+%>
+
+</snippet>
+
+

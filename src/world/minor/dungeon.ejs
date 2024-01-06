@@ -1,0 +1,71 @@
+<snippet name="dungeonEast" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dungeon - East</h3>
+
+    <p>In the center of this room is a stretching rack, a contraption of wooden boards and rollers with chains and manacles dangling from its sides. The southern wall is occupied by an enormous weapons shelf full of knives, scalpels and other tools. Retractable metal hooks hang from the ceiling.</p>
+
+    <p>The only exit is [[west|dungeonCenter]].</p>
+</div>
+</snippet>
+
+<snippet name="dungeonWest" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dungeon - West</h3>
+
+    <p>A pair of manacles are chained to the northern wall. Leaning against the opposite wall is an enormous wooden spoked wheel, with razors protruding from the rim, The floor is littered with crushed bone fragments and dried puddles of something dark and odorous.</p>
+
+    <p>The only exit is [[east|dungeonCenter]].</p>
+</div>
+</snippet>
+
+
+<snippet name="dungeonNorth" scripts="meta/markerDivScript.js">
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dungeon - North</h3>
+
+    <p>A cauldron occupies the center of this cell, an enormous iron vessel with a complex system of levers and pulleys suspended above. A niche in the eastern wall is filled with smaller pots and cauldrons of various shapes, some covered in waxy stains.</p>
+
+    <p>The only exit is [[south|dungeonCenter]].</p>
+</div>
+</snippet>
+
+
+<snippet name="dungeonCenter" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="machine">
+    <p>A metallic switch gleams prominently beneath a black screen.</p>
+
+    <div class="machineScreen">
+        <label for="coordinates">NODE ID</label>
+        <input name="coordinates" type="number" step="1"/>
+    </div>
+
+    <p><a class="activateLink" location="dungeonCenter">Pull switch.</a></p>
+
+    <div class="successfulActivation hidden">
+        <p>Light flashes. A coruscating rip in the fabric of spacetime opens before you.</p>
+
+        <p><a class="successfulActivationLink">Enter.</a></p>
+    </div>
+    <div class="unsuccessfulActivation hidden">
+        <p>Click. Nothing happens.</p>
+    </div>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Dungeon - Center</h3>
+
+    <p>A round brick chamber. The <a class="panelOpener" identifier="machine">apparatus</a> here is crafted of iron bars and chains, and encircled by a ring of red lanterns that tinge everything a deep scarlet. Three doorways, each with a spiked iron portcullis hanging above, lead [[north|dungeonNorth]], [[east|dungeonEast]], and [[west|dungeonWest]].</p>
+</div>
+</snippet>

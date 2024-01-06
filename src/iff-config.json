@@ -18,6 +18,10 @@
             {
                 "rule": "sunken",
                 "files": "meta/addSunkenHallNav.js"
+            },
+            {
+                "rule": "familiar",
+                "files": "meta/addFamiliarPlaceNav.js"
             }
         ]
     },
@@ -36,5 +40,8 @@
                 "files": "meta/styles/specific/transition.css"
             }
         ]
+    },
+    "validation": {
+        "form-dup-name": "warn"
     }
 }
