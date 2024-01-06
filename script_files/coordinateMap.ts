@@ -4,11 +4,14 @@ export const coordinateMap = {
     71: "drownedApparatus",
     38539: "nexusDome",
     9272: "maintenanceTunnelXEnd",
+    91374: "caterpillarsStomach",
 
     823: "familiarPlaceApparatus",
-    7246: "bedroom0",
+    88888: "bedroom0",
     12: "bridgeSkyIsland",
-    88888: "dungeonCenter",
+    362: "dungeonCenter",
     121212: "hiddenGrove",
-    91374: "caterpillarsStomach"
+    666: "obsidianGrotto",
+    2022: "transmissionSummitBase",
+    24815: "cellEast"
 };

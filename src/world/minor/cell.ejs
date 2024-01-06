@@ -1,0 +1,52 @@
+<snippet name="cellWest" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="scratches">
+    <p>There are... 5, 10, 15, 20, 25, 30... 65, 70, 75... 210, 215, 220... 362 scratches in total.</p>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Cell - West</h3>
+
+    <p>A cramped prison cell carved from rough-hewn stone. A musty blanket lies crumpled in the corner. Tight-packed steel bars to the north block off a dim corridor, where flickering wall torches illuminate other cells, all empty.</p>
+
+    <p>A sleek black panel is set into the wall, incongruently bright against the grime of the cell. Next to it, a set of deep <a class="panelOpener" identifier="scratches">scratches</a> has been gouged into the stone.</p>
+
+    <p>To the [[east|cellEast]], a crude doorway leads to another cell.</p>
+</div>
+</snippet>
+
+<snippet name="cellEast" scripts="meta/markerDivScript.js">
+
+<div class="panelFull absoluteAlign hidden" identifier="machine">
+    <p>A metallic switch gleams prominently beneath a black screen.</p>
+
+    <div class="machineScreen">
+        <label for="coordinates">NODE ID</label>
+        <input name="coordinates" type="number" step="1"/>
+    </div>
+
+    <p><a class="activateLink" location="cellEast">Pull switch.</a></p>
+
+    <div class="successfulActivation hidden">
+        <p>Light flashes. A coruscating rip in the fabric of spacetime opens before you.</p>
+
+        <p><a class="successfulActivationLink">Enter.</a></p>
+    </div>
+    <div class="unsuccessfulActivation hidden">
+        <p>Click. Nothing happens.</p>
+    </div>
+</div>
+
+<div class="absoluteAlign topHalf">
+</div>
+<div class="absoluteAlign bottomHalf blackBg">
+    <h3 class="roomName">Cell - East</h3>
+
+    <p>A bare prison cell with stone walls on all sides. A cage-like <a class="panelOpener" identifier="machine">apparatus</a> made of metal bars stands in the corner, covered in dust. The air is cool and damp.</p>
+
+    <p>The only exit is [[west|cellWest]], where a crude doorway leads to another identically-sized cell.</p>
+</div>
+</snippet>
+
