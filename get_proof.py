@@ -1,10 +1,13 @@
 import os
 
 input_path = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/crumbling_castle_source/src/world"
+input_path2 = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/crumbling_castle_source/src/world/minor"
 
-filenames = sorted([input_path+"/"+i for i in os.listdir(input_path)])
+filenames = sorted([input_path+"/"+i for i in os.listdir(input_path) if i.endswith(".ejs")])
+filenames += [input_path2+"/"+i for i in os.listdir(input_path2) if i.endswith(".ejs")]
 
 output_path = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/proof.html"
+output_path2 = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/index.txt"
 
 board_map = {}
 
@@ -47,6 +50,18 @@ with open(output_path, 'w') as outfile:
                     outfile.write("".join(current_snippet))
                     current_snippet = []
                     snippet_name = ""
+
+"""
+with open(output_path2, "w") as outfile:
+    with open(output_path) as infile:
+        for line in infile:
+            try:
+                start = line.index(">") + 1
+                if line[start:].startswith("#"):
+                    outfile.write(line[start:])
+            except ValueError:
+                continue
+"""
 
 for i in sorted(board_map.keys()):
     print(i, ":", board_map[i])
