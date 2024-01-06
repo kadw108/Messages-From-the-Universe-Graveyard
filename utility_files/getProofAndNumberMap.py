@@ -10,6 +10,7 @@ output_path = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/proo
 output_path2 = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/index.txt"
 
 board_map = {}
+board_map2 = {}
 
 with open(output_path, 'w') as outfile:
     for fname in filenames:
@@ -19,9 +20,15 @@ with open(output_path, 'w') as outfile:
 
             current_snippet = []
             snippet_name = ""
+            snippet_internal_name = ""
             board_num = "NA"
 
             for line in infile:
+
+                if '<snippet name="' in line:
+                    name_start = line.index('<snippet name="') + len('<snippet name="')
+                    name_end = line[name_start:].index('"') + len('<snippet name="')
+                    snippet_internal_name = line[name_start:name_end]
 
                 if 'h3 class="roomName"' in line:
                     tag_end = line.index('>') + 1
@@ -40,7 +47,9 @@ with open(output_path, 'w') as outfile:
                     room = board_map.get(int(board_num))
                     if room != None:
                         print("DUPLICATE BOARD NUM: " + board_num + " SNIPPETS: ", snippet_name, room)
+
                     board_map[int(board_num)] = snippet_name
+                    board_map2[int(board_num)] = snippet_internal_name
 
                 current_snippet.append(line)
 
@@ -65,3 +74,8 @@ with open(output_path2, "w") as outfile:
 
 for i in sorted(board_map.keys()):
     print(i, ":", board_map[i])
+
+output_path3 = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/crumbling_castle_source/utility_files/numberMap.txt"
+
+with open(output_path3, "w") as outfile:
+    outfile.write("const numberMap = " + str({v: k for k, v in board_map2.items()}) + ";")
