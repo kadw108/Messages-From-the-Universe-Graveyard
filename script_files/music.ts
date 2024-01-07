@@ -47,7 +47,7 @@ const greenhouseMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 0.8),
+    }), 0.7),
     addMaxVolume(new Howl({
         src: ["assets/music_real/forest_day_wind_roadhumm2.ogg"],
         loop: true,
@@ -111,7 +111,6 @@ const depthsMusic: Array<Howl> = [
     addMaxVolume(new Howl({
         src: ["assets/music_real/piano.ogg"],
         loop: true,
-        rate: 0.9,
 
         autoplay: true,
         volume: 0
@@ -126,7 +125,7 @@ const dungeonMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 1.2),
+    }), 1.5),
 ];
 
 const bedroomMusic: Array<Howl> = [
@@ -153,21 +152,21 @@ const cellMusic: Array<Howl> = [
 
 const bridgeMusic: Array<Howl> = [
     addMaxVolume(new Howl({
-        src: ["assets/music_real/outdoor_nighttime_ambience2.ogg"],
-        loop: true,
-        rate: 1,
-
-        autoplay: true,
-        volume: 0
-    }), 0.7),
-    addMaxVolume(new Howl({
         src: ["assets/music_real/winter_3.2.ogg"],
         loop: true,
         rate: 1,
 
         autoplay: true,
         volume: 0
-    }), 0.35),
+    }), 1.45),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/gusts_of_wind_through_birch_trees.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 0.7)
 ];
 
 const playcastleMusic: Array<Howl> = [
@@ -178,15 +177,7 @@ const playcastleMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 1),
-    addMaxVolume(new Howl({
-        src: ["assets/music_real/ix_tubamaphone.ogg"],
-        loop: true,
-        rate: 1,
-
-        autoplay: true,
-        volume: 0
-    }), 0.7),
+    }), 0.8),
 ];
 
 const hiddenMusic: Array<Howl> = [
@@ -202,7 +193,7 @@ const hiddenMusic: Array<Howl> = [
 
 const glitchMusic: Array<Howl> = [
     addMaxVolume(new Howl({
-        src: ["assets/music_real/jump_into_art.ogg"],
+        src: ["assets/music_real/jump_into_art_glitch.ogg"],
         loop: true,
         rate: 1,
 
@@ -218,14 +209,14 @@ const familiarMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 0.2),
+    }), 0.3),
     addMaxVolume(new Howl({
         src: ["assets/music_real/buzzing_light.ogg"],
         loop: true,
 
         autoplay: true,
         volume: 0
-    }), 0.7),
+    }), 0.45),
     addMaxVolume(new Howl({
         src: ["assets/music_real/buzzing_light.ogg"],
         loop: true,
@@ -233,7 +224,7 @@ const familiarMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 0.7)
+    }), 0.45)
 ];
 
 const transmissionMusic: Array<Howl> = [
@@ -243,14 +234,7 @@ const transmissionMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 1),
-    addMaxVolume(new Howl({
-        src: ["assets/music_real/birds_song_in_forest.ogg"],
-        loop: true,
-
-        autoplay: true,
-        volume: 0
-    }), 1).
+    }), 0.1),
     addMaxVolume(new Howl({
         src: ["assets/music_real/outdoor_nighttime_ambience2.ogg"],
         loop: true,
@@ -258,7 +242,15 @@ const transmissionMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 0.5),
+    }), 0.65),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/gusts_of_wind_through_birch_trees.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 0.8)
 ];
 
 const fireMusic: Array<Howl> = [
@@ -268,14 +260,14 @@ const fireMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 1),
+    }), 0.7),
     addMaxVolume(new Howl({
         src: ["assets/music_real/milk-boiling-sound-effect.ogg"],
         loop: true,
 
         autoplay: true,
         volume: 0
-    }), 0.4),
+    }), 0.1),
     addMaxVolume(new Howl({
         src: ["assets/music_real/deep-volcano-sound-effect.ogg"],
         loop: true,
@@ -283,7 +275,7 @@ const fireMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 1),
+    }), 0.6),
     addMaxVolume(new Howl({
         src: ["assets/music_real/burning-fire-sound-effect.ogg"],
         loop: true,
@@ -291,7 +283,7 @@ const fireMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 1),
+    }), 0.6),
 ];
 
 type MusicManager = {
@@ -322,7 +314,7 @@ const musicManager: MusicManager = {
                     maxVolume = 1.0;
                 }
 
-                howl.fade(0, maxVolume, 9000);
+                howl.fade(0, maxVolume, 7000);
             })
         }, 1000);
 

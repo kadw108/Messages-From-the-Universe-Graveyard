@@ -8,10 +8,10 @@ export const coordinateMap = {
 
     2024: "familiarPlaceApparatus",
     416: "bedroom0",
-    12: "bridgeSkyIsland",
+    9999999999: "bridgeSkyIsland",
     810: "dungeonCenter",
     152: "hiddenGrove",
-    666: "goldGrotto",
+    666: "obsidianGrotto",
     340: "transmissionSummitBase",
     124: "cellEast"
 };
