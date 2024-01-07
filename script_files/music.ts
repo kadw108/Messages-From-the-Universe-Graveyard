@@ -118,6 +118,182 @@ const depthsMusic: Array<Howl> = [
     }), 0.35),
 ];
 
+const dungeonMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/abandoned_building_puzzles.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 1.2),
+];
+
+const bedroomMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/winter_holiday.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 1),
+];
+
+const cellMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/dirge_of_the_damned.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 1),
+];
+
+const bridgeMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/outdoor_nighttime_ambience2.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 0.7),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/winter_3.2.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 0.35),
+];
+
+const playcastleMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/le_banc_dans_le_bois.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 1),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/ix_tubamaphone.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 0.7),
+];
+
+const hiddenMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/uralia2.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 1),
+];
+
+const glitchMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/jump_into_art.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 0.8),
+];
+
+const familiarMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/room_tone.mp3"],
+        loop: true,
+
+        autoplay: true,
+        volume: 0
+    }), 0.2),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/buzzing_light.ogg"],
+        loop: true,
+
+        autoplay: true,
+        volume: 0
+    }), 0.7),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/buzzing_light.ogg"],
+        loop: true,
+        rate: 1.5,
+
+        autoplay: true,
+        volume: 0
+    }), 0.7)
+];
+
+const transmissionMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/birds_noises.ogg"],
+        loop: true,
+
+        autoplay: true,
+        volume: 0
+    }), 1),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/birds_song_in_forest.ogg"],
+        loop: true,
+
+        autoplay: true,
+        volume: 0
+    }), 1).
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/outdoor_nighttime_ambience2.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 0.5),
+];
+
+const fireMusic: Array<Howl> = [
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/re_cycles.ogg"],
+        loop: true,
+
+        autoplay: true,
+        volume: 0
+    }), 1),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/milk-boiling-sound-effect.ogg"],
+        loop: true,
+
+        autoplay: true,
+        volume: 0
+    }), 0.4),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/deep-volcano-sound-effect.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 1),
+    addMaxVolume(new Howl({
+        src: ["assets/music_real/burning-fire-sound-effect.ogg"],
+        loop: true,
+        rate: 1,
+
+        autoplay: true,
+        volume: 0
+    }), 1),
+];
+
 type MusicManager = {
     activeSoundtrack: number,
     soundtracks: Array<Array<Howl>>,
@@ -126,7 +302,7 @@ type MusicManager = {
 
 const musicManager: MusicManager = {
     activeSoundtrack: -1,
-    soundtracks: [dormMusic, greenhouseMusic, sunkenMusic, introMusic, amberMusic, depthsMusic],
+    soundtracks: [dormMusic, greenhouseMusic, sunkenMusic, introMusic, amberMusic, depthsMusic, dungeonMusic, bedroomMusic, cellMusic, bridgeMusic, playcastleMusic, hiddenMusic, glitchMusic, familiarMusic, transmissionMusic, fireMusic],
 
     playSoundtrack: function(whichSoundtrack: number) {
         if (whichSoundtrack === this.activeSoundtrack) {
