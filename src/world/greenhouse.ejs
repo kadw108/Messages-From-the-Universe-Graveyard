@@ -149,7 +149,7 @@
         <p><a class="successfulActivationLink">Enter.</a></p>
     </div>
     <div class="unsuccessfulActivation hidden">
-        <p>Click. Nothing happens.</p>
+        <p>[errorNodeNotFound]</p>
     </div>
 </div>
 
@@ -274,12 +274,24 @@ window.crumblingcastle.musicManager.playSoundtrack(1);
 
 <snippet name="statueTowerStairwell">
 
+<div class="panelFull absoluteAlign hidden" identifier="statues">
+    <p>They look more like lumps of stone than statues. Someone has labeled them, all the same:</p>
+
+    <p>The Girl Who Lived In The Reflection of A Glass of Water</p>
+
+    <p>Jostiphenes, the Jester with One Thousand Nine Hundred Eleven Faces</p>
+
+    <p>Angels' Muse</p>
+
+    <p>Blind Pilgrim Pēteris, Impaled On His Own Thorns</p>
+</div>
+
 <div class="absoluteAlign topHalf">
 </div>
 <div class="absoluteAlign bottomHalf blackBg">
     <h3 class="roomName">Statue Tower - Stairwell</h3>
 
-    <p>This spiral staircase winds [[up|statueTowerSummit]] and [[down|hallOfStatues]] a tall stairwell. Water drips from some secret place as you climb. Statues protrude from alcoves in the walls, their forms weathered and overgrown by white vines. One statue of a blindfolded woman is holding a <a class="whiteMarker marblePlaque" board="91">marble plaque</a>.</p>
+    <p>This spiral staircase winds [[up|statueTowerSummit]] and [[down|hallOfStatues]] a tall stairwell. Water drips from some secret place as you climb. <a class="panelOpener" identifier="statues">Statues</a> protrude from alcoves in the walls, their forms weathered and overgrown by white vines. One statue that might be a blindfolded human is holding a <a class="whiteMarker marblePlaque" board="91">marble plaque</a>.</p>
 </div>
 </snippet>
 

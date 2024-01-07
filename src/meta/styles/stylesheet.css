@@ -197,6 +197,10 @@ CUSTOM STYLES
   font-size: 80%;
 }
 
+.unsuccessfulActivation {
+  color: #ff0000;
+}
+
 /*
 OVERRIDING DEFAULT CSS STYLES
 */

@@ -16,7 +16,7 @@
         <p><a class="successfulActivationLink">Enter.</a></p>
     </div>
     <div class="unsuccessfulActivation hidden">
-        <p>Click. Nothing happens.</p>
+        <p>[errorNodeNotFound]</p>
     </div>
 </div>
 
@@ -73,6 +73,14 @@ $(function () {
 
 <snippet name="whiteCavern">
 
+<% 
+$(function () {
+   document.getElementById("stepsDown").addEventListener("click", () => {
+        story.transitionMessage = "You count 8108 steps down before you reach the door.";
+   });
+});
+%>
+
 <div class="absoluteAlign topHalf">
 </div>
 <div class="absoluteAlign bottomHalf blackBg">
@@ -82,11 +90,19 @@ $(function () {
 
     <p>A <a class="whiteMarker woodenSign" board="72">wooden sign</a> has been planted into the cavern floor.</p>
 
-    <p>A rusty ladder at the top of the stairs leads [[up|onTheLadder]]. At the bottom of the stairs, all the way [[down|isolationChamber]], shines a red door shines engraved with the symbol of a white eye.</p>
+    <p>A rusty ladder at the top of the stairs leads [[up|onTheLadder]]. At the bottom of the stairs, all the way <span id="stepsDown">[[down|isolationChamber]]</span>, shines a door painted with the numbers 8:10 in a red so dark it looks almost black.</p>
 </div>
 </snippet>
 
 <snippet name="isolationChamber">
+
+<% 
+$(function () {
+   document.getElementById("stepsUp").addEventListener("click", () => {
+        story.transitionMessage = "You count 8108 steps up to the ladder.";
+   });
+});
+%>
 
 <div class="absoluteAlign topHalf">
 </div>
@@ -95,6 +111,6 @@ $(function () {
 
     <p>A small room with a chair fixed to the floor, facing a darkened screen. Manacles have been grafted onto the chair's arms and legs. The light in the room, originating from no apparent source, pulses a soft red.</p>
 
-    <p>A red door, engraved with a symbol of a white eye, leads [[out|whiteCavern]] of the room. Beneath the eye, a <a class="whiteMarker woodenSign" board="73">wooden sign</a> has been screwed onto the door.</p>
+    <p>A white door, painted with the numbers 8:10 in dark red, leads <span id="stepsUp">[[out|whiteCavern]]</span> of the room. Beneath the eye, a <a class="whiteMarker woodenSign" board="73">wooden sign</a> has been screwed onto the door.</p>
 </div>
 </snippet>
