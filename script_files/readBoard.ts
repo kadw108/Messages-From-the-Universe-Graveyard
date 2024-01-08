@@ -64,6 +64,9 @@ const renderBoard = (response: QueryCommandOutput) => {
   }
 }
 
+const renderErrors = (message) => {
+}
+
 const renderMessage = (messageData) => {
   const div = document.createElement("div");
   div.classList.add("markerMessage");
@@ -73,7 +76,17 @@ const renderMessage = (messageData) => {
   senderName.innerText = "from: " + filter.clean(messageData.name);
 
   const message = document.createElement("p");
-  message.innerText = filter.clean(messageData.message);
+  const messageText = filter.clean(messageData.message);
+
+  const messageTextArray = messageText.split("[corruptDataPlaceholder]");
+  const text1 = document.createTextNode(messageTextArray[0]);
+  const text2 = document.createTextNode(messageTextArray[1]);
+
+  const replace = document.createElement("img");
+  replace.classList.add("corruptDataPlaceholder");
+  replace.src = "assets/white3.gif";
+
+  message.append(text1, replace, text2);
 
   div.append(senderName, message);
   return div;
