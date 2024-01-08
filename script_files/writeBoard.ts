@@ -28,14 +28,14 @@ const sendPutRequest = async(boardNumber: number, inputName: string, inputMessag
     Item: {
       board: boardNumber,
       id: uuid_v1(),
-      name: inputName,
-      message: inputMessage,
+      name: inputName.trim(),
+      message: inputMessage.trim(),
       time: timestampMilliseconds
     },
   });
 
+  console.log("Sending " + boardNumber + inputName);
   const response = await docClient.send(command);
-  console.log(response);
   return response;
 };
 
@@ -48,7 +48,7 @@ const addMessage = async(boardNumber: number, inputName: string, inputMessage: s
         console.error("inputName bad length: " + inputName);
         return;
     }
-    if (inputMessage.length < 50 || inputMessage.length > 1000) {
+    if (inputMessage.length < 50 || inputMessage.length > 2750) {
         console.error("inputMessage bad length: " + inputMessage);
         return;
     }

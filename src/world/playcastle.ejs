@@ -63,7 +63,7 @@ window.crumblingcastle.musicManager.playSoundtrack(10);
 
     <p>A <a class="whiteMarker spiralNotebook" board="52">spiral notebook</a> sits on a plastic flap above you.</p>
 
-    <p>[[North|tubeLabyrinth]] is a plastic tube leading into a labyrinth of other plastic tubes, some dotted with windows where you can see grimy faces peeking out. To the [[east|caterpillarsStomach]], a cartoon caterpillar opens its gaping mouth to reveal a tunnel you can crawl through. To the [[south|monkeyBridge]], a series of monkey bars crosses the abyss. You can also climb [[up|ropescapeSummit]] for a better view.</p>
+    <p>[[North|tubeLabyrinth0]] is a plastic tube leading into a labyrinth of other plastic tubes, some dotted with windows where you can see grimy faces peeking out. To the [[east|caterpillarsStomach]], a cartoon caterpillar opens its gaping mouth to reveal a tunnel you can crawl through. To the [[south|monkeyBridge]], a series of monkey bars crosses the abyss. You can also climb [[up|ropescapeSummit]] for a better view.</p>
 </div>
 </snippet>
 
@@ -136,15 +136,19 @@ window.crumblingcastle.musicManager.playSoundtrack(10);
 </snippet>
 
 <snippet name="ballPitTransition2" tags="transition">
-<p>[[Struggle towards the surface.|ballPitReal]]</p>
+<p id="struggle">[[Struggle towards the surface.|ballPit]]</p>
 
 <% 
-story.transitionMessage = "With effort, you work your way up through the ball pit, emerging onto a solid concerete surface...";
+$(function () {
+   document.getElementById("struggle").addEventListener("click", () => {
+        story.transitionMessage = "With effort, you work your way up through the ball pit, emerging onto a solid concerete surface...";
+   });
+});
 %>
 
 </snippet>
 
-<snippet name="ballPit">
+<snippet name="ballPit" tags="playcastle">
 
 <div class="panelFull absoluteAlign hidden" identifier="ballPit">
     <p>It smells like urine and desperation. It is barely a few balls deep.</p>
@@ -193,7 +197,7 @@ story.transitionMessage = "With effort, you work your way up through the ball pi
 
     <p>A tiny closet. A single paltry lightbulb hangs from the ceiling. The <a class="panelOpener" identifier="machine">apparatus</a> beneath casts dark shadows, moving across the walls as the bulb swings back and forth.</p>
 
-    <p>A tiny door leads [[south|ballPitReal]].</p>
+    <p>A tiny door leads [[south|ballPit]].</p>
 </div>
 
 <% 
@@ -299,7 +303,7 @@ window.crumblingcastle.musicManager.playSoundtrack(10);
 
     <p>Halfway through this tube, you begin to hear muffled breathing and the sound of shuffling behind you. When you reach the intersection, the sound fades.</p>
 
-    <p>At the intersection, the tube splits into two paths. One <a class="whiteMarker spiralNotebook" board="61">page</a> of a notebook has been taped to the intersection wall. You can go [[left|tubeLabyrinth1]] and [[right|]].</p>
+    <p>At the intersection, the tube splits into two paths. One <a class="whiteMarker spiralNotebook" board="61">page</a> of a notebook has been taped to the intersection wall. You can go [[left|tubeLabyrinth1]] and [[right|tubeLabyrinth10]].</p>
 </div>
 </snippet>
 
@@ -336,11 +340,15 @@ window.crumblingcastle.musicManager.playSoundtrack(10);
 
     <p>The tube slopes down as you crawl, becoming steeper and steeper. The walls become thinner, letting in more light from outside, where it glimmers on the plastic floor of the tunnel. Eventually you start sliding down, unable to resist the force of gravity.</p>
 
-    <p>You plunge, face-first...</p>
+    <p id="plasticTransition">[[You plunge, face-first...|hiddenBallPit]]</p>
 </div>
 
 <% 
-story.transitionMessage = "...landing on a cushioning layer of plastic.";
+$(function () {
+   document.getElementById("plasticTransition").addEventListener("click", () => {
+        story.transitionMessage = "...landing on a cushioning layer of plastic.";
+   });
+});
 %>
 </snippet>
 

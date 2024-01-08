@@ -1,4 +1,4 @@
-const sunkenHallSnippets = ["sunkenHall", "blackWormbed", "jellyfish", "kelpForest", "kelpGraveyard", "sunkenStatue", "treasurePile", "whiteWormbed", "underwaterMachines", "drownedApparatus"];
+const sunkenHallSnippets = ["sunkenHall", "blackWormbed", "jellyfish", "kelpForest", "kelpGraveyard", "submergedStatue", "treasurePile", "whiteWormbed", "underwaterMachines", "drownedApparatus"];
 
 $(function () {
     const swimUp = document.querySelector("p.swimUp");

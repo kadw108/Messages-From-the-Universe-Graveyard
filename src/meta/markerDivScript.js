@@ -112,7 +112,7 @@ function createFetchedInfoDiv() {
     const sendBox = document.createElement("form");
     sendBox.id = "sendBox";
     sendBox.classList.add("hidden");
-    sendBox.innerHTML = '<h6>Leave a Message?</h6><div><label for="nameInput">Name <small>[3-32 characters]</small></label><input type="text" maxlength="32" minlength="3" id="nameInput" "Name from 3 to 32 characters."></div><div><label for="messageInput">Message <small>[50-1000 characters]</small></label><textarea id="messageInput" rows="10" maxlength="1000" minlength="50" title="Message from 50 to 1000 characters."></textarea></div>';
+    sendBox.innerHTML = '<h6>Leave a Message?</h6><div><label for="nameInput">Name <small>[3-32 characters]</small></label><input type="text" maxlength="32" minlength="3" id="nameInput" "Name from 3 to 32 characters."></div><div><label for="messageInput">Message <small>[50-2750 characters]</small></label><textarea id="messageInput" rows="10" maxlength="2750" minlength="50" title="Message from 50 to 2750 characters."></textarea></div>';
     const submitButton = document.createElement("button");
     submitButton.type = "submit";
     submitButton.innerText = "Send";

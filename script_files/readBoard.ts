@@ -5,6 +5,7 @@ import { QueryCommand, DynamoDBDocumentClient, QueryCommandOutput } from "@aws-s
 
 import Filter from "bad-words";
 const filter = new Filter();
+filter.removeWords("god", "hell", "ball", "balls");
 // @ts-ignore
 // const filter = new Filter({ replaceRegex: /(?<!^)(.*)(?!$)/g }); 
 

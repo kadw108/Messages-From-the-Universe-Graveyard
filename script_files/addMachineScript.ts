@@ -44,7 +44,7 @@ export const machine = {
         const destination = coordinateMap[coordinateValue];
         const location = event.target.getAttribute("location");
 
-        if (destination !== undefined && destination !== location) {
+        if (destination !== undefined) {
             machine.success(coordinateInput, destination);
         }
         else {
