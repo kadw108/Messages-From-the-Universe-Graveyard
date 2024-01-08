@@ -52,6 +52,13 @@ GENERAL STYLE
   position: relative;
 }
 
+@media only screen 
+and (max-width: 600px) {
+  #passages {
+    width: 100%;
+  }
+}
+
 /* For passages themselves */
 .passage {
   /* overflow: auto; */

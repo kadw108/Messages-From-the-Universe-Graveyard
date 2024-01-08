@@ -7,7 +7,7 @@ function addMaxVolume(howl: Howl, maxVolume: number) {
 
 const introMusic: Array<Howl> = [
     new Howl({
-        src: ["assets/music_real/crumblingcastle_distor6.mp3"],
+        src: ["assets/music_real/crumblingcastle_distor6.ogg"],
         loop: true,
         rate: 1,
 
