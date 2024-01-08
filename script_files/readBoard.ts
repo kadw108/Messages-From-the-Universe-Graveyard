@@ -36,21 +36,29 @@ const queryBoard = async (boardNumber: number) => {
   });
 
   const response = await docClient.send(command);
-  console.log(response);
   return response;
 };
 
 const renderBoard = (response: QueryCommandOutput) => {
-  const items = response.Items;
-  if (items === undefined) {
-    return;
-  }
-
   const messageContainer = document.getElementById("messageContainer");
   if (messageContainer === null) {
     console.error("messageContainer is null");
     return;
   }
+
+  const items = response.Items;
+  if (items === undefined) {
+
+    const errorDiv = document.createElement("div");
+    errorDiv.innerHTML = "<p style='color: red;'>{ERROR PROCESSING REQUEST, CHECK CONSOLE}</p>";
+    console.log(response);
+
+    messageContainer.innerHTML = "";
+    messageContainer.append(errorDiv);
+
+    return;
+  }
+
   messageContainer.innerHTML = "";
 
   if (items.length === 0) {
@@ -64,9 +72,6 @@ const renderBoard = (response: QueryCommandOutput) => {
   }
 }
 
-const renderErrors = (message) => {
-}
-
 const renderMessage = (messageData) => {
   const div = document.createElement("div");
   div.classList.add("markerMessage");
@@ -78,15 +83,20 @@ const renderMessage = (messageData) => {
   const message = document.createElement("p");
   const messageText = filter.clean(messageData.message);
 
-  const messageTextArray = messageText.split("[corruptDataPlaceholder]");
-  const text1 = document.createTextNode(messageTextArray[0]);
-  const text2 = document.createTextNode(messageTextArray[1]);
+  if (messageText.indexOf("[corruptDataPlaceholder]") >= 0) {
+    const messageTextArray = messageText.split("[corruptDataPlaceholder]");
+    const text1 = document.createTextNode(messageTextArray[0]);
+    const text2 = document.createTextNode(messageTextArray[1]);
 
-  const replace = document.createElement("img");
-  replace.classList.add("corruptDataPlaceholder");
-  replace.src = "assets/white3.gif";
+    const replace = document.createElement("img");
+    replace.classList.add("corruptDataPlaceholder");
+    replace.src = "assets/white3.gif";
 
-  message.append(text1, replace, text2);
+    message.append(text1, replace, text2);
+  }
+  else {
+    message.innerText = messageText;
+  }
 
   div.append(senderName, message);
   return div;

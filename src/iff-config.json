@@ -4,7 +4,7 @@
         "author": {
             "name": "KADW"
         },
-        "version": "1.0.1"
+        "version": "1.0.3"
     },
     "scripts": {
         "story": [

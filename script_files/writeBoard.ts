@@ -34,22 +34,22 @@ const sendPutRequest = async(boardNumber: number, inputName: string, inputMessag
     },
   });
 
-  console.log("Sending " + boardNumber + inputName);
+  // console.log("Sending " + boardNumber + inputName);
   const response = await docClient.send(command);
   return response;
 };
 
 const addMessage = async(boardNumber: number, inputName: string, inputMessage: string) => {
     if (typeof boardNumber !== "number") {
-        console.error("boardNumber is not number: " + boardNumber);
+        // console.error("boardNumber is not number: " + boardNumber);
         return;
     }
     if (inputName.length < 3 || inputName.length > 32) {
-        console.error("inputName bad length: " + inputName);
+        // console.error("inputName bad length: " + inputName);
         return;
     }
     if (inputMessage.length < 50 || inputMessage.length > 2750) {
-        console.error("inputMessage bad length: " + inputMessage);
+        // console.error("inputMessage bad length: " + inputMessage);
         return;
     }
 

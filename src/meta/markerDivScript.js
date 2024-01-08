@@ -50,6 +50,17 @@ function showHideSendBox(event) {
 async function submitMessageForm(event) {
   event.preventDefault();
 
+  const submitButton = document.querySelector("#sendBox > button");
+  submitButton.disabled = true;
+  submitButton.innerText = "Please Wait";
+  setTimeout(() => {
+    const submitButton = document.querySelector("#sendBox > button");
+    if (submitButton !== null) {
+        submitButton.disabled = false;
+        submitButton.innerText = "Send";
+    }
+  }, 5000);
+
   let nameInput = document.getElementById("nameInput");
   let messageInput = document.getElementById("messageInput");
 
