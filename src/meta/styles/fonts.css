@@ -3,26 +3,17 @@
 /* Or just settle for faux-italic, faux-bold */
 
 @font-face {
-  	font-family: "Go Mono";
-  	src: url("assets/Go-Fonts/Go-Mono.ttf");
-  	font-style: normal;
+  	font-family: "MonoFont";
+  	src: url("assets/Fira_Mono/FiraMono-Regular.ttf");
   	font-weight: normal;
 }
 @font-face {
- 	font-family: "Go Mono";
-  	src: url("assets/Go-Fonts/Go-Mono-Italic.ttf");
-  	font-style: italic;
-  	font-weight: normal;
-}
-@font-face {
- 	font-family: "Go Mono";
-  	src: url("assets/Go-Fonts/Go-Mono-Bold.ttf");
-  	font-style: normal;
+ 	font-family: "MonoFont";
+  	src: url("assets/Fira_Mono/FiraMono-Bold.ttf");
   	font-weight: bold;
 }
+
 @font-face {
- 	font-family: "Go Mono";
-  	src: url("assets/Go-Fonts/Go-Mono-Bold-Italic.ttf");
-  	font-style: italic;
-  	font-weight: bold;
+ 	font-family: "Display1";
+  	src: url("assets/Display_Font/VT323-Regular.ttf");
 }
