@@ -177,7 +177,7 @@ const playcastleMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 0.8),
+    }), 1),
 ];
 
 const hiddenMusic: Array<Howl> = [
@@ -250,7 +250,7 @@ const transmissionMusic: Array<Howl> = [
 
         autoplay: true,
         volume: 0
-    }), 0.8)
+    }), 0.7)
 ];
 
 const fireMusic: Array<Howl> = [

@@ -1,0 +1,5 @@
+#screenBg {
+    background-color: #000;
+    background-image: url("assets/lines4.gif");
+    background-size: contain;
+}

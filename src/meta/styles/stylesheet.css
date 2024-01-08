@@ -65,10 +65,11 @@ GENERAL STYLE
   width: 100%;
   height: 100%;
 
-  background-color: #004;
+  background-color: #000;
   background-size: cover;
+  background-position: center;
   
-  border: 3px solid white;
+  border: 2px solid white;
   border-image: url(assets/white3.gif);
   border-image-slice: 4;
 
@@ -78,7 +79,7 @@ GENERAL STYLE
 
 #screenContents {
   width: 97%;
-  height: 98%;
+  height: 97%;
   margin: auto;
 }
 div .topHalf {
@@ -95,6 +96,10 @@ div .bottomHalf {
 
   padding: 10px;
   overflow: scroll;
+
+  border-image: url("assets/black1.gif");
+  border-image-slice: 8;
+  border-width: 7px;
 }
 
 #menuButtons {

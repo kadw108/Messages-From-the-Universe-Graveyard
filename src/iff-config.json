@@ -37,8 +37,72 @@
         ],
         "tags": [
             {
+                "rule": "menu",
+                "files": "meta/styles/specific/menu.css"
+            },
+            {
                 "rule": "transition",
                 "files": "meta/styles/specific/transition.css"
+            },
+            {
+                "rule": "amberworks",
+                "files": "meta/styles/specific/amberworks.css"
+            },
+            {
+                "rule": "depths",
+                "files": "meta/styles/specific/depths.css"
+            },
+            {
+                "rule": "dorm",
+                "files": "meta/styles/specific/dorm.css"
+            },
+            {
+                "rule": "greenhouse",
+                "files": "meta/styles/specific/greenhouse.css"
+            },
+            {
+                "rule": "playcastle",
+                "files": "meta/styles/specific/playcastle.css"
+            },
+            {
+                "rule": "sunken",
+                "files": "meta/styles/specific/sunken.css"
+            },
+            {
+                "rule": "bedroom",
+                "files": "meta/styles/specific/bedroom.css"
+            },
+            {
+                "rule": "bridge",
+                "files": "meta/styles/specific/bridge.css"
+            },
+            {
+                "rule": "cell",
+                "files": "meta/styles/specific/cell.css"
+            },
+            {
+                "rule": "dungeon",
+                "files": "meta/styles/specific/dungeon.css"
+            },
+            {
+                "rule": "familiar",
+                "files": "meta/styles/specific/familiar.css"
+            },
+            {
+                "rule": "glitch",
+                "files": "meta/styles/specific/glitch.css"
+            },
+            {
+                "rule": "hidden",
+                "files": "meta/styles/specific/hidden.css"
+            },
+            {
+                "rule": "fire",
+                "files": "meta/styles/specific/fire.css"
+            },
+            {
+                "rule": "transmission",
+                "files": "meta/styles/specific/transmission.css"
             }
         ]
     },
