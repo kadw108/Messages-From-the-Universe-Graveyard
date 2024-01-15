@@ -1,13 +1,15 @@
 import os
 
-input_path = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/crumbling_castle_source/src/world"
-input_path2 = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/crumbling_castle_source/src/world/minor"
+curr_loc = os.getcwd()
+
+input_path = os.path.join(curr_loc, "../src/world")
+input_path2 = os.path.join(curr_loc, "../src/world/minor")
 
 filenames = sorted([input_path+"/"+i for i in os.listdir(input_path) if i.endswith(".ejs")])
 filenames += [input_path2+"/"+i for i in os.listdir(input_path2) if i.endswith(".ejs")]
 
-output_path = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/proof.html"
-output_path2 = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/index.txt"
+output_path = os.path.join(curr_loc, "../../proof.html")
+output_path2 = os.path.join(curr_loc, "../../index.txt")
 
 board_map = {}
 board_map2 = {}
@@ -75,7 +77,7 @@ with open(output_path2, "w") as outfile:
 for i in sorted(board_map.keys()):
     print(i, ":", board_map[i])
 
-output_path3 = "/home/account/Documents/writ/if/shufflecomp/crumbling_castle/crumbling_castle_source/utility_files/numberMap.txt"
+output_path3 = os.path.join(curr_loc, "numberMap.txt")
 
 with open(output_path3, "w") as outfile:
     outfile.write("const numberMap = " + str({v: k for k, v in board_map2.items()}) + ";")

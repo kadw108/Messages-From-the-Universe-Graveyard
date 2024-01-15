@@ -81,7 +81,15 @@ const renderMessage = (messageData) => {
   senderName.innerText = "from: " + filter.clean(messageData.name);
 
   const message = document.createElement("p");
-  const messageText = filter.clean(messageData.message);
+
+  let messageText = messageData.message;
+  // Since the filter doesn't work perfectly with all inputs.
+  // This is the lazy solution because I want to keep it in.
+  try {
+    messageText = filter.clean(messageData.message);
+  } catch (error) {
+    messageText = messageData.message;
+  }
 
   if (messageText.indexOf("[corruptDataPlaceholder]") >= 0) {
     const messageTextArray = messageText.split("[corruptDataPlaceholder]");

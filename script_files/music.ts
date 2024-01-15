@@ -307,6 +307,14 @@ const musicManager: MusicManager = {
             })
         }
 
+        // Fix bug where main menu music and first area music starts playing in first area
+        // when you enter first area before it has time to load
+        if (whichSoundtrack !== 3) {
+            this.soundtracks[3].forEach(howl => {
+                howl.stop();
+            }) 
+        }
+
         setTimeout(() => {
             this.soundtracks[whichSoundtrack].forEach(howl => {
                 let maxVolume = howl["maxVolume"];
