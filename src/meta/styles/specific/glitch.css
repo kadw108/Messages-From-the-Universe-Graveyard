@@ -2,3 +2,9 @@
     background-color: #1f0000;
     background-image: url("assets/black3.gif");
 }
+
+#markerDiv {
+    border: 2px solid white;
+    border-image: url("assets/white3.gif");
+    border-image-slice: 4;
+}

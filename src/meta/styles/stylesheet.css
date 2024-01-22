@@ -58,6 +58,13 @@ and (max-width: 600px) {
     width: 100%;
   }
 }
+@media only screen
+and (max-height: 800px) {
+  #passages {
+    height: 100vh;
+    min-height: 500px;
+  }
+}
 
 /* For passages themselves */
 .passage {
@@ -98,7 +105,9 @@ div .topHalf {
 div .bottomHalf {
   width: 100%;
   height: 50%;
-  top: 50%;
+  min-height: 350px;
+  bottom: 0%;
+  top: auto;
   margin: auto;
 
   padding: 10px;
@@ -149,7 +158,7 @@ CUSTOM STYLES
 .blackBg {
   color: white;
   background-color: black;
-  border: 2px dotted white;
+  border: 2px solid white;
 }
 
 .absoluteAlign {
@@ -256,17 +265,29 @@ small {
   color: #666666;
 }
 
-a {
-  color: #aaaadd;
+a:not([data-snippet]) {
+  font-weight: bold;
+  color: inherit;
   text-decoration: inherit;
   cursor: pointer;
 }
-.hiddenLink a {
-  color: inherit;
+a[data-snippet] {
+  color: #809fdd;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+a[identifier="machine"] {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 a:hover {
   text-decoration: inherit;
   color: #446699;
+}
+.hiddenLink a {
+  font-weight: inherit;
+  text-decoration: inherit;
+  color: inherit;
 }
 
 div {
@@ -282,6 +303,8 @@ button {
   background-color: #000;
   color: #fff;
   cursor: pointer;
+
+  font-family: 'MonoFont', monospace;
 }
 button:hover {
   background-color: #444;

@@ -3,3 +3,21 @@
     background-image: url("assets/1dungeon.png.gif");
     background-position-y: -300px;
 }
+
+#markerDiv {
+    background-image: url("assets/parchment.jpg");
+    border-color: #000;
+}
+#markerDiv * {
+    color: #000;
+}
+
+#markerDiv button, .markerMessage, #sendBox input, #sendBox textarea {
+    background-color: rgba(255, 255, 255, 0.2);
+
+    border-radius: 5px;
+    border-color: #953;
+}
+#markerDiv button:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}

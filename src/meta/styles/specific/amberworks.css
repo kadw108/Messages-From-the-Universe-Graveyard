@@ -2,3 +2,13 @@
     background-color: #1f0c0e;
     background-image: url("assets/2amberworks.png.gif");
 }
+
+#markerDiv {
+    background-color: rgba(50, 50, 50, 0.95);
+}
+#markerDiv button, .markerMessage, #sendBox input, #sendBox textarea {
+    background-color: rgba(20, 20, 20, 0.95);
+}
+#markerDiv button:hover {
+    background-color: #777;
+}

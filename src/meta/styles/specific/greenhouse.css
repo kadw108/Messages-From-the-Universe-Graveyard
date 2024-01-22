@@ -3,3 +3,29 @@
     background-image: url("assets/1greenhouse2.png.gif");
     background-position-y: -200px;
 }
+
+#markerDiv {
+    background-color: #ddd;
+
+    border-color: #000;
+    border-style: outset;
+    border-width: 3px;
+}
+#markerDiv * {
+    color: #000;
+    border-color: #000;
+}
+
+#markerDiv button, .markerMessage, #sendBox, #sendBox input, #sendBox textarea {
+    background-color: #f0f0f0;
+
+    border-radius: 5px;
+    border-style: outset;
+    border-width: 2px;
+}
+#sendBox input, #sendBox textarea {
+    background-color: #fff;
+}
+#markerDiv button:hover {
+    background-color: #777;
+}

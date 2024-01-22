@@ -50,6 +50,8 @@
   border: 1px solid #555;
   border-radius: 20px;
   overflow: hidden;
+
+  background-color: #000;
 }
 
 #sendBoxButton {
@@ -64,7 +66,7 @@
 #sendBox {
     margin: 10px;
     margin-top: 0;
-    border: 1px solid white;
+    border: 1px solid #aaa;
     padding: 10px;
 }
 #sendBox > div {
@@ -76,7 +78,7 @@
 #sendBox > button {
     border-radius: 14px;
     padding: 3px 6px 3px 6px;
-    border: 1px solid white;
+    border: 1px solid #aaa;
 }
 #nameInput, #messageInput {
     width: 95%;

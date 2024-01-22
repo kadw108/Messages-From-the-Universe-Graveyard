@@ -3,3 +3,10 @@
     background-image: url("assets/1fire.png.gif");
     background-position-y: -300px;
 }
+
+#markerDiv {
+    border-color: #ffc740;
+}
+#markerDiv * {
+    border-color: #ffc740;
+}

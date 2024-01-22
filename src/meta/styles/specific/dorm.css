@@ -3,3 +3,7 @@
     background-image: url("assets/1dorm.png.gif");
     background-position-y: -200px;
 }
+
+#markerDiv {
+    border-color: #dff;
+}
