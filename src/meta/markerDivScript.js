@@ -1,4 +1,5 @@
 let markerOpened = false;
+let failures = 0;
 
 async function openMarker(event) {
     document.getElementById("markerDiv").classList.remove("hidden");
@@ -47,19 +48,22 @@ function showHideSendBox(event) {
     }
 }
 
+function enableSendButton() {
+    setTimeout(() => {
+        const submitButton = document.querySelector("#sendBox > button");
+        if (submitButton !== null) {
+            submitButton.disabled = false;
+            submitButton.innerText = "Send";
+        }
+    }, 1000);
+}
+
 async function submitMessageForm(event) {
   event.preventDefault();
 
   const submitButton = document.querySelector("#sendBox > button");
   submitButton.disabled = true;
   submitButton.innerText = "Please Wait";
-  setTimeout(() => {
-    const submitButton = document.querySelector("#sendBox > button");
-    if (submitButton !== null) {
-        submitButton.disabled = false;
-        submitButton.innerText = "Send";
-    }
-  }, 5000);
 
   let nameInput = document.getElementById("nameInput");
   let messageInput = document.getElementById("messageInput");
@@ -69,13 +73,22 @@ async function submitMessageForm(event) {
   const message = messageInput.value;
 
   const ref = window.crumblingcastle;
-  await ref.addMessage(boardNumber, name, message);
-  await refresh(document.getElementById("refreshButton"));
+  const result = await ref.addMessage(boardNumber, name, message);
+  if (result.success === false) {
+    console.log(result);
 
-  nameInput.value = "";
-  messageInput.value = "";
+    failures++;
+    const errorDiv = document.getElementById("submitErrorDiv");
+    errorDiv.innerText = "{An error occured while writing the message. Please wait a short time and try again. Failure count: " + failures + ".}"
 
-  return false;
+    enableSendButton();
+  }
+  else {
+    await refresh(document.getElementById("refreshButton")).then(enableSendButton);
+
+    nameInput.value = "";
+    messageInput.value = "";
+  }
 }
 
 function createMarkerDiv() {
@@ -128,6 +141,9 @@ function createFetchedInfoDiv() {
     submitButton.type = "submit";
     submitButton.innerText = "Send";
     sendBox.appendChild(submitButton);
+    const submitErrorDiv = document.createElement("div");
+    submitErrorDiv.id = "submitErrorDiv";
+    sendBox.appendChild(submitErrorDiv);
     sendBox.addEventListener("submit", submitMessageForm);
 
     fetchedInfoDiv.append(pageLinkContainer, refreshButton, messageContainer, sendBoxButton, sendBox);

@@ -97,3 +97,7 @@
 #nameInput:invalid, #messageInput:invalid {
     border: 1px groove red;
 }
+
+#submitErrorDiv {
+  color: red;
+}
