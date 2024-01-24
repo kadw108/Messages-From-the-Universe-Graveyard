@@ -15,13 +15,11 @@ export const coordinateMap = {
     340: "transmissionSummitBase",
     124: "cellEast",
 
-    /*
     1: "rainSpire",
     13: "mannequinLabyrinth",
     42: "gibberish3",
     69: "gibberish2",
     420: "gibberish1",
-    */
 
     // 108: "",
 };

@@ -23,7 +23,7 @@
   background: #060917;
   margin: auto;
 
-  border: 2px outset #999;
+  border: 3px double #ccc;
   border-radius: 5px;
 }
 

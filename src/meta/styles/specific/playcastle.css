@@ -5,7 +5,7 @@
 
 #markerDiv {
     background-color: #fff;
-    background-image: repeating-linear-gradient(white 0px, white 16px, teal 17px);
+    background-image: repeating-linear-gradient(#e7e7e7 0px, #f4f4f4 18px, teal 19px);
 
     border-color: #000;
     border-style: outset;
@@ -15,7 +15,7 @@
     color: #000;
 }
 
-#markerDiv button, .markerMessage, #sendBox, #sendBox input, #sendBox textarea {
+#markerDiv button, .markerMessage, #sendBox, #sendBox input, #sendBox textarea, .pageLinkContainer a, .pageLinkContainer li {
     background-color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
 }

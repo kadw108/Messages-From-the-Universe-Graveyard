@@ -102,6 +102,10 @@ div .topHalf {
   bottom: 50%;
   margin: auto;
 }
+div .topHalf img {
+  width: 100%;
+  height: 100%;
+}
 div .bottomHalf {
   width: 100%;
   height: 50%;

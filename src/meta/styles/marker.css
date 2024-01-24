@@ -11,14 +11,18 @@
   padding: 0 0 15px 0;
 }
 
-#loadingDiv > img { /* loading icon */
+#loadingDiv {
+  background-color: rgba(0, 0, 0, 0.5);
+
   height: 50px;
   width: 50px;
-
   position: relative;
   left: 50%;
   margin-left: -25px; /* half of width */
   margin-top: 50px;
+}
+#loadingDiv > img { /* loading icon */
+  height: 100%;
 }
 
 /* --- */
