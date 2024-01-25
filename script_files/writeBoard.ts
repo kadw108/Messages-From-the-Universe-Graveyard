@@ -10,7 +10,7 @@ const addMessage = async (boardNumber: number, inputName: string, inputMessage: 
     }
 
     try {
-        const result = await fetch("http://localhost:8000/write/" + boardNumber, {
+        const result = await fetch("https://crumbling-castle-server.fly.dev/write/" + boardNumber, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

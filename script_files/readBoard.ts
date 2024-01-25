@@ -83,7 +83,7 @@ const getBoard = async (boardNumber: number) => {
     }
 
     try {
-        const result = await fetch("http://localhost:8000/read/" + boardNumber);
+        const result = await fetch("https://crumbling-castle-server.fly.dev/read/" + boardNumber);
         const resultData = await result.json();
         renderBoard(resultData.success, resultData.data);
     } catch (err) {

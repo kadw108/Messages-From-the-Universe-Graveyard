@@ -20,6 +20,4 @@ export const coordinateMap = {
     42: "gibberish3",
     69: "gibberish2",
     420: "gibberish1",
-
-    // 108: "",
 };
