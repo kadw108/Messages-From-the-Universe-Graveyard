@@ -6,7 +6,7 @@ The game was made with <a href="https://github.com/zehanort/iffinity">iffinity</
 
 Needed but not included in the repository due to being build outputs:
 
-* export/index.html (and all other contents of the export folder)
+* export/index.html
 * src/meta/crumblingcastle.js
 
 They are generated with `build`. The files in `src` are the actual source code of the final iffinity project, while the files in `script_files` get compiled by `build` into `src/meta/crumblingcastle.js`, which is loaded into the final project (as a story script).
