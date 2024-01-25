@@ -28,7 +28,7 @@ function editMenuPanel(menuPanel) {
         menuPanel.classList.add("hidden");
     });
 
-    menuPanel.append(closeButton);
+    menuPanel.prepend(closeButton);
 }
 
 export function addMenuPanels() {
