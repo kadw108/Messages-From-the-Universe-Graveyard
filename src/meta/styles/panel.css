@@ -1,7 +1,7 @@
 .closeButton {
-  position: absolute;
-  right: 8px;
-  top: 5px;
+  float: right;
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 .panelFull {
