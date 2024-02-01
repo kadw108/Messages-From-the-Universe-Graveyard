@@ -5,6 +5,7 @@
 
 #markerDiv {
     background-color: #ddd;
+    background-image: url("assets/stone.jpg");
 
     border-color: #000;
     border-style: outset;
@@ -16,7 +17,7 @@
 }
 
 #markerDiv button, .markerMessage, #sendBox, #sendBox input, #sendBox textarea {
-    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.4);
 
     border-radius: 5px;
     border-style: outset;
