@@ -7,6 +7,10 @@ s.visitedSphere = 0;
 	const preload = [
         "assets/loading.gif",
         "assets/1dorm.png.gif",
+		"assets/castle.gif",
+		"assets/lines4.gif",
+		"assets/black1.gif",
+		"assets/white3.gif"
     ];
 
 	window._ImageCache = preload.map(function (url) {

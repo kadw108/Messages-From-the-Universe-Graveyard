@@ -18,25 +18,31 @@ const introMusic: Array<Howl> = [
 
 const dormMusic: Array<Howl> = [
     addMaxVolume(new Howl({
-        src: ["assets/music_real/out_of_bounds.mp3"],
+        src: ["assets/music_real/out_of_bounds.ogg"],
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.9),
     addMaxVolume(new Howl({
-        src: ["assets/music_real/room_tone.mp3"],
+        src: ["assets/music_real/room_tone.ogg"],
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.2),
     addMaxVolume(new Howl({
         src: ["assets/music_real/buzzing_light.ogg"],
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.1)
 ];
 
@@ -46,14 +52,18 @@ const greenhouseMusic: Array<Howl> = [
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.7),
     addMaxVolume(new Howl({
         src: ["assets/music_real/forest_day_wind_roadhumm2.ogg"],
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.3),
 ];
 
@@ -63,21 +73,27 @@ const sunkenMusic: Array<Howl> = [
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }),
     addMaxVolume(new Howl({
         src: ["assets/music_real/symphony_of_stones_v3.ogg"],
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.7),
     addMaxVolume(new Howl({
         src: ["assets/music_real/bubbling.ogg"],
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.4),
 ];
 
@@ -87,7 +103,9 @@ const amberMusic: Array<Howl> = [
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 1.7),
     addMaxVolume(new Howl({
         src: ["assets/music_real/running_ship_steam_engine.ogg"],
@@ -95,7 +113,9 @@ const amberMusic: Array<Howl> = [
         rate: 0.8,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.3),
 ];
 
@@ -106,14 +126,18 @@ const depthsMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.7),
     addMaxVolume(new Howl({
         src: ["assets/music_real/piano.ogg"],
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.35),
 ];
 
@@ -124,7 +148,9 @@ const dungeonMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 1.5),
 ];
 
@@ -135,7 +161,9 @@ const bedroomMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 1),
 ];
 
@@ -146,7 +174,9 @@ const cellMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 1),
 ];
 
@@ -157,7 +187,9 @@ const bridgeMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 1.45),
     addMaxVolume(new Howl({
         src: ["assets/music_real/gusts_of_wind_through_birch_trees.ogg"],
@@ -165,7 +197,9 @@ const bridgeMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.7)
 ];
 
@@ -176,7 +210,9 @@ const playcastleMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 1),
 ];
 
@@ -187,7 +223,9 @@ const hiddenMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 1),
 ];
 
@@ -198,7 +236,9 @@ const glitchMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.8),
 ];
 
@@ -208,14 +248,18 @@ const familiarMusic: Array<Howl> = [
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.3),
     addMaxVolume(new Howl({
         src: ["assets/music_real/buzzing_light.ogg"],
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.45),
     addMaxVolume(new Howl({
         src: ["assets/music_real/buzzing_light.ogg"],
@@ -223,7 +267,9 @@ const familiarMusic: Array<Howl> = [
         rate: 1.5,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.45)
 ];
 
@@ -233,7 +279,9 @@ const transmissionMusic: Array<Howl> = [
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.1),
     addMaxVolume(new Howl({
         src: ["assets/music_real/outdoor_nighttime_ambience2.ogg"],
@@ -241,7 +289,9 @@ const transmissionMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.65),
     addMaxVolume(new Howl({
         src: ["assets/music_real/gusts_of_wind_through_birch_trees.ogg"],
@@ -249,7 +299,9 @@ const transmissionMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.7)
 ];
 
@@ -259,14 +311,18 @@ const fireMusic: Array<Howl> = [
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.7),
     addMaxVolume(new Howl({
         src: ["assets/music_real/milk-boiling-sound-effect.ogg"],
         loop: true,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.1),
     addMaxVolume(new Howl({
         src: ["assets/music_real/deep-volcano-sound-effect.ogg"],
@@ -274,7 +330,9 @@ const fireMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.6),
     addMaxVolume(new Howl({
         src: ["assets/music_real/burning-fire-sound-effect.ogg"],
@@ -282,7 +340,9 @@ const fireMusic: Array<Howl> = [
         rate: 1,
 
         autoplay: true,
-        volume: 0
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     }), 0.6),
 ];
 
@@ -322,7 +382,25 @@ const musicManager: MusicManager = {
                     maxVolume = 1.0;
                 }
 
-                howl.fade(0, maxVolume, 7000);
+                if (howl.state() === "unloaded") {
+                    howl.load();
+
+                    howl.onplay = () => {
+                        setTimeout(() => {
+                            // otherwise volume change not applied
+                            // see https://github.com/goldfire/howler.js/issues/1603 ?
+                            howl.fade(0, maxVolume, 7000);
+                        }, 100);
+                    }
+
+                }
+                else {
+                    setTimeout(() => {
+                        // otherwise volume change not applied
+                        // see https://github.com/goldfire/howler.js/issues/1603 ?
+                        howl.fade(0, maxVolume, 7000);
+                    }, 100);
+                }
             })
         }, 1000);
 

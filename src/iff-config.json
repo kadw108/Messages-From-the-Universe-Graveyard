@@ -8,8 +8,8 @@
     },
     "scripts": {
         "story": [
-            "meta/crumblingcastle.js",
-            "meta/storyScript/initializeState.js"
+            "meta/storyScript/initializeState.js",
+            "meta/crumblingcastle.js"
         ],
         "global": [
             "meta/globalScript.js",
