@@ -125,8 +125,10 @@ div .bottomHalf {
   top: auto;
 
   border-image: url("assets/black1.gif");
+  border-color: #222;
   border-image-slice: 8;
   border-width: 7px;
+  border-image-repeat: repeat;
 }
 
 /*
