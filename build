@@ -8,3 +8,8 @@ echo "window.crumblingcastle = crumblingcastle;" >> ../src/meta/crumblingcastle.
 
 cd ../src
 npx ifc -o ../export/index.html
+
+# insert contents of addToHead.html into head of export/index.html, before line containing "<title>"
+# from https://unix.stackexchange.com/a/32912
+cd ..
+sed -n -i -e '/<title>/r addToHead.html' -e 1x -e '2,${x;p}' -e '${x;p}' export/index.html
