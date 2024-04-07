@@ -28,9 +28,9 @@ $(function () {
             menuButtons.innerHTML = '<button type="button" class="menuButton panelOpener" id="startButton" identifier="startMenu">Start</button>';
 
             const startMenu = document.createElement("div");
-            startMenu.classList.add("panelFull", "absoluteAlign", "hidden");
+            startMenu.classList.add("menuPanel", "smallPanel", "absoluteAlign", "hidden");
             startMenu.setAttribute("identifier", "startMenu");
-            startMenu.innerHTML = '<p>Return to start menu? This will reset your location. Codes and messages will remain.</p> <br/> <p><a id="returnLink">Return.</a></p>';
+            startMenu.innerHTML = '<p>Return to start menu? This will reset your location. Codes will remain unchanged, and messages will persist.</p> <br/> <p><a id="returnLink">Return.</a></p>';
 
             const screenContents = document.getElementById("screenContents");
             if (screenContents !== null && snippet.name != "begin") {
@@ -40,7 +40,10 @@ $(function () {
                 const returnLink = document.getElementById("returnLink");
                 returnLink.addEventListener("click", () => {
                     startMenu.remove();
+                    const bg = document.getElementById("screenCover");
+                    bg.style.zIndex = "-1";
                     menuButtons.remove();
+
                     story.showSnippet("begin");
                 })
             }

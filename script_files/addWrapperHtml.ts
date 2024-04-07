@@ -17,6 +17,7 @@ STRUCTURE AFTER:
 
 <div id="contents">
     <div id="bg"></div>
+    <div id="screenCover"></div>
     <div id="passages"><div class="passage">
         <div id="screenBg"></div>
 
@@ -48,7 +49,13 @@ export function addWrapperHtml() {
 
         const bg = document.createElement("div");
         bg.id = "bg";
+        bg.classList.add("fullscreenBg");
         contents.appendChild(bg);
+
+        const screenCover = document.createElement("div");
+        screenCover.id = "screenCover";
+        screenCover.classList.add("fullscreenBg");
+        contents.appendChild(screenCover);
 
         const passages = document.createElement("div");
         passages.id = "passages";

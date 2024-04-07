@@ -2,13 +2,13 @@
 Syntax:
 
 <a class="panelOpener" identifier="test" >Click to make it show up!</a>
-<div class="panelFull absoluteAlign hidden" identifier="test">How wonderful. I love my life.</div>
+<div class="menuPanel absoluteAlign hidden" identifier="test">How wonderful. I love my life.</div>
 
 */
 
 function openMenuPanel(event) {
     const identifier = event.target.getAttribute("identifier");
-    const replacer = document.querySelector(".panelFull[identifier='" + identifier + "']");
+    const replacer = document.querySelector(".menuPanel[identifier='" + identifier + "']");
 
     if (replacer === null) {
         console.error("Replacelink without replacer!");
@@ -17,18 +17,35 @@ function openMenuPanel(event) {
     }
 
     replacer.classList.remove("hidden");
+
+    const bg = document.getElementById("screenCover");
+    if (bg === null) {
+        return;
+    }
+    bg.style.zIndex = "19";
+    bg.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
 }
 
 function editMenuPanel(menuPanel) {
-    const closeButton = document.createElement("button");
-    closeButton.innerText = "X";
-    closeButton.type = "button";
-    closeButton.classList.add("closeButton");
-    closeButton.addEventListener("click", () => {
-        menuPanel.classList.add("hidden");
-    });
+    if (menuPanel.getAttribute("hasCloseButton") !== "true") {
+        const closeButton = document.createElement("button");
+        closeButton.innerText = "X";
+        closeButton.type = "button";
+        closeButton.classList.add("closeButton");
+        closeButton.addEventListener("click", () => {
+            menuPanel.classList.add("hidden");
 
-    menuPanel.prepend(closeButton);
+            const bg = document.getElementById("screenCover");
+            if (bg === null) {
+                return;
+            }
+            bg.style.zIndex = "-1";
+        });
+
+        menuPanel.prepend(closeButton);
+
+        menuPanel.setAttribute("hasCloseButton", "true");
+    }
 }
 
 export function addMenuPanels() {
@@ -36,7 +53,7 @@ export function addMenuPanels() {
         e.addEventListener("click", openMenuPanel);
     });
 
-    Array.from(document.getElementsByClassName("panelFull")).forEach(e => {
+    Array.from(document.getElementsByClassName("menuPanel")).forEach(e => {
         editMenuPanel(e);
     });
 }

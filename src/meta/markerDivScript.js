@@ -94,7 +94,7 @@ async function submitMessageForm(event) {
 function createMarkerDiv() {
     const markerDiv = document.createElement("div");
     markerDiv.id = "markerDiv";
-    markerDiv.classList.add("absoluteAlign", "hidden", "panelFull");
+    markerDiv.classList.add("absoluteAlign", "hidden", "menuPanel");
 
     const closeButton = document.createElement("button");
     closeButton.innerText = "X";

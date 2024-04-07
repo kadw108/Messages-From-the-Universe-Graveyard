@@ -92,3 +92,14 @@ export function indefinite_article(phrase: string) {
 
     return "a";
 }
+
+export function showSnippetWrapper(id: string, addToHistory: boolean = false) {
+    // @ts-expect-error (for story)
+    story.showSnippet(id, addToHistory);
+
+    const bg = document.getElementById("screenCover");
+    if (bg === null) {
+        return;
+    }
+    bg.style.zIndex = "-1";
+}

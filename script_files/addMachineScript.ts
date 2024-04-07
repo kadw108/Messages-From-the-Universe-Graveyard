@@ -11,7 +11,7 @@ export const machine = {
         Array.from(document.getElementsByClassName("successfulActivationLink")).forEach(e => {
             e.addEventListener("click", () => {
                 // @ts-expect-error
-                story.showSnippet(destination);
+                window.crumblingcastle.showSnippetWrapper(destination);
             });
         });
 
@@ -53,7 +53,7 @@ export const machine = {
     },
 
     editMachineDiv: function() {
-        if (document.querySelectorAll(".panelFull[identifier='machine']").length > 0) {
+        if (document.querySelectorAll(".menuPanel[identifier='machine']").length > 0) {
             Array.from(document.getElementsByClassName("activateLink")).forEach(e => {
                 e.addEventListener("click", machine.use);
             });

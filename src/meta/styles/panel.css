@@ -4,7 +4,7 @@
   margin-top: 5px;
 }
 
-.panelFull {
+.menuPanel {
   z-index: 20;
   margin: 5px;
   padding-bottom: 15px;
@@ -16,4 +16,9 @@
 
   overflow: scroll;
   padding: 10px;
+}
+
+.smallPanel {
+  margin: 20px;
+  height: fit-content;
 }
