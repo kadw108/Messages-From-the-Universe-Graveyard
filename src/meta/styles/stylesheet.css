@@ -280,7 +280,7 @@ small {
 a:not([data-snippet]) {
   font-weight: bold;
   color: inherit;
-  text-decoration: inherit;
+  text-decoration: underline;
   cursor: pointer;
 }
 a[data-snippet] {
