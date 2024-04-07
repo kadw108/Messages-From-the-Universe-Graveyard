@@ -5,7 +5,7 @@ import { addWrapperHtml } from "./addWrapperHtml";
 import { addReplaceLink } from "./addReplaceLink";
 import { addMenuPanels } from "./addMenuPanels";
 import { coordinateMap } from "./coordinateMap";
-import { randItem } from "./utility";
+import { randItem, showSnippetWrapper } from "./utility";
 import { machine } from "./addMachineScript";
 
 export {
@@ -13,6 +13,6 @@ export {
   musicManager,
   addWrapperHtml, addReplaceLink, addMenuPanels,
   coordinateMap,
-  randItem,
+  randItem, showSnippetWrapper,
   machine
 }

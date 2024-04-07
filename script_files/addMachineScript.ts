@@ -1,4 +1,5 @@
 import { coordinateMap } from "./coordinateMap";
+import { showSnippetWrapper } from "./utility";
 
 export const machine = {
     success: function(coordinateInput, destination) {
@@ -10,8 +11,7 @@ export const machine = {
 
         Array.from(document.getElementsByClassName("successfulActivationLink")).forEach(e => {
             e.addEventListener("click", () => {
-                // @ts-expect-error
-                window.crumblingcastle.showSnippetWrapper(destination);
+                showSnippetWrapper(destination);
             });
         });
 

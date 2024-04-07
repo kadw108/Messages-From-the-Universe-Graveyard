@@ -3,7 +3,7 @@ const sunkenHallSnippets = ["sunkenHall", "blackWormbed", "jellyfish", "kelpFore
 $(function () {
     const swimUp = document.querySelector("p.swimUp");
     swimUp?.addEventListener("click", () => {
-        story.showSnippet("current");
+        window.crumblingcastle.showSnippetWrapper("current");
     });
 
     const drift = document.querySelector("p.drift");
@@ -14,6 +14,6 @@ $(function () {
         }
 
         story.transitionMessage = "You are taken somewhere new...";
-        story.showSnippet(newSnippet);
+        window.crumblingcastle.showSnippetWrapper(newSnippet);
     });
 });

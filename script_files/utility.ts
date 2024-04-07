@@ -93,6 +93,9 @@ export function indefinite_article(phrase: string) {
     return "a";
 }
 
+/* To be used instead of story.showSnippet in the actual code!
+Hides the 'menu background cover' whenever a snippet is changed
+from clicking a menu option. */
 export function showSnippetWrapper(id: string, addToHistory: boolean = false) {
     // @ts-expect-error (for story)
     story.showSnippet(id, addToHistory);

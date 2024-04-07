@@ -59,6 +59,6 @@ $(function () {
             newSnippet = "familiarPlacePanel";
         }
 
-        story.showSnippet(newSnippet);
+        window.crumblingcastle.showSnippetWrapper(newSnippet);
     });
 });

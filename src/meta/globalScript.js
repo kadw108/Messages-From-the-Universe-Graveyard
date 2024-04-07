@@ -40,11 +40,9 @@ $(function () {
                 const returnLink = document.getElementById("returnLink");
                 returnLink.addEventListener("click", () => {
                     startMenu.remove();
-                    const bg = document.getElementById("screenCover");
-                    bg.style.zIndex = "-1";
                     menuButtons.remove();
 
-                    story.showSnippet("begin");
+                    window.crumblingcastle.showSnippetWrapper("begin");
                 })
             }
         }
