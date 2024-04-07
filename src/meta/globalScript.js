@@ -1,8 +1,5 @@
 $(function () {
     window.crumblingcastle.addWrapperHtml();
-    window.crumblingcastle.addReplaceLink();
-    window.crumblingcastle.addMenuPanels();
-    window.crumblingcastle.machine.editMachineDiv();
 
     const bottomHalf = document.querySelector("div.absoluteAlign.bottomHalf");
     if (story.transitionMessage !== null) {
@@ -27,12 +24,30 @@ $(function () {
             const menuButtons = document.createElement("div");
             menuButtons.classList.add("menuButtons", "blackBg2");
 
-            menuButtons.innerHTML = '<button type="button" class="menuButton" id="inventoryButton">Inventory</button><button type="button" class="menuButton" id="mapButton">Skills</button><button type="button" class="menuButton" id="partyButton">Crafting</button>';
+            // menuButtons.innerHTML = '<button type="button" class="menuButton" id="inventoryButton">Inventory</button><button type="button" class="menuButton" id="mapButton">Skills</button><button type="button" class="menuButton" id="partyButton">Crafting</button>';
+            menuButtons.innerHTML = '<button type="button" class="menuButton panelOpener" id="startButton" identifier="startMenu">Start</button>';
+
+            const startMenu = document.createElement("div");
+            startMenu.classList.add("panelFull", "absoluteAlign", "hidden");
+            startMenu.setAttribute("identifier", "startMenu");
+            startMenu.innerHTML = '<p>Return to start menu? This will reset your location. Codes and messages will remain.</p> <br/> <p><a id="returnLink">Return.</a></p>';
+
             const screenContents = document.getElementById("screenContents");
-            if (screenContents !== null) {
+            if (screenContents !== null && snippet.name != "begin") {
                 screenContents.appendChild(menuButtons);
+                screenContents.appendChild(startMenu);
+
+                const returnLink = document.getElementById("returnLink");
+                returnLink.addEventListener("click", () => {
+                    startMenu.remove();
+                    menuButtons.remove();
+                    story.showSnippet("begin");
+                })
             }
         }
     }
 
+    window.crumblingcastle.addReplaceLink();
+    window.crumblingcastle.addMenuPanels();
+    window.crumblingcastle.machine.editMachineDiv();
 });
