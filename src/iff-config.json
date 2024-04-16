@@ -57,8 +57,16 @@
                 "files": "meta/styles/specific/dorm.css"
             },
             {
+                "rule": "dormtunnel",
+                "files": "meta/styles/specific/dormtunnel.css"
+            },
+            {
                 "rule": "greenhouse",
                 "files": "meta/styles/specific/greenhouse.css"
+            },
+            {
+                "rule": "greenhousegarden",
+                "files": "meta/styles/specific/greenhousegarden.css"
             },
             {
                 "rule": "playcastle",
