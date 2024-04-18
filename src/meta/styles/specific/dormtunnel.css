@@ -1,9 +1,4 @@
 #screenBg {
-    background-color: #00151f;
-    background-image: url("assets/tunnel.gif");
-    background-position-y: -90px;
-}
-
-#markerDiv {
-    border-color: #dff;
+    background-image: url("assets/tunnel.gif") !important;
+    background-position-y: -90px !important;
 }

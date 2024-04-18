@@ -9,10 +9,11 @@ const introMusic: Array<Howl> = [
     new Howl({
         src: ["assets/music_real/crumblingcastle_distor6.ogg"],
         loop: true,
-        rate: 1,
 
-        autoplay: true,
-        volume: 0
+        autoplay: false,
+        volume: 0,
+        html5: true,
+        preload: "metadata"
     })
 ];
 
@@ -21,7 +22,7 @@ const dormMusic: Array<Howl> = [
         src: ["assets/music_real/out_of_bounds.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -30,7 +31,7 @@ const dormMusic: Array<Howl> = [
         src: ["assets/music_real/room_tone.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -39,7 +40,7 @@ const dormMusic: Array<Howl> = [
         src: ["assets/music_real/buzzing_light.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -51,7 +52,7 @@ const greenhouseMusic: Array<Howl> = [
         src: ["assets/music_real/bubble_skrotraff.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -60,7 +61,7 @@ const greenhouseMusic: Array<Howl> = [
         src: ["assets/music_real/forest_day_wind_roadhumm2.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -72,7 +73,7 @@ const sunkenMusic: Array<Howl> = [
         src: ["assets/music_real/river2.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -81,7 +82,7 @@ const sunkenMusic: Array<Howl> = [
         src: ["assets/music_real/symphony_of_stones_v3.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -90,7 +91,7 @@ const sunkenMusic: Array<Howl> = [
         src: ["assets/music_real/bubbling.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -102,7 +103,7 @@ const amberMusic: Array<Howl> = [
         src: ["assets/music_real/blessed_are_the_hearts_that_can_bend.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -112,7 +113,7 @@ const amberMusic: Array<Howl> = [
         loop: true,
         rate: 0.8,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -125,7 +126,7 @@ const depthsMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -134,7 +135,7 @@ const depthsMusic: Array<Howl> = [
         src: ["assets/music_real/piano.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -147,7 +148,7 @@ const dungeonMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -160,7 +161,7 @@ const bedroomMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -173,7 +174,7 @@ const cellMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -186,7 +187,7 @@ const bridgeMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -196,7 +197,7 @@ const bridgeMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -209,7 +210,7 @@ const playcastleMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -222,7 +223,7 @@ const hiddenMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -235,7 +236,7 @@ const glitchMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -247,7 +248,7 @@ const familiarMusic: Array<Howl> = [
         src: ["assets/music_real/room_tone.mp3"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -256,7 +257,7 @@ const familiarMusic: Array<Howl> = [
         src: ["assets/music_real/buzzing_light.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -266,7 +267,7 @@ const familiarMusic: Array<Howl> = [
         loop: true,
         rate: 1.5,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -278,7 +279,7 @@ const transmissionMusic: Array<Howl> = [
         src: ["assets/music_real/birds_noises.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -288,7 +289,7 @@ const transmissionMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -298,7 +299,7 @@ const transmissionMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -310,7 +311,7 @@ const fireMusic: Array<Howl> = [
         src: ["assets/music_real/re_cycles.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -319,7 +320,7 @@ const fireMusic: Array<Howl> = [
         src: ["assets/music_real/milk-boiling-sound-effect.ogg"],
         loop: true,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -329,7 +330,7 @@ const fireMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -339,7 +340,7 @@ const fireMusic: Array<Howl> = [
         loop: true,
         rate: 1,
 
-        autoplay: true,
+        autoplay: false,
         volume: 0,
         html5: true,
         preload: "metadata"
@@ -361,50 +362,59 @@ const musicManager: MusicManager = {
             return;
         }
 
+        // fade out currently playing ost
         if (this.activeSoundtrack !== -1) {
             this.soundtracks[this.activeSoundtrack].forEach(howl => {
                 howl.fade(howl.volume(), 0, 3000);
             })
         }
 
-        // Fix bug where main menu music and first area music starts playing in first area
-        // when you enter first area before it has time to load
-        if (whichSoundtrack !== 3) {
-            this.soundtracks[3].forEach(howl => {
-                howl.stop();
-            }) 
-        }
+        this.activeSoundtrack = whichSoundtrack;
 
+        // fade in new ost
         setTimeout(() => {
-            this.soundtracks[whichSoundtrack].forEach(howl => {
-                let maxVolume = howl["maxVolume"];
-                if (maxVolume === undefined) {
-                    maxVolume = 1.0;
-                }
+            console.log("playing " + whichSoundtrack);
+            for (const howl of this.soundtracks[whichSoundtrack]) {
 
-                if (howl.state() === "unloaded") {
-                    howl.load();
+                console.log(howl);    
 
-                    howl.onplay = () => {
+                // in case you enter the area for another ost before
+                // this timeout function executes
+                // (mainly for issues with main menu -> 1st area transition)
+                if (this.activeSoundtrack === whichSoundtrack) {
+
+
+                    let maxVolume = howl["maxVolume"];
+                    if (maxVolume === undefined) {
+                        maxVolume = 1.0;
+                    }
+
+                    if (howl.state() === "unloaded") {
+                        howl.load();
+
+                        howl.onplay = () => {
+                            setTimeout(() => {
+                                // otherwise volume change not applied
+                                // see https://github.com/goldfire/howler.js/issues/1603 ?
+                                howl.fade(0, maxVolume, 7000);
+                            }, 100);
+                        }
+
+                        howl.play();
+                    }
+                    else {
+                        if (!howl.playing()) {
+                            howl.play();
+                        }
                         setTimeout(() => {
                             // otherwise volume change not applied
                             // see https://github.com/goldfire/howler.js/issues/1603 ?
                             howl.fade(0, maxVolume, 7000);
                         }, 100);
                     }
-
                 }
-                else {
-                    setTimeout(() => {
-                        // otherwise volume change not applied
-                        // see https://github.com/goldfire/howler.js/issues/1603 ?
-                        howl.fade(0, maxVolume, 7000);
-                    }, 100);
-                }
-            })
+            }
         }, 1000);
-
-        this.activeSoundtrack = whichSoundtrack;
     }
 }
 
