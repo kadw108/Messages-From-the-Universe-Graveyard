@@ -37,6 +37,10 @@
         ],
         "tags": [
             {
+                "rule": "firstScreen",
+                "files": "meta/styles/specific/firstScreen.css"
+            },
+            {
                 "rule": "menu",
                 "files": "meta/styles/specific/menu.css"
             },
