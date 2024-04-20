@@ -22,8 +22,8 @@
 }
 
 #screenBg {
-    -webkit-animation: bgcolor 20s infinite;
-    animation: bgcolor 10s infinite;
+    -webkit-animation: bgcolor 10s infinite;
+    animation: bgcolor 5s infinite;
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
 }

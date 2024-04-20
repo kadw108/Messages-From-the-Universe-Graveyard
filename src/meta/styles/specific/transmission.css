@@ -5,7 +5,7 @@
 
 #markerDiv {
     background-color: #fff;
-    background-image: repeating-linear-gradient(#e6e6e6 0px, white 24px, #ccc 25px);
+    background-image: repeating-linear-gradient(white 0px, white 24px, #66ccff 25px);
 
     border-color: #000;
     border-style: outset;

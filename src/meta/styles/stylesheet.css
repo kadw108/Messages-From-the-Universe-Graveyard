@@ -364,6 +364,9 @@ button:hover {
 .linkReplaced, .linkHider {
   cursor: pointer;
 }
+.linkReplaced {
+  width: fit-content;
+}
 
 /* CUSTOM STYLINGS (because reset.css) */
 
@@ -386,7 +389,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   margin: 15px 0 15px 0;
 }
-h4, h5 {
+h5 {
   margin: 9px 0 9px 0;
 }
 h6 {
