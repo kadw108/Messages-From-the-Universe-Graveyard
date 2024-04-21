@@ -1,5 +1,6 @@
 #screenBg {
     background-image: url("assets/lounge.gif") !important;
-    background-position-y: -100px !important;
-    background-position-x: -500px !important;
+    background-position-y: -50px !important;
+    background-position-x: -300px !important;
+    background-size: 200% auto !important;
 }

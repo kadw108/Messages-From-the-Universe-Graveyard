@@ -65,6 +65,18 @@
                 "files": "meta/styles/specific/amberworksstairwell.css"
             },
             {
+                "rule": "amberworkssinks",
+                "files": "meta/styles/specific/amberworkssinks.css"
+            },
+            {
+                "rule": "amberworksmachine",
+                "files": "meta/styles/specific/amberworksmachine.css"
+            },
+            {
+                "rule": "amberworksdininghall",
+                "files": "meta/styles/specific/amberworksdininghall.css"
+            },
+            {
                 "rule": "amberworkstower",
                 "files": "meta/styles/specific/amberworkstower.css"
             },
