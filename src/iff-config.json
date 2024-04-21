@@ -53,6 +53,22 @@
                 "files": "meta/styles/specific/amberworks.css"
             },
             {
+                "rule": "amberworksbathhouse",
+                "files": "meta/styles/specific/amberworksbathhouse.css"
+            },
+            {
+                "rule": "amberworkslounge",
+                "files": "meta/styles/specific/amberworkslounge.css"
+            },
+            {
+                "rule": "amberworksstairwell",
+                "files": "meta/styles/specific/amberworksstairwell.css"
+            },
+            {
+                "rule": "amberworkstower",
+                "files": "meta/styles/specific/amberworkstower.css"
+            },
+            {
                 "rule": "depths",
                 "files": "meta/styles/specific/depths.css"
             },

@@ -1,0 +1,5 @@
+#screenBg {
+    background-image: url("assets/lounge.gif") !important;
+    background-position-y: -100px !important;
+    background-position-x: -500px !important;
+}

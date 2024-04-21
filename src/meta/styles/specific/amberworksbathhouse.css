@@ -1,0 +1,6 @@
+#screenBg {
+    background-image: url("assets/swimming_pool.gif") !important;
+    background-position-y: 0px !important;
+    background-position-x: 0px !important;
+    background-size: 100% auto !important;
+}
