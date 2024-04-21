@@ -4,7 +4,7 @@
         "author": {
             "name": "KADW"
         },
-        "version": "1.1.6"
+        "version": "1.1.7"
     },
     "scripts": {
         "story": [
@@ -71,6 +71,10 @@
             {
                 "rule": "greenhousegarden",
                 "files": "meta/styles/specific/greenhousegarden.css"
+            },
+            {
+                "rule": "greenhouseovergrown",
+                "files": "meta/styles/specific/greenhouseovergrown.css"
             },
             {
                 "rule": "playcastle",
