@@ -19,6 +19,10 @@ $(function () {
     */
 
     if (!snippet.tags.includes("menu") && !snippet.tags.includes("transition")) {
+        // save location
+        localStorage.setItem("kadw_graveyard_location", snippet.name);
+
+        // add menu buttons
         const buttonTest = document.querySelector("div.menuButtons");
         if (buttonTest === null) {
             const menuButtons = document.createElement("div");
