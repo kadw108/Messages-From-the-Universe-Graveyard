@@ -85,6 +85,30 @@
                 "files": "meta/styles/specific/depths.css"
             },
             {
+                "rule": "depthsscrolls",
+                "files": "meta/styles/specific/depthsscrolls.css"
+            },
+            {
+                "rule": "depthsbridge",
+                "files": "meta/styles/specific/depthsbridge.css"
+            },
+            {
+                "rule": "depthsfountain",
+                "files": "meta/styles/specific/depthsfountain.css"
+            },
+            {
+                "rule": "depthssaint",
+                "files": "meta/styles/specific/depthssaint.css"
+            },
+            {
+                "rule": "depthspillar",
+                "files": "meta/styles/specific/depthspillar.css"
+            },
+            {
+                "rule": "depthsthrones",
+                "files": "meta/styles/specific/depthsthrones.css"
+            },
+            {
                 "rule": "dorm",
                 "files": "meta/styles/specific/dorm.css"
             },

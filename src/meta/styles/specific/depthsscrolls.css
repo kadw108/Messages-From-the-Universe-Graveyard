@@ -1,0 +1,5 @@
+#screenBg {
+    background-image: url("assets/scrolls.gif") !important;
+    background-position-y: -250px !important;
+    background-position-x: 0 !important;
+}

@@ -1,0 +1,6 @@
+#screenBg {
+    background-image: url("assets/bridge.gif") !important;
+    background-position-y: 0px !important;
+    background-position-x: 0px !important;
+    background-size: 200% auto !important;
+}
