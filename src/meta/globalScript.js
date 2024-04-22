@@ -19,8 +19,17 @@ $(function () {
     */
 
     if (!snippet.tags.includes("menu") && !snippet.tags.includes("transition")) {
-        // save location
-        localStorage.setItem("kadw_graveyard_location", snippet.name);
+
+        // save location even if site is closed and revisited
+        try {
+            localStorage.setItem("kadw_graveyard_location", snippet.name);
+            // console.log("location set (localStorage): " + snippet.name);
+        } catch (error) { // e.g. localStorage access is turned off in browser settings
+        }
+        // save location to return to it after start menu is accessed
+        // separate from localStorage save
+        s.current_location = snippet.name;
+        // console.log("location set (s): " + s.current_location);
 
         // add menu buttons
         const buttonTest = document.querySelector("div.menuButtons");
@@ -34,7 +43,7 @@ $(function () {
             const startMenu = document.createElement("div");
             startMenu.classList.add("menuPanel", "smallPanel", "absoluteAlign", "hidden");
             startMenu.setAttribute("identifier", "startMenu");
-            startMenu.innerHTML = '<p>Return to start menu? This will reset your location. Codes will remain unchanged, and messages will persist.</p> <br/> <p><a id="returnLink">Return.</a></p>';
+            startMenu.innerHTML = '<p>Return to start menu? Codes will remain unchanged, and messages will persist. This will not reset your location.</p> <br/> <p><a id="returnLink">Return.</a></p>';
 
             const screenContents = document.getElementById("screenContents");
             if (screenContents !== null && snippet.name != "begin") {

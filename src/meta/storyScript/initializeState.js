@@ -1,5 +1,6 @@
 story.transitionMessage = null;
 s.visitedSphere = 0;
+s.current_location = null;
 
 /* To preload images */
 /* From https://twinery.org/forum/discussion/8195/preloading-background-images-sugarcube-2-0-twine-2 */

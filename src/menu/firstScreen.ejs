@@ -8,28 +8,7 @@ Happened a lot and really bugged me. -->
 <div style="text-align: center;">
     <img src="assets/door.gif" alt="THE DOOR IS ETCHING ITSELF INTO CYBERSPACE"
     style="border-image: url('assets/black1.gif'); border-color: #222; border-image-slice: 9; border-width: 10px; border-image-repeat: repeat; padding: 10px; border-style: solid;">
-    <h2><a id="firstScreenEnter">ENTER?</a></h2>
+    <h2>[[ENTER?|begin]]</h2>
 </div>
-
-<%
-// transport to last visited location
-$(function () {
-    let location;
-    try {
-        location = localStorage.getItem("kadw_graveyard_location");
-    } catch (error) { // e.g. localStorage access is turned off in browser settings
-        location = "begin";
-    }
-    if (location === "firstScreen" || location === null) {
-        location = "begin";
-    }
-    console.log("location detected: " + location)
-
-    const firstScreenEnter = document.getElementById("firstScreenEnter");
-    firstScreenEnter.addEventListener("click", () => {
-        story.showSnippet(location);
-    });
-});
-%>
 
 </snippet>
