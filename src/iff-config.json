@@ -133,6 +133,10 @@
                 "files": "meta/styles/specific/playcastle.css"
             },
             {
+                "rule": "playcastlepit",
+                "files": "meta/styles/specific/playcastlepit.css"
+            },
+            {
                 "rule": "sunken",
                 "files": "meta/styles/specific/sunken.css"
             },

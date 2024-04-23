@@ -1,0 +1,5 @@
+#screenBg {
+    background-image: url("assets/ballpit.gif") !important;
+    background-position-y: -175px !important;
+    background-position-x: -200px !important;
+}
