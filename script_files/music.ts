@@ -380,17 +380,16 @@ const musicManager: MusicManager = {
     ],
 
     activateSoundtrackMusic: function(newSoundtrack: MusicAreaMap) {
-        // in case you enter the area for another ost before
-        // this timeout function executes
-        // (mainly for issues with main menu -> 1st area transition)
-
         console.log("activateSoundtrackMusic " + this.activeSoundtrack.area + " " + newSoundtrack.area);
 
+        // in case you enter the area for another ost before
+        // this timeout function executes
         if (this.activeSoundtrack === null || this.activeSoundtrack.area === newSoundtrack.area) {
 
             for (const howl of newSoundtrack.soundtrack) {
 
-                console.log("activate " + howl);
+                console.log("activate howl");
+                console.log(howl);
 
                 let maxVolume = howl["maxVolume"];
                 if (maxVolume === undefined) {
@@ -401,16 +400,6 @@ const musicManager: MusicManager = {
                     console.log("howl is unloaded. loading.");
                     howl.load();
                 }
-
-                /*
-                howl.onplay = () => {
-                    setTimeout(() => {
-                        // otherwise volume change not applied
-                        // see https://github.com/goldfire/howler.js/issues/1603 ?
-                        howl.fade(0, maxVolume, 7000);
-                    }, 100);
-                }
-                */
 
                 if (!howl.playing()) {
                     console.log("howl is not playing. playing now.");
@@ -442,7 +431,8 @@ const musicManager: MusicManager = {
             console.log("fading out " + this.activeSoundtrack.area);
             this.activeSoundtrack.soundtrack.forEach(howl => {
                 howl.fade(howl.volume(), 0, 3000);
-                console.log("3 seconds to fade out: " + howl);
+                console.log("3 seconds to fade out howl");
+                console.log(howl);
             })
         }
 
