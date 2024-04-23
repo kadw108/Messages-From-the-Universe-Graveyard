@@ -9,7 +9,7 @@ GENERAL STYLE
     --color2: #fff;
     --shadow: #ddd;
 
-    --scrollbar-foreground: #444;
+    --scrollbar-foreground: #666;
     --scrollbar-background: #222;
 
   	--screenheight: 675px;
@@ -46,13 +46,12 @@ body {
 }
 
 #bg {
-  background-image: url("assets/background.png");
   background-color: #000000;
 }
 
 #screenCover {
-  background-image: url("assets/background.png");
   background-color: #000000;
+  pointer-events: none;
 }
 
 /* Passage container */
@@ -155,15 +154,21 @@ div .bottomHalf {
   border-width: 7px;
   border-image-repeat: repeat;
 
+  /* Make scrollbar only appear when scrolling is possible */
+  overflow: auto;
+
 /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+/*
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+*/
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar for Chrome, Safari and Opera
 div .bottomHalf::-webkit-scrollbar {
   display: none;
 }
+*/
 
 /*
 CUSTOM STYLES

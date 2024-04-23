@@ -27,6 +27,9 @@
   border: 3px double #ccc;
   border-radius: 5px;
 }
+#numPad > input {
+  font-family: "MonoFont", monospace;
+}
 
 /* (C) DISPLAY */
 #numDisplay {
