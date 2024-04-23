@@ -214,7 +214,7 @@ const playcastleMusic: Array<Howl> = [
         volume: 0,
         html5: true,
         preload: "metadata"
-    }), 1),
+    }), 1.5),
 ];
 
 const hiddenMusic: Array<Howl> = [
@@ -347,74 +347,114 @@ const fireMusic: Array<Howl> = [
     }), 0.6),
 ];
 
+type MusicAreaMap = {
+    area: string,
+    soundtrack: Array<Howl>
+}
 type MusicManager = {
-    activeSoundtrack: number,
-    soundtracks: Array<Array<Howl>>,
+    activeSoundtrack: MusicAreaMap | null,
+    soundtracks: Array<MusicAreaMap>,
+    activateSoundtrackMusic: Function,
     playSoundtrack: Function
 }
 
 const musicManager: MusicManager = {
-    activeSoundtrack: -1,
-    soundtracks: [dormMusic, greenhouseMusic, sunkenMusic, introMusic, amberMusic, depthsMusic, dungeonMusic, bedroomMusic, cellMusic, bridgeMusic, playcastleMusic, hiddenMusic, glitchMusic, familiarMusic, transmissionMusic, fireMusic],
+    activeSoundtrack: null,
+    soundtracks: [
+        {area: "dorm", soundtrack: dormMusic},
+        {area: "greenhouse", soundtrack: greenhouseMusic},
+        {area: "sunken", soundtrack: sunkenMusic},
+        {area: "menu", soundtrack: introMusic},
+        {area: "amberworks", soundtrack: amberMusic},
+        {area: "depths", soundtrack: depthsMusic},
+        {area: "dungeon", soundtrack: dungeonMusic},
+        {area: "bedroom", soundtrack: bedroomMusic},
+        {area: "cell", soundtrack: cellMusic},
+        {area: "bridge", soundtrack: bridgeMusic},
+        {area: "playcastle", soundtrack: playcastleMusic},
+        {area: "hidden", soundtrack: hiddenMusic},
+        {area: "glitch", soundtrack: glitchMusic},
+        {area: "familiar", soundtrack: familiarMusic},
+        {area: "transmission", soundtrack: transmissionMusic},
+        {area: "fire", soundtrack: fireMusic},
+    ],
 
-    playSoundtrack: function(whichSoundtrack: number) {
-        if (whichSoundtrack === this.activeSoundtrack) {
+    activateSoundtrackMusic: function(newSoundtrack: MusicAreaMap) {
+        // in case you enter the area for another ost before
+        // this timeout function executes
+        // (mainly for issues with main menu -> 1st area transition)
+
+        console.log("activateSoundtrackMusic " + this.activeSoundtrack.area + " " + newSoundtrack.area);
+
+        if (this.activeSoundtrack === null || this.activeSoundtrack.area === newSoundtrack.area) {
+
+            for (const howl of newSoundtrack.soundtrack) {
+
+                console.log("activate " + howl);
+
+                let maxVolume = howl["maxVolume"];
+                if (maxVolume === undefined) {
+                    maxVolume = 1.0;
+                }
+
+                if (howl.state() === "unloaded") {
+                    console.log("howl is unloaded. loading.");
+                    howl.load();
+                }
+
+                /*
+                howl.onplay = () => {
+                    setTimeout(() => {
+                        // otherwise volume change not applied
+                        // see https://github.com/goldfire/howler.js/issues/1603 ?
+                        howl.fade(0, maxVolume, 7000);
+                    }, 100);
+                }
+                */
+
+                if (!howl.playing()) {
+                    console.log("howl is not playing. playing now.");
+                    howl.play();
+                }
+
+                setTimeout(() => {
+                    // otherwise volume change not applied
+                    // see https://github.com/goldfire/howler.js/issues/1603 ?
+                    howl.fade(0, maxVolume, 7000);
+                }, 100);
+            }
+        }
+    },
+
+    playSoundtrack: function(snippetTags: Array<string>) {
+        console.log(snippetTags);
+
+        let newSoundtrack = this.soundtracks.find((i: MusicAreaMap) => snippetTags.includes(i.area));
+        if (newSoundtrack === undefined) {
+            newSoundtrack = null;
+        }
+        else if (this.activeSoundtrack !== null && newSoundtrack.area === this.activeSoundtrack.area) {
             return;
         }
 
         // fade out currently playing ost
-        if (this.activeSoundtrack !== -1) {
-            this.soundtracks[this.activeSoundtrack].forEach(howl => {
+        if (this.activeSoundtrack !== null) {
+            console.log("fading out " + this.activeSoundtrack.area);
+            this.activeSoundtrack.soundtrack.forEach(howl => {
                 howl.fade(howl.volume(), 0, 3000);
+                console.log("3 seconds to fade out: " + howl);
             })
         }
 
-        this.activeSoundtrack = whichSoundtrack;
+        this.activeSoundtrack = newSoundtrack;
 
-        // fade in new ost
-        setTimeout(() => {
-            console.log("playing " + whichSoundtrack);
-            for (const howl of this.soundtracks[whichSoundtrack]) {
-
-                console.log(howl);    
-
-                // in case you enter the area for another ost before
-                // this timeout function executes
-                // (mainly for issues with main menu -> 1st area transition)
-                if (this.activeSoundtrack === whichSoundtrack) {
-
-
-                    let maxVolume = howl["maxVolume"];
-                    if (maxVolume === undefined) {
-                        maxVolume = 1.0;
-                    }
-
-                    if (howl.state() === "unloaded") {
-                        howl.load();
-
-                        howl.onplay = () => {
-                            setTimeout(() => {
-                                // otherwise volume change not applied
-                                // see https://github.com/goldfire/howler.js/issues/1603 ?
-                                howl.fade(0, maxVolume, 7000);
-                            }, 100);
-                        }
-
-                        howl.play();
-                    }
-                    else {
-                        if (!howl.playing()) {
-                            howl.play();
-                        }
-                        setTimeout(() => {
-                            // otherwise volume change not applied
-                            // see https://github.com/goldfire/howler.js/issues/1603 ?
-                            howl.fade(0, maxVolume, 7000);
-                        }, 100);
-                    }
-                }
-            }
-        }, 1000);
+        if (newSoundtrack !== null) {
+            // fade in new ost
+            setTimeout(() => {
+                console.log("playing " + newSoundtrack.area);
+                this.activateSoundtrackMusic(newSoundtrack);
+            }, 1000);
+        }
     }
 }
 

@@ -17,3 +17,5 @@ sed -n -i -e '/<title>/r addToHead.html' -e 1x -e '2,${x;p}' -e '${x;p}' export/
 # minify resulting html file with https://www.npmjs.com/package/html-minifier
 html-minifier --remove-comments --minify-css true --case-sensitive --sort-attributes --sort-class-name export/index.html > temp.html
 mv temp.html export/index.html
+
+echo "Build done (for real)."

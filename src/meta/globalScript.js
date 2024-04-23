@@ -64,4 +64,6 @@ $(function () {
     window.crumblingcastle.addReplaceLink();
     window.crumblingcastle.addMenuPanels();
     window.crumblingcastle.machine.editMachineDiv();
+
+    window.crumblingcastle.musicManager.playSoundtrack(snippet.tags);
 });
