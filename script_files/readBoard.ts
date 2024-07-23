@@ -45,7 +45,12 @@ const renderMessage = (messageData) => {
 
     const senderName = document.createElement("h6");
     senderName.classList.add("senderName");
-    senderName.innerText = "from: " + filter.clean(messageData.name);
+
+    try {
+        senderName.innerText = "from: " + filter.clean(messageData.name);
+    } catch (error) {
+        senderName.innerText = "from: " + messageData.name;
+    }
 
     const message = document.createElement("p");
 
