@@ -1,8 +1,5 @@
 {
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.474.0",
-    "@aws-sdk/credential-providers": "^3.474.0",
-    "@aws-sdk/lib-dynamodb": "^3.478.0",
     "bad-words": "^3.0.4",
     "howler": "^2.2.4",
     "iffinity": "^0.4.0",
