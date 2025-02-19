@@ -45,6 +45,10 @@ body {
   z-index: -1;
 }
 
+div#iff-story {
+  margin: 0;
+}
+
 #bg {
   background-color: #000000;
 }
