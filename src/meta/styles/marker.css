@@ -28,17 +28,18 @@
 /* --- */
 
 #refreshButton {
-  float: right;
-  margin-right: 5px;
-  margin-top: 5px;
   border-radius: 7px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .pageLinkContainer {
     margin: 5px;
-}
-.pageLinkContainer, .pageLinkContainer * {
-    display: inline-block;
+
+    padding-bottom: 5px;
+    position: sticky;
+    top: 0;
+    background-color: black;
 }
 .pageLinkContainer > ul {
     margin-right: 10px;

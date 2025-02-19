@@ -96,34 +96,35 @@ function createMarkerDiv() {
     markerDiv.id = "markerDiv";
     markerDiv.classList.add("absoluteAlign", "hidden", "menuPanel");
 
+    const pageLinkContainer = document.createElement("div");
+    pageLinkContainer.classList.add("pageLinkContainer");
+
     const closeButton = document.createElement("button");
     closeButton.innerText = "X";
     closeButton.type = "button";
     closeButton.id = "closeMarkerDiv";
     closeButton.classList.add("closeButton");
     closeButton.addEventListener("click", closeMarker);
+    pageLinkContainer.append(closeButton);
 
     const loadingDiv = document.createElement("div");
     loadingDiv.id = "loadingDiv";
     loadingDiv.innerHTML = "<img src='assets/loading.gif'/>";
 
-    markerDiv.append(closeButton, loadingDiv, createFetchedInfoDiv());
+    markerDiv.append(pageLinkContainer, loadingDiv, createFetchedInfoDiv(pageLinkContainer));
     return markerDiv;
 }
 
-function createFetchedInfoDiv() {
+function createFetchedInfoDiv(pageLinkContainer) {
     const fetchedInfoDiv = document.createElement("div");
     fetchedInfoDiv.id = "fetchedInfoDiv";
     fetchedInfoDiv.classList.add("hidden");
-
-    const pageLinkContainer = document.createElement("div");
-    pageLinkContainer.classList.add("pageLinkContainer");
-    pageLinkContainer.innerHTML = "<ul><li>1</li></ul><a>Next Page</a>";
 
     const refreshButton = document.createElement("button");
     refreshButton.id = "refreshButton";
     refreshButton.innerText = "Refresh";
     refreshButton.addEventListener("click", refreshClickHandler);
+    pageLinkContainer.prepend(refreshButton);
 
     const messageContainer = document.createElement("div");
     messageContainer.id = "messageContainer";
@@ -146,7 +147,7 @@ function createFetchedInfoDiv() {
     sendBox.appendChild(submitErrorDiv);
     sendBox.addEventListener("submit", submitMessageForm);
 
-    fetchedInfoDiv.append(pageLinkContainer, refreshButton, messageContainer, sendBoxButton, sendBox);
+    fetchedInfoDiv.append(messageContainer, sendBoxButton, sendBox);
     return fetchedInfoDiv;
 }
 
