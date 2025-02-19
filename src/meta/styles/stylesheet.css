@@ -56,7 +56,8 @@ body {
 
 /* Passage container */
 #passages {
-  margin: 10px auto auto auto;
+  /* margin: 10px auto auto auto; */
+  margin: 0;
   padding: 15px;
 
   width: 600px;
