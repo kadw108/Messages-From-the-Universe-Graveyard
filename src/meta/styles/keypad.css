@@ -3,72 +3,116 @@
  */
 
 /* (A) WRAPPER */
-#numWrap, #numWrap * { box-sizing: border-box; }
+#numWrap,
+#numWrap * {
+    box-sizing: border-box;
+}
 #numWrap {
-  /* (A1) FULL SCREEN COVER */
-  position: fixed;
-  top: 0; left: 0; z-index: 999;
-  width: 100vw; height: 100vh;
+    /* (A1) FULL SCREEN COVER */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
 
-  /* (A3) CENTER ON SCREEN + BACKGROUND COLOR */
-  display: flex;
-  align-items: center; justify-content: center;
-  background: rgba(0, 0, 0, 0.7);
+    /* (A3) CENTER ON SCREEN + BACKGROUND COLOR */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 /* (B) NUMPAD */
 #numPad {
-  max-width: 350px;
-  padding: 10px;
-  background: #060917;
-  margin: auto;
-  margin-top: 10px;
+    max-width: 350px;
+    padding: 10px;
+    background: #060917;
+    margin: auto;
+    margin-top: 25px;
 
-  border: 3px double #ccc;
-  border-radius: 5px;
+    border: 3px double #ccc;
+    border-radius: 5px;
 }
 #numPad > input {
-  font-family: "MonoFont", monospace;
+    font-family: "MonoFont", monospace;
 }
 
 /* (C) DISPLAY */
 #numDisplay {
-  width: 95%;
-  border: 0;
-  padding: 5px;
-  margin-bottom: 10px;
-  background: #000;
-  color: #fff;
-  font-size: 42px;
-  text-align: right;
-  border: 3px double rgba(0, 0, 0, 0);
+    width: 95%;
+    border: 0;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: #000;
+    color: #fff;
+    font-size: 42px;
+    text-align: right;
+    border: 3px double rgba(0, 0, 0, 0);
 }
-#numDisplay:focus { outline: none; }
-#numDisplay::selection { background: none; }
+#numDisplay:focus {
+    outline: none;
+}
+#numDisplay::selection {
+    background: none;
+}
 
 /* (D) BUTTONS WRAPPER */
 #numBWrap {
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 /* (E) BUTTONS */
-#numBWrap div {
-  font-size: 24px;
-  color: #fff;
-  text-align: center;
-  padding: 15px 0;
-  border: 2px outset #000;
+#numBWrap button {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    border: 2px outset #000;
 }
-#numBWrap div:hover { cursor: pointer; background-color: #333; }
-#numBWrap .num, #numBWrap .zero, #numBWrap .dot { background: #000; }
-#numBWrap .zero { grid-column: span 2; }
-#numBWrap .ok { color: #009689; background-color: #012;}
-#numBWrap .ok:hover { background-color: #101f30;}
-#numBWrap .del, #numBWrap .clr { background: #200; color: red; }
-#numBWrap .del:hover, #numBWrap .clr:hover { background: #311 }
+#numBWrap button:active {
+    -webkit-box-shadow: inset 0px 0px 4px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 4px #c1c1c1;
+    box-shadow: inset 0px 0px 4px #c1c1c1;
+    outline: none;
+}
+#numBWrap button:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+#numBWrap .num,
+#numBWrap .zero,
+#numBWrap .dot {
+    background: #000;
+}
+
+#numBWrap .zero {
+    grid-column: span 2;
+}
+#numBWrap .ok {
+    color: #009689;
+    background-color: #012;
+}
+#numBWrap .ok:hover {
+    background-color: #101f30;
+}
+
+#numBWrap .del,
+#numBWrap .clr {
+    background: #200;
+    color: red;
+}
+#numBWrap .del:hover,
+#numBWrap .clr:hover {
+    background: #311;
+}
 
 /* (F) NO DECIMAL POINTS ALLOWED */
-#numWrap.noDec .dot { display: none; }
-#numWrap.noDec .zero { grid-column: span 3; }
+#numWrap.noDec .dot {
+    display: none;
+}
+#numWrap.noDec .zero {
+    grid-column: span 3;
+}

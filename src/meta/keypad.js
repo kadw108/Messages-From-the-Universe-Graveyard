@@ -18,7 +18,8 @@ var numpad = {
     // (B2) ATTACH BUTTONS
     let hbWrap = document.getElementById("numBWrap"),
       buttonator = (txt, css, fn) => {
-        let button = document.createElement("div");
+        let button = document.createElement("button");
+        button.setAttribute("type", "button");
         button.innerHTML = txt;
         button.classList.add(css);
         button.onclick = fn;

@@ -1,45 +1,43 @@
 .whiteMarker {
-  color: inherit;
-  font-weight: bold;
+    color: inherit;
+    font-weight: bold;
 }
 .whiteMarker:hover {
-  font-weight: bold;
-  text-decoration: underline;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 #markerDiv {
-  padding: 0 0 15px 0;
+    padding: 0 0 15px 0;
 }
 
 #loadingDiv {
-  background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
 
-  height: 50px;
-  width: 50px;
-  position: relative;
-  left: 50%;
-  margin-left: -25px; /* half of width */
-  margin-top: 50px;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    left: 50%;
+    margin-left: -25px; /* half of width */
+    margin-top: 50px;
 }
-#loadingDiv > img { /* loading icon */
-  height: 100%;
+#loadingDiv > img {
+    /* loading icon */
+    height: 100%;
 }
 
 /* --- */
 
 #refreshButton {
-  border-radius: 7px;
-  margin-top: 5px;
-  margin-left: 5px;
+    border-radius: 7px;
 }
 
 .pageLinkContainer {
-    margin: 5px;
-
-    padding-bottom: 5px;
+    padding: 5px;
     position: sticky;
     top: 0;
-    background-color: black;
+    background-color: inherit;
+    background-image: inherit;
 }
 .pageLinkContainer > ul {
     margin-right: 10px;
@@ -50,22 +48,22 @@
 }
 
 .markerMessage {
-  margin: 7px;
-  padding: 5px 7px 0 7px;
-  border: 1px solid #555;
-  border-radius: 20px;
-  overflow: hidden;
+    margin: 7px;
+    padding: 5px 7px 0 7px;
+    border: 1px solid #555;
+    border-radius: 20px;
+    overflow: hidden;
 
-  background-color: #000;
+    background-color: #000;
 }
 
 #sendBoxButton {
-  margin: 15px;
-  margin-bottom: -3px;
+    margin: 15px;
+    margin-bottom: -3px;
 
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  padding: 4px 10px 4px 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 4px 10px 4px 10px;
 }
 
 #sendBox {
@@ -85,7 +83,8 @@
     padding: 3px 6px 3px 6px;
     border: 1px solid #aaa;
 }
-#nameInput, #messageInput {
+#nameInput,
+#messageInput {
     width: 95%;
     vertical-align: top;
     background-color: #111;
@@ -95,10 +94,77 @@
     margin: 5px 0 5px 0;
     border-radius: 5px;
 }
-#nameInput:invalid, #messageInput:invalid {
+#nameInput:invalid,
+#messageInput:invalid {
     border: 1px groove red;
 }
 
 #submitErrorDiv {
-  color: red;
+    color: red;
+}
+
+/* -- Loading symbol (from https://loading.io/css/) --- */
+
+.lds-ellipsis {
+    /* change color here */
+    color: #1c4c5b;
+}
+.lds-ellipsis,
+.lds-ellipsis div {
+    box-sizing: border-box;
+}
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 33.33333px;
+    width: 13.33333px;
+    height: 13.33333px;
+    border-radius: 50%;
+    background: currentColor;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
 }
