@@ -61,7 +61,7 @@ div#iff-story {
 /* Passage container */
 #passages {
   /* margin: 10px auto auto auto; */
-  margin: 0;
+  margin: 0 auto;
   padding: 15px;
 
   width: 600px;
