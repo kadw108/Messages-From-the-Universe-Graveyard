@@ -11,6 +11,7 @@ async function openMarker(event) {
         await ref.getBoard(boardNumber);
 
         document.getElementById("loadingDiv")?.classList.add("hidden");
+        createPageLinkContainer();
         document.getElementById("fetchedInfoDiv")?.classList.remove("hidden");
     }
 }
@@ -41,8 +42,7 @@ function showHideSendBox(event) {
         event.target.innerText = "Leave a Message?";
         event.target.style.borderBottom = "1px solid #aaa";
         document.getElementById("sendBox").classList.add("hidden");
-    }
-    else {
+    } else {
         event.target.innerText = "Hide";
         event.target.style.borderBottom = "none";
         document.getElementById("sendBox").classList.remove("hidden");
@@ -60,36 +60,35 @@ function enableSendButton() {
 }
 
 async function submitMessageForm(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  const submitButton = document.querySelector("#sendBox > button");
-  submitButton.disabled = true;
-  submitButton.innerText = "Please Wait";
+    const submitButton = document.querySelector("#sendBox > button");
+    submitButton.disabled = true;
+    submitButton.innerText = "Please Wait";
 
-  let nameInput = document.getElementById("nameInput");
-  let messageInput = document.getElementById("messageInput");
+    let nameInput = document.getElementById("nameInput");
+    let messageInput = document.getElementById("messageInput");
 
-  const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
-  const name = nameInput.value;
-  const message = messageInput.value;
+    const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
+    const name = nameInput.value;
+    const message = messageInput.value;
 
-  const ref = window.crumblingcastle;
-  const result = await ref.addMessage(boardNumber, name, message);
-  if (result.success === false) {
-    console.log(result);
+    const ref = window.crumblingcastle;
+    const result = await ref.addMessage(boardNumber, name, message);
+    if (result.success === false) {
+        console.log(result);
 
-    failures++;
-    const errorDiv = document.getElementById("submitErrorDiv");
-    errorDiv.innerText = "{An error occured while writing the message. Please wait a short time and try again. Failure count: " + failures + ".}"
+        failures++;
+        const errorDiv = document.getElementById("submitErrorDiv");
+        errorDiv.innerText = "{An error occured while writing the message. Please wait a short time and try again. Failure count: " + failures + ".}";
 
-    enableSendButton();
-  }
-  else {
-    await refresh(document.getElementById("refreshButton")).then(enableSendButton);
+        enableSendButton();
+    } else {
+        await refresh(document.getElementById("refreshButton")).then(enableSendButton);
 
-    nameInput.value = "";
-    messageInput.value = "";
-  }
+        nameInput.value = "";
+        messageInput.value = "";
+    }
 }
 
 function createMarkerDiv() {
@@ -97,36 +96,53 @@ function createMarkerDiv() {
     markerDiv.id = "markerDiv";
     markerDiv.classList.add("absoluteAlign", "hidden", "menuPanel");
 
+    const loadingDiv = document.createElement("div");
+    loadingDiv.id = "loadingDiv";
+    // loadingDiv.innerHTML = "<img src='assets/loading.gif'/>";
+    loadingDiv.innerHTML = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
+
+    markerDiv.append(loadingDiv, createFetchedInfoDiv());
+    return markerDiv;
+}
+
+function createPageLinkContainer() {
     const pageLinkContainer = document.createElement("div");
-    pageLinkContainer.classList.add("pageLinkContainer");
+    pageLinkContainer.id = "pageLinkContainer";
 
     const closeButton = document.createElement("button");
     closeButton.innerText = "X";
     closeButton.type = "button";
     closeButton.id = "closeMarkerDiv";
     closeButton.classList.add("closeButton");
-    closeButton.addEventListener("click", closeMarker);
-    pageLinkContainer.append(closeButton);
-
-    const loadingDiv = document.createElement("div");
-    loadingDiv.id = "loadingDiv";
-    // loadingDiv.innerHTML = "<img src='assets/loading.gif'/>";
-    loadingDiv.innerHTML = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
-
-    markerDiv.append(pageLinkContainer, loadingDiv, createFetchedInfoDiv(pageLinkContainer));
-    return markerDiv;
-}
-
-function createFetchedInfoDiv(pageLinkContainer) {
-    const fetchedInfoDiv = document.createElement("div");
-    fetchedInfoDiv.id = "fetchedInfoDiv";
-    fetchedInfoDiv.classList.add("hidden");
 
     const refreshButton = document.createElement("button");
     refreshButton.id = "refreshButton";
     refreshButton.innerText = "Refresh";
-    refreshButton.addEventListener("click", refreshClickHandler);
-    pageLinkContainer.prepend(refreshButton);
+
+    closeButton.disabled = true;
+    refreshButton.disabled = true;
+
+    // prevent event listeners from responding to events that happened before they were added
+    // not sure if this does anything, frankly
+    // clicking in the AREA of the close button while the marker is loading can cause a deferred close
+    // event to happen once everything is loaded. It's hard to trigger so I'm leaving it be for now.
+    // see https://stackoverflow.com/questions/68395246/prevent-new-eventlistener-from-triggering-for-event-that-occurred-just-before-th
+    setTimeout(() => {
+        closeButton.disabled = false;
+        refreshButton.disabled = false;
+
+        closeButton.addEventListener("click", closeMarker);
+        refreshButton.addEventListener("click", refreshClickHandler);
+    }, 10);
+
+    pageLinkContainer.append(refreshButton, closeButton);
+    document.getElementById("markerDiv").prepend(pageLinkContainer);
+}
+
+function createFetchedInfoDiv() {
+    const fetchedInfoDiv = document.createElement("div");
+    fetchedInfoDiv.id = "fetchedInfoDiv";
+    fetchedInfoDiv.classList.add("hidden");
 
     const messageContainer = document.createElement("div");
     messageContainer.id = "messageContainer";
@@ -157,7 +173,7 @@ $(function () {
     const whiteMarkerList = Array.from(document.getElementsByClassName("whiteMarker"));
 
     if (whiteMarkerList.length > 0) {
-        whiteMarkerList.forEach(e => {
+        whiteMarkerList.forEach((e) => {
             e.addEventListener("click", openMarker);
         });
 

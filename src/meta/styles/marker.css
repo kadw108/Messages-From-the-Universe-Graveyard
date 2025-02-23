@@ -12,18 +12,11 @@
 }
 
 #loadingDiv {
-    background-color: rgba(0, 0, 0, 0.5);
-
-    height: 50px;
     width: 50px;
     position: relative;
     left: 50%;
     margin-left: -25px; /* half of width */
     margin-top: 50px;
-}
-#loadingDiv > img {
-    /* loading icon */
-    height: 100%;
 }
 
 /* --- */
@@ -32,17 +25,17 @@
     border-radius: 7px;
 }
 
-.pageLinkContainer {
+#pageLinkContainer {
     padding: 5px;
     position: sticky;
     top: 0;
     background-color: inherit;
     background-image: inherit;
 }
-.pageLinkContainer > ul {
+#pageLinkContainer > ul {
     margin-right: 10px;
 }
-.pageLinkContainer li {
+#pageLinkContainer li {
     border: 1px solid white;
     padding: 4px;
 }

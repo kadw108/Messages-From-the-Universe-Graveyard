@@ -100,15 +100,4 @@ const getBoard = async (boardNumber: number) => {
     }
 };
 
-/*
-TODO add pagination
-    <!-- <div class="pageLinkContainer">
-        <ul>
-            <li class="pageLink">1</li><li class="pageLink">2</li><li class="pageLink">3</li><li class="pageLink">...</li><li class="pageLink">78</li>
-        </ul>
-
-        <a>Next Page</a>
-    </div> -->
-*/
-
 export { getBoard };
