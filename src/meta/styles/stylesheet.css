@@ -21,6 +21,7 @@ GENERAL STYLE
 body {
   /* Foreground, Background */
   scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+  image-rendering: pixelated;
 }
 .styled-scrollbars::-webkit-scrollbar {
   width: 10px; /* Mostly for vertical scrollbars */
