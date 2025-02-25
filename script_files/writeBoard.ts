@@ -1,3 +1,5 @@
+import { SERVER_URL } from "./server_url";
+
 const addMessage = async (boardNumber: number, inputName: string, inputMessage: string) => {
     if (typeof boardNumber !== "number") {
         return;
@@ -10,7 +12,7 @@ const addMessage = async (boardNumber: number, inputName: string, inputMessage: 
     }
 
     try {
-        const result = await fetch("https://crumbling-castle-server.fly.dev/write/" + boardNumber, {
+        const result = await fetch(SERVER_URL + "/write/" + boardNumber, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

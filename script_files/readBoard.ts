@@ -1,4 +1,5 @@
 import Filter from "bad-words";
+import { SERVER_URL } from "./server_url";
 const filter = new Filter();
 filter.removeWords("god", "hell", "ball", "balls");
 // @ts-ignore
@@ -88,7 +89,7 @@ const getBoard = async (boardNumber: number) => {
     }
 
     try {
-        const result = await fetch("https://crumbling-castle-server.fly.dev/read/" + boardNumber);
+        const result = await fetch(SERVER_URL + "/read/" + boardNumber);
         const resultData = await result.json();
         renderBoard(resultData.success, resultData.data);
     } catch (err) {
