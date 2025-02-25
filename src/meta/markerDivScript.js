@@ -21,8 +21,7 @@ function closeMarker() {
 }
 
 async function refresh(refreshButton) {
-    // refreshButton.innerHTML = "<img src='assets/loading.gif' style='width: 18px;'/>";
-    refreshButton.innerHTML = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
+    refreshButton.innerHTML = '<div style="width: 50px; height: 12.5px;"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>';
     refreshButton.disabled = true;
 
     const ref = window.crumblingcastle;
@@ -98,7 +97,6 @@ function createMarkerDiv() {
 
     const loadingDiv = document.createElement("div");
     loadingDiv.id = "loadingDiv";
-    // loadingDiv.innerHTML = "<img src='assets/loading.gif'/>";
     loadingDiv.innerHTML = '<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>';
 
     markerDiv.append(loadingDiv, createFetchedInfoDiv());
