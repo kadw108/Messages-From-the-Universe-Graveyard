@@ -5,7 +5,11 @@ function addMaxVolume(howl: Howl, maxVolume: number) {
     return howl;
 }
 
+/*
 const introMusic: Array<Howl> = [
+    // removed because I kept running into errors
+    // where it wouldn't load fast enough for the menu,
+    // would start playing after you entered the first area, and never stop
     new Howl({
         src: ["assets/music_real/crumblingcastle_distor6.ogg"],
         loop: true,
@@ -15,7 +19,7 @@ const introMusic: Array<Howl> = [
         html5: true,
         preload: "metadata"
     })
-];
+]; */
 
 const dormMusic: Array<Howl> = [
     addMaxVolume(new Howl({
@@ -364,7 +368,7 @@ const musicManager: MusicManager = {
         {area: "dorm", soundtrack: dormMusic},
         {area: "greenhouse", soundtrack: greenhouseMusic},
         {area: "sunken", soundtrack: sunkenMusic},
-        {area: "menu", soundtrack: introMusic},
+        // {area: "menu", soundtrack: introMusic},
         {area: "amberworks", soundtrack: amberMusic},
         {area: "depths", soundtrack: depthsMusic},
         {area: "dungeon", soundtrack: dungeonMusic},
