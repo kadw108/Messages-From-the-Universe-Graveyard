@@ -7,7 +7,7 @@ import { addMenuPanels } from "./addMenuPanels";
 import { coordinateMap } from "./coordinateMap";
 import { randItem, showSnippetWrapper } from "./utility";
 import { machine } from "./addMachineScript";
-import {createMarkerDiv, createPageLinkContainer} from "./markerDivScript";
+import {createMarkerDiv, initialLoadDone} from "./markerDivScript";
 
 export {
   getBoard, addMessage,
@@ -16,5 +16,5 @@ export {
   coordinateMap,
   randItem, showSnippetWrapper,
   machine,
-  createMarkerDiv, createPageLinkContainer
+  createMarkerDiv, initialLoadDone
 }

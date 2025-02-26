@@ -11,9 +11,7 @@ async function openMarker(event) {
         const ref = window.crumblingcastle;
         await ref.getBoard(boardNumber);
 
-        document.getElementById("loadingDiv")?.classList.add("hidden");
-        ref.createPageLinkContainer();
-        document.getElementById("fetchedInfoDiv")?.classList.remove("hidden");
+        ref.initialLoadDone();
     }
 }
 

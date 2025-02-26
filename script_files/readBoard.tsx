@@ -1,4 +1,4 @@
-import {h} from "dom-chef";
+import { h } from "dom-chef";
 
 import Filter from "bad-words";
 import { SERVER_URL } from "./server_url";
@@ -19,9 +19,9 @@ const renderBoard = (success: boolean, data: any) => {
 
         let errorDiv;
         if (data instanceof Array && data.length > 1) {
-            errorDiv = <div><p style={{color: "red", margin: "10px"}}>{data[0]}</p></div>;
+            errorDiv = <div><p style={{ color: "red", margin: "10px" }}>{data[0]}</p></div>;
         } else {
-            errorDiv.innerHTML = <div><p style={{color: "red", margin: "10px"}}>An error occured while reading messages. Please wait a short while and try again.</p></div>
+            errorDiv.innerHTML = <div><p style={{ color: "red", margin: "10px" }}>An error occured while reading messages. Please wait a short while and try again.</p></div>
         }
 
         messageContainer.innerHTML = "";
@@ -40,14 +40,9 @@ const renderBoard = (success: boolean, data: any) => {
             const div = renderMessage(messageData);
             newMessageContainer.append(div);
         });
-       
-        if (data.lastEvaluatedKey) {
-            // @ts-expect-error
-            window.crumblingcastle.lastEvaluatedKey = data.lastEvaluatedKey;
 
-            const loadButton = <button>Load More</button>;
-            messageContainer.append(loadButton);
-        }
+        // @ts-expect-error
+        window.crumblingcastle.lastEvaluatedKey = data.lastEvaluatedKey;
     }
 };
 
@@ -101,10 +96,10 @@ const getBoard = async (boardNumber: number) => {
 
     try {
         let url = SERVER_URL + "/read/" + boardNumber;
+
         // @ts-expect-error
         const startKey = window.crumblingcastle.lastEvaluatedKey;
         if (startKey && startKey.board === boardNumber) {
-            console.log("WE HAVE A START KEY", startKey);
             url += "/" + startKey.id + "/" + startKey.time;
         }
 
