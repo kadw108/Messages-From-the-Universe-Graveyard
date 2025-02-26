@@ -19,17 +19,13 @@ function lastEvaluatedKeyExists() {
 
 function addInfiniteScroll() {
     function observeLastLoadedMessage(observer: IntersectionObserver) {
+        // the very last .markerMessage in the markerDiv/most recently loaded .markerMessage
         const lastLoadedMessage = document.querySelector("#messageContainer div:last-child .markerMessage:last-child");
-        console.log("lastLoadedMessage:", lastLoadedMessage, lastLoadedMessage.textContent);
         observer.observe(lastLoadedMessage);
     }
 
     async function handleIntersect(entries: Array<IntersectionObserverEntry>) {
-        console.log(entries);
-
         if (entries[0].isIntersecting && lastEvaluatedKeyExists()) {
-            console.log("observer: target in load range");
-
             observer.disconnect();
             await loadMore();
 
@@ -40,10 +36,16 @@ function addInfiniteScroll() {
     }
 
     const observerOptions = {
-        // root: null, // viewport of target
-        root: document.getElementById("markerDiv"), // viewport of target
-        rootMargin: "0px",
-        threshold: 0.75
+        // viewport of scrolling ancestor element
+        // api tracks intersection of target and root
+        root: document.getElementById("markerDiv"),
+        rootMargin: "5px",
+
+        /* can't have a too-big threshold value or callback won't trigger
+        for message divs that are so long you might not
+        be able to fit the given percentage inside #markerDiv
+        so I made it 0 to be safe */
+        threshold: 0
     };
 
     const observer = new IntersectionObserver(handleIntersect, observerOptions);
@@ -61,6 +63,13 @@ async function loadMore() {
 
     const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
     await getBoard(boardNumber);
+
+    if (lastEvaluatedKeyExists()) {
+        console.log("readBoard finished, still more to be loaded");
+    }
+    else {
+        console.log("readBoard finished - all messages loaded");
+    }
 
     loading.remove();
 }
