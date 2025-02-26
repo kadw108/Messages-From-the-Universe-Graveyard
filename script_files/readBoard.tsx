@@ -1,3 +1,5 @@
+import {h} from "dom-chef";
+
 import Filter from "bad-words";
 import { SERVER_URL } from "./server_url";
 const filter = new Filter();
@@ -15,11 +17,11 @@ const renderBoard = (success: boolean, data: any) => {
     if (!success) {
         console.log(data);
 
-        const errorDiv = document.createElement("div");
+        let errorDiv;
         if (data instanceof Array && data.length > 1) {
-            errorDiv.innerHTML = "<p style='color: red; margin: 10px;'>{" + data[0] + "}</p>";
+            errorDiv = <div><p style={{color: "red", margin: "10px"}}>{data[0]}</p></div>;
         } else {
-            errorDiv.innerHTML = "<p style='color: red; margin: 10px;'>{An error occured while reading messages. Please wait a short while and try again.}</p>";
+            errorDiv.innerHTML = <div><p style={{color: "red", margin: "10px"}}>An error occured while reading messages. Please wait a short while and try again.</p></div>
         }
 
         messageContainer.innerHTML = "";
@@ -28,15 +30,24 @@ const renderBoard = (success: boolean, data: any) => {
         return;
     }
 
-    messageContainer.innerHTML = "";
-
-    if (data.length === 0) {
+    if (data.items.length === 0) {
         messageContainer.innerHTML = "<p style='margin: 15px;'>Nothing here.</p>";
     } else {
-        data.forEach((messageData) => {
+        const newMessageContainer = <div></div>;
+        messageContainer.append(newMessageContainer);
+
+        data.items.forEach((messageData) => {
             const div = renderMessage(messageData);
-            messageContainer.append(div);
+            newMessageContainer.append(div);
         });
+       
+        if (data.lastEvaluatedKey) {
+            // @ts-expect-error
+            window.crumblingcastle.lastEvaluatedKey = data.lastEvaluatedKey;
+
+            const loadButton = <button>Load More</button>;
+            messageContainer.append(loadButton);
+        }
     }
 };
 
@@ -89,7 +100,15 @@ const getBoard = async (boardNumber: number) => {
     }
 
     try {
-        const result = await fetch(SERVER_URL + "/read/" + boardNumber);
+        let url = SERVER_URL + "/read/" + boardNumber;
+        // @ts-expect-error
+        const startKey = window.crumblingcastle.lastEvaluatedKey;
+        if (startKey && startKey.board === boardNumber) {
+            console.log("WE HAVE A START KEY", startKey);
+            url += "/" + startKey.id + "/" + startKey.time;
+        }
+
+        const result = await fetch(url);
         const resultData = await result.json();
         renderBoard(resultData.success, resultData.data);
     } catch (err) {

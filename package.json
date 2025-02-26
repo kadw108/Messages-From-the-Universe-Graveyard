@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "bad-words": "^3.0.4",
+    "dom-chef": "^5.1.1",
     "howler": "^2.2.4",
     "iffinity": "^0.4.0",
     "uuid": "^9.0.1"
