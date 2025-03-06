@@ -1,4 +1,4 @@
-/* Part of this was split off into markerDivScript.tsx for organization. */
+/* Most of this was split off into script_files/readMarkerDiv.tsx and writeMarkerDiv.tsx for organization. */
 
 let markerOpened = false;
 

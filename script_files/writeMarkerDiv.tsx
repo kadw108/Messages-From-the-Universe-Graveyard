@@ -1,6 +1,11 @@
+/*
+Contains functions to support the 'Send Message' feature in a marker div.
+Ultimately exports addEndHtml which is used by readMarkerDiv.
+*/
+
 import { h } from "dom-chef";
 import { addMessage } from "./writeBoard";
-import { loadMore } from "./markerDivScript";
+import { loadMore } from "./readMarkerDiv";
 
 function addEndHtml() {
     if (document.getElementById("sendBox") === null) {

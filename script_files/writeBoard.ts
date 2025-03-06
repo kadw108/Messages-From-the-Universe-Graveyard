@@ -1,3 +1,7 @@
+/* 
+Used by writeMarkerDiv.tsx.
+*/
+
 import { SERVER_URL } from "./server_url";
 
 const addMessage = async (boardNumber: number, inputName: string, inputMessage: string) => {
@@ -22,7 +26,7 @@ const addMessage = async (boardNumber: number, inputName: string, inputMessage: 
         const resultData = await result.json();
         return resultData;
     } catch (err) {
-        return {success: false, data: err};
+        return { success: false, data: err };
     }
 };
 

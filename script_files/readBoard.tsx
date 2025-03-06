@@ -1,3 +1,7 @@
+/*
+Used by readMarkerDiv.tsx.
+*/
+
 import { h } from "dom-chef";
 
 import Filter from "bad-words";

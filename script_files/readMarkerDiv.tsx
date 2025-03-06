@@ -1,10 +1,11 @@
 /* 
-Split off from markerDivScript.js for organization.
-All functions eventually called by markerDivScript.js.
+Functions to support loading data into a markerDiv.
+Used by src/meta/markerDivScript.js.
+Uses readBoard.tsx.
 */
 
 import { getBoard } from "./readBoard";
-import { addEndHtml } from "./markerDivSend";
+import { addEndHtml } from "./writeMarkerDiv";
 import { h } from "dom-chef";
 
 function loadingNotDone() {
