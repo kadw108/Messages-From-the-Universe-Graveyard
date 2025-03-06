@@ -53,7 +53,7 @@ export const machine = {
     },
 
     editMachineDiv: function() {
-        if (document.querySelectorAll(".menuPanel[identifier='machine']").length > 0) {
+        if (document.querySelectorAll("dialog.menuPanel[identifier='machine']").length > 0) {
             Array.from(document.getElementsByClassName("activateLink")).forEach(e => {
                 e.addEventListener("click", machine.use);
             });
@@ -66,7 +66,7 @@ export const machine = {
                 return;
             }
             (coordinateInput as HTMLInputElement).onkeydown = (event) => {
-                if (['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code)) {
+                if (['Backspace','Delete','ArrowLeft','ArrowRight', 'Tab'].includes(event.code)) {
                     return true;
                 }
                 

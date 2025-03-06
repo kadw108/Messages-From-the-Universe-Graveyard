@@ -18,7 +18,7 @@ function openMenuPanel(event) {
         return;
     }
 
-    replacer.showModal();
+    replacer.show();
 
     const bg = document.getElementById("screenCover");
     if (bg === null) {
@@ -26,6 +26,11 @@ function openMenuPanel(event) {
     }
     bg.style.zIndex = "19";
     bg.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+
+    document.querySelectorAll("#iff-snippet > div").forEach((e) => {
+        (e as HTMLDivElement).inert = true;
+    });
+    (document.querySelector("div.menuButtons") as HTMLDivElement).inert = true;
 }
 
 function closeMenuPanelHandler(menuPanel) {
@@ -37,6 +42,11 @@ function closeMenuPanelHandler(menuPanel) {
             return;
         }
         bg.style.zIndex = "-1";
+
+        document.querySelectorAll("#iff-snippet > div").forEach((e) => {
+            (e as HTMLDivElement).inert = false;
+        });
+        (document.querySelector("div.menuButtons") as HTMLDivElement).inert = false;
     }
 }
 
