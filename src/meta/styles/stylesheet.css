@@ -334,10 +334,12 @@ a:hover {
   text-decoration: inherit;
   color: #446699;
 }
-.hiddenLink a {
+.hiddenLink button {
+  border: none;
   font-weight: inherit;
   text-decoration: inherit;
   color: inherit;
+  font-size: 100%;
 }
 a.outsideLink {
   color: #aac0cf;
@@ -359,7 +361,11 @@ button.whiteMarker {
   background-color: inherit;
   color: inherit;
   font-family: inherit;
+  font-size: 100%;
   border: none;
+
+  text-decoration: underline;
+  font-weight: 700;
 }
 button:not(.whiteMarker) {
   background-color: #000;
@@ -368,7 +374,7 @@ button:not(.whiteMarker) {
 
   font-family: 'MonoFont', monospace;
 }
-button:not(.whiteMarker):hover {
+button:hover {
   background-color: #444;
 }
 .linkReplaced, .linkHider {

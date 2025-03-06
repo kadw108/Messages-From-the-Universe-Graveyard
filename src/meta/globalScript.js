@@ -37,13 +37,12 @@ $(function () {
             const menuButtons = document.createElement("div");
             menuButtons.classList.add("menuButtons", "blackBg2");
 
-            // menuButtons.innerHTML = '<button type="button" class="menuButton" id="inventoryButton">Inventory</button><button type="button" class="menuButton" id="mapButton">Skills</button><button type="button" class="menuButton" id="partyButton">Crafting</button>';
             menuButtons.innerHTML = '<button type="button" class="menuButton panelOpener" id="startButton" identifier="startMenu">Start</button>';
 
-            const startMenu = document.createElement("div");
-            startMenu.classList.add("menuPanel", "smallPanel", "absoluteAlign", "hidden");
+            const startMenu = document.createElement("dialog");
+            startMenu.classList.add("menuPanel", "smallPanel", "absoluteAlign");
             startMenu.setAttribute("identifier", "startMenu");
-            startMenu.innerHTML = '<p>Return to start menu? Codes will remain unchanged, and messages will persist. This will not reset your location.</p> <br/> <p><a id="returnLink">Return.</a></p>';
+            startMenu.innerHTML = '<p>Return to start menu? Codes will remain unchanged, and messages will persist. This will not reset your location.</p> <br/><button type="button" id="returnLink">Return.</button>';
 
             const screenContents = document.getElementById("screenContents");
             if (screenContents !== null && snippet.name != "begin") {

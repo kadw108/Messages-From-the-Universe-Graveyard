@@ -24,3 +24,17 @@
 #markerDiv button:hover {
     background-color: #0aa;
 }
+
+.swimUp button, .drift button {
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  border: none;
+
+  text-decoration: underline;
+  font-weight: 700;
+}
+.swimUp button:hover, .drift button:hover {
+    color: #888;
+}
