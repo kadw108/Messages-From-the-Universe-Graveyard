@@ -22,10 +22,6 @@
 
 /* --- */
 
-#refreshButton {
-    border-radius: 7px;
-}
-
 #pageLinkContainer {
     padding: 5px;
     position: sticky;
@@ -51,7 +47,7 @@
     background-color: #000;
 }
 
-#sendBoxButton {
+.endButton {
     margin: 15px;
     margin-bottom: -3px;
 

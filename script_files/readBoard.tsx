@@ -41,8 +41,16 @@ const renderBoard = (success: boolean, data: any) => {
             newMessageContainer.append(div);
         });
 
-        // @ts-expect-error
-        window.crumblingcastle.lastEvaluatedKey = data.lastEvaluatedKey;
+        if (data.lastEvaluatedKey) {
+            // @ts-expect-error
+            window.crumblingcastle.lastEvaluatedKey = data.lastEvaluatedKey;
+            // @ts-expect-error
+            window.crumblingcastle.loadingDone = false;
+        }
+        else {
+            // @ts-expect-error
+            window.crumblingcastle.loadingDone = true;
+        }
     }
 };
 

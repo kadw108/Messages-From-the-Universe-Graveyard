@@ -4,17 +4,21 @@ All functions eventually called by markerDivScript.js.
 */
 
 import { getBoard } from "./readBoard";
+import { addEndHtml } from "./markerDivSend";
 import { h } from "dom-chef";
-import { addMessage } from "./writeBoard";
 
-function lastEvaluatedKeyExists() {
+function loadingNotDone() {
+    // @ts-expect-error
+    return !window.crumblingcastle.loadingDone;
+    /*
     const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
 
     // @ts-expect-error
-    if (window.crumblingcastle.lastEvaluatedKey && window.crumblingcastle.lastEvaluatedKey.board === boardNumber) {
+    if (!window.crumblingcastle.loadingDone && window.crumblingcastle.lastEvaluatedKey && window.crumblingcastle.lastEvaluatedKey.board === boardNumber) {
         return true;
     }
     return false;
+    */
 }
 
 function addInfiniteScroll() {
@@ -25,7 +29,13 @@ function addInfiniteScroll() {
     }
 
     async function handleIntersect(entries: Array<IntersectionObserverEntry>) {
-        if (entries[0].isIntersecting && lastEvaluatedKeyExists()) {
+        // the isIntersecting check exists mainly because 
+        // calling observer.observe() triggers the observer callback
+        // (https://stackoverflow.com/a/53385264)
+        // and without the check this would lead to an endless
+        // loop that loads every message the moment the board is opened.
+
+        if (entries[0].isIntersecting && loadingNotDone()) {
             observer.disconnect();
             await loadMore();
 
@@ -41,10 +51,10 @@ function addInfiniteScroll() {
         root: document.getElementById("markerDiv"),
         rootMargin: "5px",
 
-        /* can't have a too-big threshold value or callback won't trigger
-        for message divs that are so long you might not
-        be able to fit the given percentage inside #markerDiv
-        so I made it 0 to be safe */
+        // can't have a too-big threshold value or callback won't trigger
+        // for message divs that are so long you might not
+        // be able to fit the given percentage inside #markerDiv
+        // so I made it 0 to be safe
         threshold: 0
     };
 
@@ -64,82 +74,17 @@ async function loadMore() {
     const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
     await getBoard(boardNumber);
 
-    if (lastEvaluatedKeyExists()) {
-        console.log("readBoard finished, still more to be loaded");
-    }
-    else {
-        console.log("readBoard finished - all messages loaded");
+    const isNotDone = loadingNotDone();
+    if (isNotDone) {
+        console.log("readBoard runs -  still more to be loaded");
+    } else {
+        console.log("readBoard runs - all messages loaded");
+        addEndHtml();
     }
 
     loading.remove();
-}
 
-async function refresh(refreshButton) {
-    refreshButton.innerHTML = "";
-    refreshButton.append(<div style={{ width: "50px", height: "12.5px" }}><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>);
-    refreshButton.disabled = true;
-
-    const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
-    await getBoard(boardNumber);
-
-    refreshButton.innerHTML = "Refresh";
-    refreshButton.disabled = false;
-}
-
-async function refreshClickHandler(event) {
-    refresh(event.target);
-}
-
-function showHideSendBox(event) {
-    if (event.target.innerText === "Hide") {
-        event.target.innerText = "Leave a Message?";
-        event.target.style.borderBottom = "1px solid #aaa";
-        document.getElementById("sendBox").classList.add("hidden");
-    } else {
-        event.target.innerText = "Hide";
-        event.target.style.borderBottom = "none";
-        document.getElementById("sendBox").classList.remove("hidden");
-    }
-}
-
-function enableSendButton() {
-    setTimeout(() => {
-        const submitButton = document.querySelector("#sendBox > button") as HTMLButtonElement;
-        if (submitButton !== null) {
-            submitButton.disabled = false;
-            submitButton.innerText = "Send";
-        }
-    }, 1000);
-}
-
-async function submitMessageForm(event) {
-    event.preventDefault();
-
-    const submitButton = document.querySelector("#sendBox > button") as HTMLButtonElement;
-    submitButton.disabled = true;
-    submitButton.innerText = "Please Wait";
-
-    let nameInput = document.getElementById("nameInput") as HTMLInputElement;
-    let messageInput = document.getElementById("messageInput") as HTMLInputElement;
-
-    const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
-    const name = nameInput.value;
-    const message = messageInput.value;
-
-    const result = await addMessage(boardNumber, name, message);
-    if (result.success === false) {
-        console.log(result);
-
-        const errorDiv = document.getElementById("submitErrorDiv");
-        errorDiv.innerText = "{An error occured while writing the message. Please wait a short time and try again.}";
-
-        enableSendButton();
-    } else {
-        await refresh(document.getElementById("refreshButton")).then(enableSendButton);
-
-        nameInput.value = "";
-        messageInput.value = "";
-    }
+    return isNotDone;
 }
 
 function createMarkerDiv() {
@@ -150,23 +95,6 @@ function createMarkerDiv() {
 
         <div id="fetchedInfoDiv" className="hidden">
             <div id="messageContainer"></div>
-
-            <button id="sendBoxButton" onClick={showHideSendBox}>Leave a Message?</button>
-
-            <form id="sendBox" className="hidden" onSubmit={submitMessageForm}>
-                <h6>Leave a Message?</h6>
-                <div>
-                    <label htmlFor="nameInput">Name <small>[3-32 characters]</small></label>
-                    <input type="text" maxLength={32} minLength={3} id="nameInput" title="Name from 3 to 32 characters."></input>
-                </div>
-                <div>
-                    <label htmlFor="messageInput">Message <small>[50-2750 characters]</small></label>
-                    <textarea id="messageInput" rows={10} maxLength={2750} minLength={50} title="Message from 50 to 2750 characters."></textarea>
-                </div>
-
-                <button type="submit">Send</button>
-                <div id="submitErrorDiv"></div>
-            </form>
         </div>
     </div>;
 }
@@ -177,6 +105,14 @@ function initialLoadDone() {
     const pageLinkContainer = <div id="pageLinkContainer" style={{ height: "30px" }}>
         {closeButton}
     </div>;
+
+    /*
+    // @ts-expect-error
+    if (window.crumblingcastle.lastEvaluatedKey) {
+        // @ts-expect-error
+        window.crumblingcastle.loadingDone = false;
+    }
+    */
 
     // prevent event listeners from responding to events that happened before they were added
     // not sure if this does anything, frankly
@@ -195,4 +131,4 @@ function initialLoadDone() {
     addInfiniteScroll();
 }
 
-export { createMarkerDiv, initialLoadDone };
+export { createMarkerDiv, initialLoadDone, loadMore };
