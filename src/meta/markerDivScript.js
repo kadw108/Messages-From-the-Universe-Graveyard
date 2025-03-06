@@ -3,7 +3,7 @@
 let markerOpened = false;
 
 async function openMarker(event) {
-    document.getElementById("markerDiv").classList.remove("hidden");
+    document.getElementById("markerDiv").open = true;
     if (!markerOpened) {
         markerOpened = true;
 

@@ -188,8 +188,8 @@ CUSTOM STYLES
   border: 1px dotted #ccc;
   border-radius: 10px;
 
-  height: 90%;
-  width: 90%;
+  height: calc(100% - 20px);
+  width: calc(100% - 10px);
 }
 
 .hoverDiv {
