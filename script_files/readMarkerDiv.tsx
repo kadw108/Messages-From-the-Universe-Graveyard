@@ -8,18 +8,20 @@ import { getBoard } from "./readBoard";
 import { addEndHtml } from "./writeMarkerDiv";
 import { h } from "dom-chef";
 
+function checkLoadingNotDone() {
+    const isNotDone = loadingNotDone();
+    if (isNotDone) {
+        // console.log("readBoard runs -  still more to be loaded");
+    } else {
+        // console.log("readBoard runs - all messages loaded");
+        addEndHtml();
+    }
+    return isNotDone;
+}
+
 function loadingNotDone() {
     // @ts-expect-error
     return !window.crumblingcastle.loadingDone;
-    /*
-    const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
-
-    // @ts-expect-error
-    if (!window.crumblingcastle.loadingDone && window.crumblingcastle.lastEvaluatedKey && window.crumblingcastle.lastEvaluatedKey.board === boardNumber) {
-        return true;
-    }
-    return false;
-    */
 }
 
 function addInfiniteScroll() {
@@ -75,13 +77,7 @@ async function loadMore() {
     const boardNumber = Number(document.getElementsByClassName("whiteMarker")[0].getAttribute("board"));
     await getBoard(boardNumber);
 
-    const isNotDone = loadingNotDone();
-    if (isNotDone) {
-        // console.log("readBoard runs -  still more to be loaded");
-    } else {
-        // console.log("readBoard runs - all messages loaded");
-        addEndHtml();
-    }
+    const isNotDone = checkLoadingNotDone();
 
     loading.remove();
 
@@ -128,6 +124,8 @@ function initialLoadDone() {
     document.getElementById("markerDiv").prepend(pageLinkContainer);
     document.getElementById("loadingDiv")?.classList.add("hidden");
     document.getElementById("fetchedInfoDiv")?.classList.remove("hidden");
+
+    checkLoadingNotDone();
 
     addInfiniteScroll();
 }
