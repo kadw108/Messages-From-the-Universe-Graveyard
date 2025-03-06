@@ -1,7 +1,7 @@
 /*
 Syntax:
 
-<button class="panelOpener" identifier="test" >Click to make it show up!</button>
+<button type="button" class="panelOpener" identifier="test" >Click to make it show up!</button>
 <dialog class="menuPanel absoluteAlign" identifier="test">
     How wonderful. I love my life.
     <button class="panelCloser" identifier="test">Click to close panel.</button>
@@ -18,7 +18,7 @@ function openMenuPanel(event) {
         return;
     }
 
-    replacer.open = true;
+    replacer.showModal();
 
     const bg = document.getElementById("screenCover");
     if (bg === null) {
@@ -30,7 +30,7 @@ function openMenuPanel(event) {
 
 function closeMenuPanelHandler(menuPanel) {
     return () => {
-        menuPanel.open = false;
+        menuPanel.close();
 
         const bg = document.getElementById("screenCover");
         if (bg === null) {

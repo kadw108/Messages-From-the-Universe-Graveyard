@@ -12,10 +12,8 @@ GENERAL STYLE
     --scrollbar-foreground: #666;
     --scrollbar-background: #222;
 
-  	--screenheight: 675px;
-  	--screenwidth: 765px;
-  	--screenheightbig: 700px;
-  	--screenwidthbig: 800px;
+  	--screenheight: 800px;
+  	--screenwidth: 600px;
 }
 
 body {
@@ -65,8 +63,8 @@ div#iff-story {
   margin: 0 auto;
   padding: 15px;
 
-  width: 600px;
-  height: 800px;
+  width: var(--screenwidth);
+  height: var(--screenheight);
   
   /* Prevent images from extending past div bounds
   object-fit: cover;
@@ -83,7 +81,7 @@ div#iff-story {
 }
 
 @media only screen 
-and (max-width: 600px) {
+and (max-width: 600px) { /* vars not supported in media queries */
   #passages {
     width: 100%;
   }
@@ -180,16 +178,12 @@ div .bottomHalf::-webkit-scrollbar {
 CUSTOM STYLES
 */
 
-.menuPanel {
-  overflow: scroll;
-  padding: 3px 7px 3px 7px;
+dialog.menuPanel {
+  height: 85%;
+  max-height: var(--screenheight);
 
-  background-color: #001020;
-  border: 1px dotted #ccc;
-  border-radius: 10px;
-
-  height: calc(100% - 20px);
-  width: calc(100% - 10px);
+  width: 85%;
+  max-width: calc(var(--screenwidth) - 70px);
 }
 
 .hoverDiv {

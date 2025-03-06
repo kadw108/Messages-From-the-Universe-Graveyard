@@ -3,7 +3,7 @@
 let markerOpened = false;
 
 async function openMarker(event) {
-    document.getElementById("markerDiv").open = true;
+    document.getElementById("markerDiv").showModal();
     if (!markerOpened) {
         markerOpened = true;
 

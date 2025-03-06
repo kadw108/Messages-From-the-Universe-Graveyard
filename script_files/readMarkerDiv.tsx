@@ -66,7 +66,7 @@ function addInfiniteScroll() {
 }
 
 function closeMarker() {
-    (document.querySelector("dialog#markerDiv") as HTMLDialogElement).open = false;
+    (document.querySelector("dialog#markerDiv") as HTMLDialogElement).close();
 }
 
 async function loadMore() {
