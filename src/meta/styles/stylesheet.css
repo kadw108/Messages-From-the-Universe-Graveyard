@@ -362,14 +362,20 @@ hr {
   margin: 3px 0;
 }
 
-button {
+button.whiteMarker {
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  border: none;
+}
+button:not(.whiteMarker) {
   background-color: #000;
   color: #fff;
   cursor: pointer;
 
   font-family: 'MonoFont', monospace;
 }
-button:hover {
+button:not(.whiteMarker):hover {
   background-color: #444;
 }
 .linkReplaced, .linkHider {

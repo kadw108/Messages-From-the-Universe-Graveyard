@@ -85,7 +85,7 @@ async function loadMore() {
 }
 
 function createMarkerDiv() {
-    return <div id="markerDiv" className="absoluteAlign hidden menuPanel">
+    return <dialog id="markerDiv" className="absoluteAlign menuPanel">
         <div id="loadingDiv">
             <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
         </div>
@@ -93,7 +93,7 @@ function createMarkerDiv() {
         <div id="fetchedInfoDiv" className="hidden">
             <div id="messageContainer"></div>
         </div>
-    </div>;
+    </dialog>;
 }
 
 function initialLoadDone() {

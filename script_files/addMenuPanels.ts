@@ -1,17 +1,16 @@
 /*
 Syntax:
 
-<a class="panelOpener" identifier="test" >Click to make it show up!</a>
-<div class="menuPanel absoluteAlign hidden" identifier="test">
+<button class="panelOpener" identifier="test" >Click to make it show up!</button>
+<dialog class="menuPanel absoluteAlign" identifier="test">
     How wonderful. I love my life.
-    <a class="panelCloser" identifier="test">Click to close panel.</a>
-</div>
-
+    <button class="panelCloser" identifier="test">Click to close panel.</button>
+</dialog>
 */
 
 function openMenuPanel(event) {
     const identifier = event.target.getAttribute("identifier");
-    const replacer = document.querySelector(".menuPanel[identifier='" + identifier + "']");
+    const replacer = document.querySelector("dialog.menuPanel[identifier='" + identifier + "']") as HTMLDialogElement;
 
     if (replacer === null) {
         console.error("Replacelink without replacer!");
@@ -19,7 +18,7 @@ function openMenuPanel(event) {
         return;
     }
 
-    replacer.classList.remove("hidden");
+    replacer.open = true;
 
     const bg = document.getElementById("screenCover");
     if (bg === null) {
@@ -31,7 +30,7 @@ function openMenuPanel(event) {
 
 function closeMenuPanelHandler(menuPanel) {
     return () => {
-        menuPanel.classList.add("hidden");
+        menuPanel.open = false;
 
         const bg = document.getElementById("screenCover");
         if (bg === null) {
