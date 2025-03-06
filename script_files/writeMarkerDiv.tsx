@@ -10,7 +10,7 @@ import { loadMore } from "./readMarkerDiv";
 function addEndHtml() {
     if (document.getElementById("sendBox") === null) {
         const endHtml = <div>
-            <button className="endButton" onClick={refreshClickHandler}>Refresh</button>
+            <button className="endButton" onClick={refreshClickHandler}>Check for New Messages</button>
             <br/>
             <button className="endButton" onClick={showHideSendBox}>Leave a Message?</button>
 
@@ -107,8 +107,17 @@ async function refresh() {
     markerDiv.scrollTo(0, markerDiv.scrollHeight);
 }
 
-async function refreshClickHandler() {
-    refresh();
+async function refreshClickHandler(event) {
+    const refreshButton = event.target;
+
+    const oldText = refreshButton.innerText;
+    refreshButton.innerText = "Loading...";
+    refreshButton.disabled = true;
+
+    await refresh();
+
+    refreshButton.innerText = oldText;
+    refreshButton.disabled = false;
 }
 
 export {addEndHtml};

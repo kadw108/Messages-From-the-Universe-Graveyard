@@ -68,7 +68,7 @@ function closeMarker() {
 }
 
 async function loadMore() {
-    const loading = <div style={{ width: "80px", height: "20px" }}><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>;
+    const loading = <div style={{ width: "80px", height: "20px", marginLeft: "10px" }}><div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>;
     const messageContainer = document.getElementById("messageContainer");
     messageContainer.append(loading);
 
@@ -77,9 +77,9 @@ async function loadMore() {
 
     const isNotDone = loadingNotDone();
     if (isNotDone) {
-        console.log("readBoard runs -  still more to be loaded");
+        // console.log("readBoard runs -  still more to be loaded");
     } else {
-        console.log("readBoard runs - all messages loaded");
+        // console.log("readBoard runs - all messages loaded");
         addEndHtml();
     }
 
