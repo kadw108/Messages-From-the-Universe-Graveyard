@@ -411,10 +411,7 @@ body > div, span {
   margin: 3px 0 3px 0;
 }
 
-p {
-  margin: 12px 0 12px 0;
-}
-li {
+p, li, details {
   margin: 12px 0 12px 0;
 }
 
@@ -425,4 +422,8 @@ h1, h2, h3 {
   letter-spacing: 0.02em;
   text-transform: uppercase; 
   font-weight: normal;
+}
+
+summary h4, summary h5 {
+  display: inline;
 }
