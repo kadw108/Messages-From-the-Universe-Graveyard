@@ -183,11 +183,13 @@ CUSTOM STYLES
 .menuPanel {
   overflow: scroll;
   padding: 3px 7px 3px 7px;
-  margin: 5px;
 
   background-color: #001020;
   border: 1px dotted #ccc;
   border-radius: 10px;
+
+  height: 90%;
+  width: 90%;
 }
 
 .hoverDiv {

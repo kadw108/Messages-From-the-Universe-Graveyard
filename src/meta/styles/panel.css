@@ -5,7 +5,7 @@
 
 .menuPanel {
   z-index: 20;
-  margin: 5px;
+  margin: auto;
   padding-bottom: 15px;
   background-color: #000;
   border: 3px double #fff;
@@ -15,9 +15,10 @@
 
   overflow: scroll;
   padding: 10px;
+
+  color: white;
 }
 
 .smallPanel {
-  margin: 20px;
   height: fit-content;
 }
