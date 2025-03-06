@@ -58,6 +58,9 @@ $(function () {
                 })
             }
         }
+        else {
+            buttonTest.inert = false;
+        }
     }
 
     window.crumblingcastle.addReplaceLink();
