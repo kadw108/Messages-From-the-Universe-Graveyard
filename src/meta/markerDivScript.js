@@ -9,6 +9,7 @@ async function openMarker(event) {
 
         boardNumber = Number(event.target.getAttribute("board"));
         const ref = window.crumblingcastle;
+        ref.lastEvaluatedKey = null;
         await ref.getBoard(boardNumber);
 
         ref.initialLoadDone();

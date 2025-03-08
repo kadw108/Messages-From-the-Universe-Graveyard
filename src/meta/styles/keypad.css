@@ -14,7 +14,11 @@
     left: 0;
     z-index: 999;
     width: 100vw;
-    height: 100vh;
+
+    /* Fix for iOS Safari 100vh being longer than actual 100vh)
+    https://stackoverflow.com/a/72245072
+    */
+    height: 100svh;
 
     /* (A3) CENTER ON SCREEN + BACKGROUND COLOR */
     display: flex;
