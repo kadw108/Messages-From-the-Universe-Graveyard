@@ -182,8 +182,8 @@ CUSTOM STYLES
 */
 
 dialog.menuPanel {
-  height: calc(95% - 10px);
-  width: calc(95% - 10px);
+  height: calc(98% - 10px);
+  width: calc(98% - 10px);
 }
 
 .hoverDiv {
