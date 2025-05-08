@@ -344,6 +344,11 @@ a:hover {
   color: inherit;
   font-size: 100%;
 }
+.hiddenLink a {
+  font-weight: inherit;
+  text-decoration: none;
+  color: inherit;
+}
 a.outsideLink {
   color: #aac0cf;
 }
