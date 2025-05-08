@@ -169,6 +169,14 @@
                 "files": "meta/styles/specific/hidden.css"
             },
             {
+                "rule": "hiddenunder",
+                "files": "meta/styles/specific/hiddenunder.css"
+            },
+            {
+                "rule": "hiddenchamber",
+                "files": "meta/styles/specific/hiddenchamber.css"
+            },
+            {
                 "rule": "fire",
                 "files": "meta/styles/specific/fire.css"
             },
